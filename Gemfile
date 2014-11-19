@@ -45,4 +45,6 @@ gem 'bourbon'
 gem 'neat'
 gem 'bitters'
 gem 'dotenv-rails'
+
 gem 'httparty'
+
