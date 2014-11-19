@@ -40,3 +40,7 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'pry-rails', group: [:development, :test]
 gem 'rails_12factor'
+
+gem 'bourbon'
+gem 'neat'
+gem 'bitters'
