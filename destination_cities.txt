@@ -1,0 +1,163 @@
+Albany, New York
+Albuquerque, New Mexico
+Anchorage, Alaska
+Atlanta, Georgia
+Atlantic City, New Jersey
+Austin, Texas
+Baltimore, Maryland
+Birmingham, Alabama
+Boise, Idaho
+Boston, Massachusetts
+Buffalo, New York
+Burbank, California
+Charleston, South Carolina
+Charlotte, North Carolina
+Chicago - Midway, Illinois
+Chicago - O'Hare Intl., Illinois
+Cincinnati, Ohio
+Cleveland, Ohio
+Colorado Springs, Colorado
+Columbia, South Carolina
+Columbus, Ohio
+Dallas, Texas
+Dayton, Ohio
+Daytona Beach, Florida
+Denver, Colorado
+Des Moines, Iowa
+Detroit, Michigan
+El Paso, Texas
+Fort Lauderdale, Florida
+Fort Myers, Florida
+Grand Rapids, Michigan
+Greenville, South Carolina
+Hartford, Connecticut
+Hilo, Hawaii
+Honolulu, Hawaii
+Houston, Texas
+Indianapolis, Indiana
+Jacksonville, Florida
+Kailua Kona, Hawaii
+Kansas City, Kansas
+Key West, Florida
+Knoxville, Tennessee
+Las Vegas, Nevada
+Lihue, Hawaii
+Little Rock, Arkansas
+Los Angeles, California
+Louisville, Kentucky
+Maui, Hawaii
+Memphis, Tennessee
+Miami, Florida
+Milwaukee, Wisconsin
+Minneapolis, Minnesota
+Montreal, Quebec
+Myrtle Beach, South Carolina
+Nashville, Tennessee
+New Orleans, Louisiana
+New York City - JFK, New York
+New York City - La Guardia, New York
+Newark, New Jersey
+Norfolk, Virginia
+Oakland, California
+Oklahoma City, Oklahoma
+Omaha, Nebraska
+Ontario, California
+Orange County, California
+Orlando, Florida
+Palm Springs, California
+Pensacola, Florida
+Philadelphia, Pennsylvania
+Phoenix, Arizona
+Pittsburgh, Pennsylvania
+Portland, Oregon
+Providence, Rhode Island
+Raleigh, North Carolina
+Reno, Nevada
+Richmond, Virginia
+Rochester, New York
+Sacramento, California
+Salt Lake City, Utah
+San Antonio, Texas
+San Diego, California
+San Francisco, California
+San Jose, California
+San Juan, Puerto Rico
+Sarasota, Florida
+Savannah, Georgia
+Seattle, Washington
+Spokane, Washington
+St. Croix, U.S. Virgin Islands
+St. Louis, Missouri
+St. Thomas, U.S. Virgin Islands
+Syracuse, New York
+Tampa, Florida
+Toronto, Ontario
+Tucson, Arizona
+Tulsa, Oklahoma
+Vancouver, British Columbia
+Washington, D.C. - Dulles Intl.
+Washington, D.C. - Reagan National
+West Palm Beach, FloridaAcapulco, Mexico
+Amsterdam, Netherlands
+Athens, Greece
+Bangkok, Thailand
+Barcelona, Spain
+Belize City, Belize
+Berlin, Germany
+Bridgetown, Barbados
+Budapest, Hungary
+Buenos Aires, Argentina
+Cairo, Egypt
+Cancun, Mexico
+Castries, St. Lucia
+Cozumel, Mexico
+Delhi, India
+Dubai, United Arab Emirates
+Dublin, Ireland
+Florence, Italy
+Frankfurt, Germany
+Freeport, Bahamas
+Guadalajara, Mexico
+Guatemala City, Guatemala
+Hamilton, Bermuda
+Hong Kong, China
+Istanbul, Turkey
+Ixtapa, Mexico
+Johannesburg, South Africa
+Kingston, Jamaica
+Lima, Peru
+Lisbon, Portugal
+London - Gatwick, United Kingdom
+London - Heathrow, United Kingdom
+Los Cabos, Mexico
+Madrid, Spain
+Manchester, United Kingdom
+Manila, Philippines
+Mazatlan, Mexico
+Melbourne, Australia
+Mexico City, Mexico
+Milan, Italy
+Montego Bay, Jamaica
+Mumbai, India
+Munich, Germany
+Nassau, Bahamas
+Nice, France
+Oranjestad, Aruba
+Paris, France
+Philipsburg, Netherlands Antilles
+Prague, Czech Republic
+Puerto Plata, Dominican Republic
+Puerto Vallarta, Mexico
+Punta Cana, Dominican Republic
+Rome, Italy
+San Salvador, El Salvador
+Santiago, Chile
+Santo Domingo, Dominican Republic
+Sao Paulo, Brazil
+Seoul, South Korea
+Singapore
+Sydney, Australia
+Tokyo, Japan
+Trinidad & Tobago, West Indies, West Indies
+Venice, Italy
+Vienna, Austria
