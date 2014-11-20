@@ -1,6 +1,3 @@
-
-<link rel="stylesheet" href="assets/stylesheets/styles.css.scss">
-
 <h1><%= @destination %></h1>
 
 <header>
@@ -9,30 +6,15 @@
 		<li>Profile</li>
 		<li>Log Out</li>
 	</ul>
-
-
 </header>
-
-<!-- weather code -->
-<div class="weather">
-	<h1>Historical weather for...</h1>
-</div>
-
-
-	<h1>City Name</h1>
 
 
 	<!-- photo code -->
 	<div class="photo">
-		<h1>Recent photos taken in...</h1>
+		<h1>Recent photos taken in...<%= @destination %></h1>
 	</div>
 
 	<div class="bottom-wrapper">
-
-		<!-- weather code -->
-		<div class="weather">
-			<h1>Historical weather for...</h1>
-		</div>
 
 		<!-- flight code-->
 		<div class="flight">
@@ -40,8 +22,6 @@
 		</div>
 
 		<!-- photo code -->
-		<div class="photo">
-			<h1>Recent photos taken in...<%= @origin %>
-			<%= @average_flight_price %> </h1>
-			
+		<div class="weather">
+			<h1>Historical weather in...<%= @destination %> </h1>
 		</div>

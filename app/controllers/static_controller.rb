@@ -1,11 +1,13 @@
 class StaticController < ApplicationController
-  include
+  layout 'show'
+  layout 'application'
+
   def index
   end
 
   def show
 
-    render :layout => false
+    render :layout => 'show'
 
     @origin = params[:origin]
     @destination = params[:destination]
