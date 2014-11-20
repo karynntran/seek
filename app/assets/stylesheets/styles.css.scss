@@ -5,6 +5,9 @@
 
 $primary-color: #6aa3df;
 
+/* ---------->>> PRIMARY STRUCTURE <<<-----------*/
+
+
 .container {
   h1 {
   @include span-columns(10);
@@ -17,7 +20,19 @@ body {
 
 header {
 	background-color: #000066;
+	overflow: auto;
+	height: 50px;
+	max-width: 100%;
 }
+
+/* ---------->>> KEY SECTION STRUCTURE <<<-----------*/
+
+.bottom-wrapper {
+  border-top: lightgray 2px solid;
+}
+
+
+/* ---------->>> NAVIGATION <<<-----------*/
 
 ul {
 	text-align: right;
@@ -28,9 +43,6 @@ li {
 	color: #FFFFFF;
 }
 
-.bottom-wrapper {
-  border-top: lightgray 2px solid;
-}
 
 
 
