@@ -10,7 +10,7 @@ $primary-color: #6aa3df;
 
 .container {
   h1 {
-  @include span-columns(10);
+  @include span-columns(12);
   color: #0066CC;
   font-size: 45px;
   text-align: center;
@@ -24,11 +24,15 @@ $primary-color: #6aa3df;
   p{
   	font-size: 15px;
   }
+  .bottom-wrapper {
+	@include span-columns(12);
+	margin: 0 auto;
+	background: lightgray;
+	padding: 0 10px;
+  }
   .bottom-wrapper div {
-	  @include span-columns(4);
-	  margin: 0 auto;
-   	  display: inline-block;
-   	  background: lightgray;
+  	@include span-columns(4);
+  	display: inline-block;
   }
   .photos div {
   	@include span-columns(12);
@@ -103,6 +107,7 @@ div body {
 
 .icon {
 	border-radius: 50%;
+	border: 2px solid darkgray;
 	height: 50px;
 	width: 50px;
 	padding: 10px;
@@ -131,9 +136,8 @@ li {
 	display: inline;
 	color: #FFFFFF;
 	border: white solid 2px;
-	vertical-align: middle;
 	font-size: 15px;
-	padding: 2px;
+	padding: 0 4px;
 }
 
 
