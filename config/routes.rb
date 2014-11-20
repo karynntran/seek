@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   root 'static#index'
 
-  get '/:query' => 'static#show'
+  get '/result' => 'static#show'
 
   resources :users
 
