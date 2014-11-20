@@ -22,3 +22,8 @@ function destinationComplete(){
 $(function(){
   fetchData()
 });
+
+
+
+
+// *********  show page backgrounds **********

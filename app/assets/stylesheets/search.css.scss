@@ -8,6 +8,9 @@
   @include shift(3);
   margin-top: 12em;
   text-align: center;
+  background-color: rgba(255,255,255,.7);
+  padding: 8em 14em;
+  border-radius: 1em;
 }
 
 .searchbox select {
@@ -16,5 +19,5 @@
 }
 
 body {
-  background: url('http://miriadna.com/desctopwalls/images/max/Tropical-island.jpg') no-repeat top;
+  background: url('island.jpg') no-repeat top;
 }
