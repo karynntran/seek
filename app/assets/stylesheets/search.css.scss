@@ -1,0 +1,13 @@
+.go {
+  @include button(shiny);  
+}
+.searchbox {
+  @include span-columns(6);
+  @include shift(3);
+  margin-top: 12em;
+  text-align: center;
+}
+
+.searchbox select {
+  @include shift(4);
+}
