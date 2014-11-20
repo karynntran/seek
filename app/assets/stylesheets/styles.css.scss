@@ -1,12 +1,106 @@
+@import "bourbon";
+@import "base/base";
+@import "neat";
+
+
 $primary-color: #6aa3df;
 
+/* ---------->>> PRIMARY STRUCTURE <<<-----------*/
+
+
 .container {
-  @include outer-container;
   h1 {
   @include span-columns(10);
-  @include linear-gradient(to right, $primary-color, white);
   }
 }
+
+body {
+	font-family: helvetica;
+	font-size: 10px;
+	height: 100%;
+}
+
+header {
+	background-color: #000066;
+	overflow: auto;
+	height: 50px;
+	max-width: 100%;
+	margin:0px auto;
+	font-size: 20px;
+}
+
+/* ---------->>> KEY SECTION STRUCTURE <<<-----------*/
+
+div body {
+	padding: 10px;
+	height: 100%;
+	margin: 5px;
+}
+
+.photo  {
+	width: 100%;
+	border: solid lightgray 1px;
+	height: 60%;
+}
+
+.flight  {
+	border: solid lightgray 1px;
+	width: 33%;
+	height: 30%;
+	float: left;
+}
+
+.weather  {
+	border: solid lightgray 1px;
+	width: 33%;
+	height: 200px;
+	float: left;
+}
+
+.big-mac  {
+	border: solid lightgray 1px;
+	width: 33%;
+	height: 200px;
+	float: left;
+}
+
+
+
+.bottom-wrapper {
+  border-top: lightgray 2px solid;
+  margin: 0 auto;
+  display: inline-block;
+}
+
+
+/* ---------->>> NAVIGATION <<<-----------*/
+
+ul {
+	text-align: right;
+}
+
+li {
+	display: inline;
+	color: #FFFFFF;
+}
+
+
+/* ---------->>> CLEARFIX <<<-----------*/
+
+
+.clearfix:after {
+     visibility: hidden;
+     display: block;
+     font-size: 0;
+     content: " ";
+     clear: both;
+     height: 0;
+     }
+.clearfix { display: inline-block; }
+/* start commented backslash hack \*/
+* html .clearfix { height: 1%; }
+.clearfix { display: block; }
+/* close commented backslash hack */
 
 
 

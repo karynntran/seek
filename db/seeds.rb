@@ -14,7 +14,7 @@ cities = [
 ["Baltimore", "BWI", "39.2833,-76.6167", true],
 ["Boston", "BOS", "42.3581,-71.0636", true],
 ["Buffalo", "BUF", "42.9047,-78.8494", true],
-["Charlotte", "CLT" "35.2269,-80.8433", true],
+["Charlotte", "CLT", "35.2269,-80.8433", true],
 ["Chicago", "ORD", "41.8369,-87.6847", true],
 ["Cincinnati", "CVG", "39.1000,-84.5167", true],
 ["Cleveland", "CLE", "41.4822,-81.6697", true],
