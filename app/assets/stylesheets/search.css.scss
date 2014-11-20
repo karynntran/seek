@@ -1,5 +1,7 @@
 .go {
-  @include button(shiny);  
+  @include button(shiny);
+  @include span-columns(3);
+  @include shift(4.5);
 }
 .searchbox {
   @include span-columns(6);
@@ -9,5 +11,10 @@
 }
 
 .searchbox select {
+  @include span-columns(4);
   @include shift(4);
+}
+
+body {
+  background: url('http://miriadna.com/desctopwalls/images/max/Tropical-island.jpg') no-repeat top;
 }
