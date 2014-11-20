@@ -1,102 +1,101 @@
-Albany, New York
-Albuquerque, New Mexico
+!Albany, New York
+!Albuquerque, New Mexico
 Anchorage, Alaska
-Atlanta, Georgia
+!Atlanta, Georgia
 Atlantic City, New Jersey
-Austin, Texas
-Baltimore, Maryland
+!Austin, Texas
+!Baltimore, Maryland
 Birmingham, Alabama
 Boise, Idaho
-Boston, Massachusetts
-Buffalo, New York
+!Boston, Massachusetts
+!Buffalo, New York
 Burbank, California
 Charleston, South Carolina
-Charlotte, North Carolina
-Chicago, Illinois
-Cincinnati, Ohio
-Cleveland, Ohio
+!Charlotte, North Carolina
+!Chicago, Illinois
+!Cincinnati, Ohio
+!Cleveland, Ohio
 Colorado Springs, Colorado
 Columbia, South Carolina
-Columbus, Ohio
-Dallas, Texas
-Dayton, Ohio
+!Columbus, Ohio
+!Dallas, Texas
+!Dayton, Ohio
 Daytona Beach, Florida
-Denver, Colorado
+!Denver, Colorado
 Des Moines, Iowa
-Detroit, Michigan
+!Detroit, Michigan
 El Paso, Texas
-Fort Lauderdale, Florida
-Fort Myers, Florida
-Grand Rapids, Michigan
+!Fort Lauderdale, Florida
+!Fort Myers, Florida
+!Grand Rapids, Michigan
 Greenville, South Carolina
-Hartford, Connecticut
+!Hartford, Connecticut
 Hilo, Hawaii
 Honolulu, Hawaii
-Houston, Texas
-Indianapolis, Indiana
-Jacksonville, Florida
+!Houston, Texas
+!Indianapolis, Indiana
+!Jacksonville, Florida
 Kailua Kona, Hawaii
-Kansas City, Kansas
+!Kansas City, Kansas
 Key West, Florida
 Knoxville, Tennessee
-Las Vegas, Nevada
+!Las Vegas, Nevada
 Lihue, Hawaii
 Little Rock, Arkansas
-Los Angeles, California
-Louisville, Kentucky
+!Los Angeles, California
+!Louisville, Kentucky
 Maui, Hawaii
-Memphis, Tennessee
-Miami, Florida
-Milwaukee, Wisconsin
-Minneapolis, Minnesota
-Montreal, Quebec
+!Memphis, Tennessee
+!Miami, Florida
+!Milwaukee, Wisconsin
+!Minneapolis, Minnesota
+!Montreal, Quebec
 Myrtle Beach, South Carolina
-Nashville, Tennessee
-New Orleans, Louisiana
-New York City - JFK, New York
-New York City - La Guardia, New York
-Newark, New Jersey
-Norfolk, Virginia
-Oakland, California
-Oklahoma City, Oklahoma
-Omaha, Nebraska
-Ontario, California
-Orange County, California
-Orlando, Florida
+!Nashville, Tennessee
+!New Orleans, Louisiana
+!New York City, New York
+!Newark, New Jersey
+!Norfolk, Virginia
+!Oakland, California
+!Oklahoma City, Oklahoma
+!Omaha, Nebraska
+!Ontario, California
+!Orange County, California
+!Orlando, Florida
 Palm Springs, California
 Pensacola, Florida
-Philadelphia, Pennsylvania
-Phoenix, Arizona
-Pittsburgh, Pennsylvania
-Portland, Oregon
-Providence, Rhode Island
-Raleigh, North Carolina
+!Philadelphia, Pennsylvania
+!Phoenix, Arizona
+!Pittsburgh, Pennsylvania
+!Portland, Oregon
+!Providence, Rhode Island
+!Raleigh, North Carolina
 Reno, Nevada
-Richmond, Virginia
+!Richmond, Virginia
 Rochester, New York
-Sacramento, California
-Salt Lake City, Utah
-San Antonio, Texas
-San Diego, California
-San Francisco, California
-San Jose, California
+!Sacramento, California
+!Salt Lake City, Utah
+!San Antonio, Texas
+!San Diego, California
+!San Francisco, California
+!San Jose, California
 San Juan, Puerto Rico
 Sarasota, Florida
 Savannah, Georgia
-Seattle, Washington
+!Seattle, Washington
 Spokane, Washington
 St. Croix, U.S. Virgin Islands
-St. Louis, Missouri
+!St. Louis, Missouri
 St. Thomas, U.S. Virgin Islands
 Syracuse, New York
-Tampa, Florida
-Toronto, Ontario
-Tucson, Arizona
-Tulsa, Oklahoma
-Vancouver, British Columbia
-Washington, D.C. - Dulles Intl.
-Washington, D.C. - Reagan National
-West Palm Beach, FloridaAcapulco, Mexico
+!Tampa, Florida
+!Toronto, Ontario
+!Tucson, Arizona
+!Tulsa, Oklahoma
+!Vancouver, British Columbia
+!Washington, D.C.
+!West Palm Beach, Florida
+Acapulco, Mexico
 Amsterdam, Netherlands
 Athens, Greece
 Bangkok, Thailand
