@@ -1,42 +1,36 @@
-<body>
-	<h1><%= @destination %></h1>
-
-	<header>
-		<div class="navigation">
-			<ul>
-				<li>Home</li>
-				<li>Profile</li>
-				<li>Log Out</li>
-			</ul>
-		</div>
-	</header>
+<h1>CITY<%= @destination %></h1>
 
 
 <body>
 	<!-- photo code -->
 	<div class="photo">
-		<h1>Recent photos taken in...<%= @destination %></h1>
+		<%= image_tag "camera.png", :class => "icon" %>
+		<h2>RECENT INSTAGRAM PHOTOS</h2>
 	</div>
 
 	<div class="clearfix bottom-wrapper">
 
 		<!-- flight code-->
 		<div class="flight">
-			<h1>Average flight price to <%= @destination %>: $<%= @avg_price%> </h1>
+			<%= image_tag "flights.png", :class => "icon" %>
+			<h2>AVERAGE FLIGHT PRICE: $<%= @avg_price%> </h2>
 		</div>
 
 		<!-- weather code -->
 		<div class="weather">
-			<h1>Historical weather in <%= @destination %>: 
+			<%= image_tag "weather.png", :class => "icon" %>
+			<h2>HISTORICAL WEATHER: 
 				<p>High of <%= @max_temp %></p>
 				<p>Low of <%= @min_temp %></p>
 				<p>Average Rainfall <%= @avg_precipitation %></p>
-			</h1>
+			</h2>
 		</div>
 
 		<!-- big mac code -->
+		
 		<div class="big-mac">
-			<h1>A Big Mac will cost ____ in <%= @destination %> </h1>
+			<%= image_tag "food.png", :class => "icon" %>
+			<h2>A BIG MAC WILL COST YOU</h2>
 		</div>
 		
 	</div>

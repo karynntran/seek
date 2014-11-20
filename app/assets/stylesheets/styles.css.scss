@@ -7,10 +7,25 @@ $primary-color: #6aa3df;
 
 /* ---------->>> PRIMARY STRUCTURE <<<-----------*/
 
+
+.container {
+  h1 {
+  @include span-columns(10);
+  color: #0066CC;
+  font-size: 45px;
+  text-align: center;
+  }
+  h2 {
+  font-size: 15px;
+  color: darkgray;
+  }
+}
+
 html, body {
 	height: 100%;
 	padding: 0;
 	margin: 0 auto;
+	font-family: helvetica;
 }
 
 header {
@@ -22,17 +37,7 @@ header {
 	font-size: 20px;
 }
 
-.container {
-  h1 {
-  @include span-columns(10);
-  color: #0066CC;
-  font-size: 15px;
-  }
-}
-
-
 body {
-	font-family: helvetica;
 	font-size: 10px;
 	height: 100%;
 	margin: 0 auto;
@@ -82,6 +87,18 @@ div body {
 }
 
 
+/* ---------->>> ICONS <<<-----------*/
+
+.icon {
+	border: #0066CC solid 2px;
+	border-radius: 50%;
+	height: 50px;
+	width: 50px;
+	padding: 10px;
+	margin: 10px;
+}
+
+
 /* ---------->>> NAVIGATION <<<-----------*/
 
 ul {
@@ -91,6 +108,10 @@ ul {
 li {
 	display: inline;
 	color: #FFFFFF;
+	border: white solid 2px;
+	vertical-align: middle;
+	font-size: 10px;
+	padding: 2px;
 }
 
 
