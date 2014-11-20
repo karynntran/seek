@@ -18,6 +18,16 @@
   @include shift(4);
 }
 
+/*jquery ui autocomplete*/
+.ui-menu-item {
+  color: black;
+  text-align: left;
+  display: block;
+}
+
+
+/* background rotation*/
+
 body {
   background: url('island.jpg') no-repeat top;
 }
