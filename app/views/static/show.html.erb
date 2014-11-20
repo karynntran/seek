@@ -1,47 +1,42 @@
-
-<link rel="stylesheet" href="assets/stylesheets/styles.css.scss">
-
 <h1><%= @destination %></h1>
 
 <header>
-	<ul>
-		<li>Home</li>
-		<li>Profile</li>
-		<li>Log Out</li>
-	</ul>
+	<div class="logo">
+	</div>	
 
+	<div class="search">
+	</div>	
 
+	<div class="navigation">
+		<ul>
+			<li>Home</li>
+			<li>Profile</li>
+			<li>Log Out</li>
+		</ul>
+	</div>
 </header>
 
-<!-- weather code -->
-<div class="weather">
-	<h1>Historical weather for...</h1>
-</div>
-
-
-	<h1>City Name</h1>
-
-
+<body>
 	<!-- photo code -->
 	<div class="photo">
-		<h1>Recent photos taken in...</h1>
+		<h1>Recent photos taken in...<%= @destination %></h1>
 	</div>
 
-	<div class="bottom-wrapper">
-
-		<!-- weather code -->
-		<div class="weather">
-			<h1>Historical weather for...</h1>
-		</div>
+	<div class="clearfix bottom-wrapper">
 
 		<!-- flight code-->
 		<div class="flight">
 			<h1>Upcoming flights for...<%= @destination %> </h1>
 		</div>
 
-		<!-- photo code -->
-		<div class="photo">
-			<h1>Recent photos taken in...<%= @origin %>
-			<%= @average_flight_price %> </h1>
-			
+		<!-- weather code -->
+		<div class="weather">
+			<h1>Historical weather in...<%= @destination %> </h1>
 		</div>
+
+		<!-- big mac code -->
+		<div class="big-mac">
+			<h1>Historical weather in...<%= @destination %> </h1>
+		</div>
+	</div>
+</body>
