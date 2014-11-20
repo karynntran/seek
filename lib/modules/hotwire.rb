@@ -1,6 +1,4 @@
-module HotWire
-  require 'httparty'
-  require 'pry'
+module Hotwire
   def self.get_flight_info(options)
     origin_city = options[:origin]
     destination = options[:destination]
@@ -8,6 +6,7 @@ module HotWire
     url = "http://api.hotwire.com/v1/tripstarter/air?apikey=sw32n4fn2u93rqan8cg92f3x&origin=#{origin_city}&dest=#{destination}&startdate=#{month}/1/2013&enddate=#{month}/31/2013"
     api_response = HTTParty.get(url)
     array_of_flights = api_response["Hotwire"]["Result"]["AirPricing"]
+    average_price(array_of_flights)
   end
 
   def self.api_key
@@ -21,5 +20,3 @@ module HotWire
     @avg = (averages.reduce(:+)/averages.length)
   end
 end
-
-binding.pry

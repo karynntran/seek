@@ -1,11 +1,13 @@
 <div class="searchbox">
-  <h2>Where to?</h2>
+  <h2 id="destination_label">Where to?</h2>
   <%= form_tag("/search", method: "get") do %>
     <%= text_field_tag(:destination, nil, placeholder: '...Paris, France') %>
-    <%= label_tag(:origin, 'Where are you coming from?') %>
+          <%= if false then label_tag(:origin, 'Where from?') end %>
+    <h3 id="origin_label">Where from?</h2>
     <%= text_field_tag(:search, nil, placeholder: '...New York') %>
-    <%= label_tag(:month, 'When will you go?') %>
+          <%= if false then label_tag(:month, 'When will you go?') end %>
+    <h4 id="month_label">Tell me when to go...</h2>
     <%= select_tag :month, options_for_select(Date::MONTHNAMES[1..-1], "July") %>
-    <%= submit_tag("GO") %>
+    <%= submit_tag("GO", class: 'go') %>
   <% end %>
 </div>
