@@ -1,6 +1,7 @@
 <div class="searchbox">
-  <h2 id="destination_label">Where to?</h2>
-  <%= form_tag("/search", method: "get") do %>
+  
+  <%= form_tag("/result", method: "get") do %>
+    <h2 id="destination_label">Where to?</h2>
     <%= text_field_tag(:destination, nil, placeholder: '...Paris, France') %>
           <%= if false then label_tag(:origin, 'Where from?') end %>
     <h3 id="origin_label">Where from?</h2>
