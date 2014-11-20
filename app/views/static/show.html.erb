@@ -27,17 +27,21 @@
 
 		<!-- flight code-->
 		<div class="flight">
-			<h1>Average flight price to <%= @destination %> </h1>
+			<h1>Average flight price to <%= @destination %>: <%= avg_price%> </h1>
 		</div>
 
 		<!-- weather code -->
 		<div class="weather">
-			<h1>Historical weather in...<%= @destination %> </h1>
+			<h1>Historical weather in <%= @destination %>: 
+				High of <%= @max_temp %>
+				Low of <%= @min_temp %>
+				Average Rainfall <%= @precipitation %>
+			</h1>
 		</div>
 
 		<!-- big mac code -->
 		<div class="big-mac">
-			<h1>Historical weather in...<%= @destination %> </h1>
+			<h1>A Big Mac will cost ____ in <%= @destination %> </h1>
 		</div>
 	</div>
 </body>
