@@ -19,11 +19,11 @@
 		<!-- weather code -->
 		<div class="weather">
 			<%= image_tag "weather.png", :class => "icon" %>
-			<h2>HISTORICAL WEATHER: 
-				<p>High of <%= @max_temp %></p>
-				<p>Low of <%= @min_temp %></p>
-				<p>Average Rainfall <%= @avg_precipitation %></p>
-			</h2>
+			<h2>HISTORICAL WEATHER</h2>
+				<p><%= image_tag "high.png", :class => "sub-icon" %>High of <%= @max_temp %></p>
+				<p><%= image_tag "low.png", :class => "sub-icon" %>Low of <%= @min_temp %></p>
+				<p><%= image_tag "rain.png", :class => "sub-icon" %>Average Rainfall <%= @avg_precipitation %></p>
+
 		</div>
 
 		<!-- big mac code -->

@@ -14,18 +14,33 @@ $primary-color: #6aa3df;
   color: #0066CC;
   font-size: 45px;
   text-align: center;
+  font-family: 'Open Sans', sans-serif;
   }
   h2 {
   font-size: 15px;
   color: darkgray;
+  font-family: 'Open Sans', sans-serif;
   }
+  p{
+  	font-size: 15px;
+  }
+  .bottom-wrapper div {
+	  @include span-columns(4);
+	  margin: 0 auto;
+   	  display: inline-block;
+   	  background: lightgray;
+  }
+  .photos div {
+  	@include span-columns(12);
+  }
+
 }
 
 html, body {
 	height: 100%;
 	padding: 0;
 	margin: 0 auto;
-	font-family: helvetica;
+	font-family: 'Open Sans', sans-serif;
 }
 
 header {
@@ -34,13 +49,15 @@ header {
 	width: 100%;
 	margin: 0;
 	padding: 0;
-	font-size: 20px;
+	font-size: 40px;
+	font-family: 'Open Sans', sans-serif;
 }
 
 body {
 	font-size: 10px;
 	height: 100%;
 	margin: 0 auto;
+	font-family: 'Open Sans', sans-serif;
 }
 
 
@@ -81,21 +98,26 @@ div body {
 	float: left;
 }
 
-.bottom-wrapper {
-  margin: 0 auto;
-  display: inline-block;
-}
-
 
 /* ---------->>> ICONS <<<-----------*/
 
 .icon {
-	border: #0066CC solid 2px;
 	border-radius: 50%;
 	height: 50px;
 	width: 50px;
 	padding: 10px;
 	margin: 10px;
+	background-color: white;
+}
+
+.sub-icon {
+	border: darkgray solid 2px;
+	border-radius: 50%;
+	height: 30px;
+	width: 30px;
+	padding: 2px;
+	margin: 10px;
+	background-color: white;
 }
 
 
@@ -110,7 +132,7 @@ li {
 	color: #FFFFFF;
 	border: white solid 2px;
 	vertical-align: middle;
-	font-size: 10px;
+	font-size: 15px;
 	padding: 2px;
 }
 
