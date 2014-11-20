@@ -1,11 +1,22 @@
 module Photo
 
-  def self.get_api_urls(options)
+  def self.get_photos(options)
+    lat_long = City.find_by(name: options[:destination])
+    url_hash = {}
+    url_hash[:latitutde] = lat_long.split(',')[0]
+    url_hash[:longitude] = lat_long.split(',')[1]
+    get_api_ids(url_hash)
+  end
+
+  def self.get_api_ids(options)
     latitude = options[:latitude]
     longitude = options[:longitude]
     api = HTTParty.get("https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=8701c7d581eab20399c7d2b7599918ff&lat=#{latitude}&lon=#{longitude}&format=rest")
+    get_api_ids(api)
+  end
 
-    all_location_photos = api.first[1]["photos"]["photo"]
+  def self.get_api_urls(api)
+    all_location_photos = api["rsp"]["photos"]["photo"]
 
     all_photo_ids = all_location_photos.map do |photo|
       photo["id"]
