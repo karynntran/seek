@@ -11,7 +11,7 @@ module Photo
   def self.get_api_ids(options)
     latitude = options[:latitude]
     longitude = options[:longitude]
-    api = HTTParty.get("https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=8701c7d581eab20399c7d2b7599918ff&lat=#{latitude}&lon=#{longitude}&format=rest")
+    api = HTTParty.get("https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=63cc42384b112fe6bd9597dd5e25cc0f&lat=#{latitude}&lon=#{longitude}&format=rest")
     get_api_ids(api)
   end
 
@@ -24,7 +24,7 @@ module Photo
 
     all_photo_urls = all_photo_ids.map do |photo_id|
 
-      url_call = HTTParty.get("https://api.flickr.com/services/rest/?method=flickr.photos.getSizes&api_key=8701c7d581eab20399c7d2b7599918ff&photo_id=#{photo_id}&format=rest")
+      url_call = HTTParty.get("https://api.flickr.com/services/rest/?method=flickr.photos.getSizes&api_key=63cc42384b112fe6bd9597dd5e25cc0f&photo_id=#{photo_id}&format=rest")
 
       url_call["rsp"]["sizes"]["size"][4]["source"]
     end
