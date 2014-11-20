@@ -7,27 +7,38 @@ $primary-color: #6aa3df;
 
 /* ---------->>> PRIMARY STRUCTURE <<<-----------*/
 
+html, body {
+	height: 100%;
+	padding: 0;
+	margin: 0 auto;
+}
+
+header {
+	background-color: #000066;
+	height: 50px;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	font-size: 20px;
+}
 
 .container {
   h1 {
   @include span-columns(10);
+  color: #0066CC;
+  font-size: 15px;
   }
 }
+
 
 body {
 	font-family: helvetica;
 	font-size: 10px;
 	height: 100%;
+	margin: 0 auto;
 }
 
-header {
-	background-color: #000066;
-	overflow: auto;
-	height: 50px;
-	max-width: 100%;
-	margin:0px auto;
-	font-size: 20px;
-}
+
 
 /* ---------->>> KEY SECTION STRUCTURE <<<-----------*/
 
@@ -39,35 +50,33 @@ div body {
 
 .photo  {
 	width: 100%;
-	border: solid lightgray 1px;
-	height: 60%;
+	height: 50%;
+	min-height: 400px;
+	float: left;
 }
 
 .flight  {
-	border: solid lightgray 1px;
 	width: 33%;
-	height: 30%;
+	height: 50%;
+	min-height: 200px;
 	float: left;
 }
 
 .weather  {
-	border: solid lightgray 1px;
 	width: 33%;
-	height: 200px;
+	height: 50%;
+	min-height: 200px;
 	float: left;
 }
 
 .big-mac  {
-	border: solid lightgray 1px;
 	width: 33%;
-	height: 200px;
+	height: 50%;
+	min-height: 200px;
 	float: left;
 }
 
-
-
 .bottom-wrapper {
-  border-top: lightgray 2px solid;
   margin: 0 auto;
   display: inline-block;
 }

@@ -1,20 +1,15 @@
-<h1><%= @destination %></h1>
+<body>
+	<h1><%= @destination %></h1>
 
-<header>
-	<div class="logo">
-	</div>	
-
-	<div class="search">
-	</div>	
-
-	<div class="navigation">
-		<ul>
-			<li>Home</li>
-			<li>Profile</li>
-			<li>Log Out</li>
-		</ul>
-	</div>
-</header>
+	<header>
+		<div class="navigation">
+			<ul>
+				<li>Home</li>
+				<li>Profile</li>
+				<li>Log Out</li>
+			</ul>
+		</div>
+	</header>
 
 
 <body>
@@ -27,15 +22,15 @@
 
 		<!-- flight code-->
 		<div class="flight">
-			<h1>Average flight price to <%= @destination %>: <%= avg_price%> </h1>
+			<h1>Average flight price to <%= @destination %>: $<%= @avg_price%> </h1>
 		</div>
 
 		<!-- weather code -->
 		<div class="weather">
 			<h1>Historical weather in <%= @destination %>: 
-				High of <%= @max_temp %>
-				Low of <%= @min_temp %>
-				Average Rainfall <%= @avg_precipitation %>
+				<p>High of <%= @max_temp %></p>
+				<p>Low of <%= @min_temp %></p>
+				<p>Average Rainfall <%= @avg_precipitation %></p>
 			</h1>
 		</div>
 
@@ -43,5 +38,6 @@
 		<div class="big-mac">
 			<h1>A Big Mac will cost ____ in <%= @destination %> </h1>
 		</div>
+		
 	</div>
 </body>
