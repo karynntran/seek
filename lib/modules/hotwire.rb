@@ -1,6 +1,4 @@
 module HotWire
-  require 'httparty'
-  require 'pry'
   def self.get_flight_info(options)
     origin_city = options[:origin]
     destination = options[:destination]
@@ -21,5 +19,3 @@ module HotWire
     @avg = (averages.reduce(:+)/averages.length)
   end
 end
-
-binding.pry

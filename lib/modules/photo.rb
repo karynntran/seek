@@ -1,6 +1,4 @@
 module Photo
-  require 'pry'
-  require 'httparty'
 
   def self.get_api_urls(options)
     latitude = options[:latitude]
@@ -26,6 +24,3 @@ module Photo
   end
 
 end
-
-
-binding.pry
