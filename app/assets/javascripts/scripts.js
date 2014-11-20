@@ -19,8 +19,19 @@ function destinationComplete(){
   });
 }
 
+function changeBackground(){
+  $('#slideshow').cycle({
+    fx: 'fade',
+    pager: '#smallnav', 
+    pause:   1, 
+    speed: 1800,
+    timeout:  3500 
+  });
+};
+
 $(function(){
   fetchData()
+  changeBackground()  
 });
 
 
