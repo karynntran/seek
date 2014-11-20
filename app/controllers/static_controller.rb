@@ -1,20 +1,17 @@
 class StaticController < ApplicationController
-  include
+
   def index
   end
 
   def show
-
-    render :layout => false
-
     @origin = params[:origin]
     @destination = params[:destination]
     @month = params[:month]
     hash = {destination: @destination, origin: @origin, month: @month}
     hotwire_hash = Hotwire.get_flight_info(hash)
-    @avg_price = hotwire_hash[:avg_price]
-    @max_temp = hotwire_hash[:max_temp]
-    @min_temp = hotwire_hash[:min_temp]
-    @avg_precipitation = hotwire_hash[:precipitation]
+    @avg_price = hotwire_hash[:avg_price].to_s
+    @max_temp = hotwire_hash[:max_temp].to_s
+    @min_temp = hotwire_hash[:min_temp].to_s
+    @avg_precipitation = hotwire_hash[:precipitation].to_s
   end
 end

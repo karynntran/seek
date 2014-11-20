@@ -15,33 +15,42 @@
 
 <!-- weather code -->
 <div class="weather">
-	<h1>Historical weather for...</h1>
+	<h1>Historical weather for <%= @destination %></h1>
+	<p>
+		High Temperature of <%= @max_temp %>
+	</p>
+	<p>
+		Low Temperature of
+		<%= @min_temp %>
+	</p>
+	<p>
+		Average rainfall of<%= @avg_precipitation %>
+	</p>	
 </div>
 
 
-	<h1>City Name</h1>
+	<h1><%= @destination %></h1>
 
 
 	<!-- photo code -->
 	<div class="photo">
-		<h1>Recent photos taken in...</h1>
+		<h1>Recent photos taken in <%= @destination %></h1>
 	</div>
 
 	<div class="bottom-wrapper">
 
 		<!-- weather code -->
 		<div class="weather">
-			<h1>Historical weather for...</h1>
+			<h1>Historical weather for <%= @destination %></h1>
 		</div>
 
 		<!-- flight code-->
 		<div class="flight">
-			<h1>Upcoming flights for...<%= @destination %> </h1>
+			<h1>Average flight price to <%= @destination %> </h1>
 		</div>
 
 		<!-- photo code -->
 		<div class="photo">
-			<h1>Recent photos taken in...<%= @origin %>
-			<%= @average_flight_price %> </h1>
+			<h1>Recent photos taken in <%= @destination %> </h1>
 			
 		</div>
