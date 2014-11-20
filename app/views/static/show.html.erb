@@ -1,12 +1,19 @@
-<h1>CITY<%= @destination %></h1>
-
 
 <body>
-	<!-- photo code -->
-	<div class="photo">
-		<%= image_tag "camera.png", :class => "icon" %>
-		<h2>RECENT INSTAGRAM PHOTOS</h2>
+
+	<div class="clearfix top-wrapper">
+		<!-- photo code -->
+		<div class="city">
+			<h1>CITY<%= @destination %></h1>
+		</div>
+
+		<div class="photo">
+			<%= image_tag "camera.png", :class => "icon" %>
+			<h2>RECENT INSTAGRAM PHOTOS</h2>
+		</div>
 	</div>
+
+
 
 	<div class="clearfix bottom-wrapper">
 
@@ -34,4 +41,5 @@
 		</div>
 		
 	</div>
+
 </body>
