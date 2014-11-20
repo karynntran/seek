@@ -142,11 +142,7 @@ DEPENDENCIES
   bitters
   bourbon
   coffee-rails (~> 4.0.0)
-<<<<<<< HEAD
   dotenv-rails
-=======
-  dotenv
->>>>>>> eaf22099d0d36b0f156ff391d6e19d021b85dc91
   httparty
   jbuilder (~> 2.0)
   jquery-rails
