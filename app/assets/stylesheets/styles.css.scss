@@ -4,6 +4,18 @@ $primary-color: #6aa3df;
   @include outer-container;
   h1 {
   @include span-columns(10);
-  @include linear-gradient(to right, $primary-color, white);
   }
+}
+
+header {
+	background-color: 000099;
+}
+
+li {
+	text-align: right;
+	display: inline;
+}
+
+.bottom-wrapper {
+  border-top: lightgray 2px solid;
 }
