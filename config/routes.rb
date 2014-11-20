@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   get '/result' => 'static#show'
 
+  get '/autocomplete' => 'static#autocomplete'
+
   resources :users
 
 end
