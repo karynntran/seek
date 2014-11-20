@@ -7,10 +7,47 @@ $primary-color: #6aa3df;
 
 /* ---------->>> PRIMARY STRUCTURE <<<-----------*/
 
+
+.container {
+  h1 {
+  @include span-columns(12);
+  color: #0066CC;
+  font-size: 45px;
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  }
+  h2 {
+  font-size: 15px;
+  color: #404040;
+  font-family: 'Open Sans', sans-serif;
+  }
+  p{
+  	font-size: 15px;
+  }
+  .bottom-wrapper {
+	@include span-columns(12);
+	margin: 0 auto;
+	background: lightgray;
+	padding: 0 10px;
+  }
+  .bottom-wrapper div {
+  	@include span-columns(4);
+  	display: inline-block;
+  }
+  .photos div {
+  	@include span-columns(8);
+  }
+  .city div {
+  	@include span-columns(4);
+  }
+
+}
+
 html, body {
 	height: 100%;
 	padding: 0;
 	margin: 0 auto;
+	font-family: 'Open Sans', sans-serif;
 }
 
 header {
@@ -19,23 +56,15 @@ header {
 	width: 100%;
 	margin: 0;
 	padding: 0;
-	font-size: 20px;
+	font-size: 40px;
+	font-family: 'Open Sans', sans-serif;
 }
-
-.container {
-  h1 {
-  @include span-columns(10);
-  color: #0066CC;
-  font-size: 15px;
-  }
-}
-
 
 body {
-	font-family: helvetica;
 	font-size: 10px;
 	height: 100%;
 	margin: 0 auto;
+	font-family: 'Open Sans', sans-serif;
 }
 
 
@@ -48,12 +77,20 @@ div body {
 	margin: 5px;
 }
 
+/* ---------->>> TOP WRAPPER <<<-----------*/
+
+.city {
+	float:left;
+}
+
 .photo  {
 	width: 100%;
 	height: 50%;
 	min-height: 400px;
 	float: left;
 }
+
+/* ---------->>> BOTTOM WRAPPER <<<-----------*/
 
 .flight  {
 	width: 33%;
@@ -76,9 +113,27 @@ div body {
 	float: left;
 }
 
-.bottom-wrapper {
-  margin: 0 auto;
-  display: inline-block;
+
+/* ---------->>> ICONS <<<-----------*/
+
+.icon {
+	border-radius: 50%;
+	border: 2px solid #404040;
+	height: 50px;
+	width: 50px;
+	padding: 10px;
+	margin: 10px;
+	background-color: white;
+}
+
+.sub-icon {
+	border: #404040 solid 2px;
+	border-radius: 50%;
+	height: 30px;
+	width: 30px;
+	padding: 2px;
+	margin: 10px;
+	background-color: white;
 }
 
 
@@ -91,6 +146,9 @@ ul {
 li {
 	display: inline;
 	color: #FFFFFF;
+	border: white solid 2px;
+	font-size: 15px;
+	padding: 0 4px;
 }
 
 
