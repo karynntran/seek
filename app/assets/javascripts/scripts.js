@@ -30,10 +30,11 @@ function originComplete(){
 
 function validateDestination() {
   $("#destination").on('keyup', function(){
-  if ($.inArray($(this).val(), destinations) > -1) {
-    $("#origin_label").show();
-    $("#origin").show();
-  }
+    if ($.inArray($(this).val(), destinations) > -1) {
+      $("#origin_label").show();
+      $("#origin").show();
+    }
+  });
 }
 
 function changeBackground(){
@@ -46,11 +47,6 @@ function changeBackground(){
   });
 };
 
-$(function(){
-  fetchData();
-  validateDestination();
-  changeBackground();  
-});
 
 
 
