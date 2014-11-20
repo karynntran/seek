@@ -33,8 +33,7 @@ Minneapolis, Minnesota
 Montreal, Quebec
 Nashville, Tennessee
 New Orleans, Louisiana
-New York City - JFK, New York
-New York City - La Guardia, New York
+New York City, New York
 Newark, New Jersey
 Norfolk, Virginia
 Oakland, California
@@ -63,6 +62,5 @@ Toronto, Ontario
 Tucson, Arizona
 Tulsa, Oklahoma
 Vancouver, British Columbia
-Washington, D.C. - Dulles Intl.
-Washington, D.C. - Reagan National
+Washington, D.C.
 West Palm Beach, Florida
