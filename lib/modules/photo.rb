@@ -1,5 +1,13 @@
 module Photo
 
+  def self.get_photos(options)
+    lat_long = City.find_by(name: options[:destination])
+    url_hash = {}
+    url_hash[:latitutde] = lat_long.split(',')[0]
+    url_hash[:longitude] = lat_long.split(',')[1]
+    get_api_urls(url_hash)
+  end
+
   def self.get_api_urls(options)
     latitude = options[:latitude]
     longitude = options[:longitude]
