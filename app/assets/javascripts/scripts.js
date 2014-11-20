@@ -9,9 +9,11 @@ function fetchData(){
       origins = data.origin;
       destinations = data.destination;
       destinationComplete();
+      originComplete();
     }
   });
 }
+
 
 function destinationComplete(){
   $("#destination").autocomplete({
@@ -19,8 +21,29 @@ function destinationComplete(){
   });
 }
 
+function originComplete(){
+  $("#origin").autocomplete({
+    source: origins
+  });
+}
+
+function validateDestination() {
+  $("#destination").on('keyup', function(){
+  if ($.inArray($(this).val(), destinations) > -1) {
+    $("#origin_label").show();
+    $("#origin").show();
+  }
+}
+
 $(function(){
-  fetchData()
+  fetchData();
+  validateDestination();
+});
+
+
+
+
+
 });
 
 
