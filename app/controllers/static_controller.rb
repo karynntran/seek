@@ -3,5 +3,6 @@ class StaticController < ApplicationController
   end
 
   def show
+    render :layout => false
   end
 end
