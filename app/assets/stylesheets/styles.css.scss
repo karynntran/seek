@@ -7,6 +7,20 @@ $primary-color: #6aa3df;
 
 /* ---------->>> PRIMARY STRUCTURE <<<-----------*/
 
+html, body {
+	height: 100%;
+	padding: 0;
+	margin: 0;
+}
+
+header {
+	background-color: #000066;
+	height: 50px;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	font-size: 20px;
+}
 
 .container {
   h1 {
@@ -14,20 +28,14 @@ $primary-color: #6aa3df;
   }
 }
 
+
 body {
 	font-family: helvetica;
 	font-size: 10px;
 	height: 100%;
 }
 
-header {
-	background-color: #000066;
-	overflow: auto;
-	height: 50px;
-	max-width: 100%;
-	margin:0px auto;
-	font-size: 20px;
-}
+
 
 /* ---------->>> KEY SECTION STRUCTURE <<<-----------*/
 
@@ -64,10 +72,7 @@ div body {
 	float: left;
 }
 
-
-
 .bottom-wrapper {
-  border-top: lightgray 2px solid;
   margin: 0 auto;
   display: inline-block;
 }

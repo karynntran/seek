@@ -1,47 +1,32 @@
-<h1><%= @destination %></h1>
-
-<header>
-	<div class="logo">
-	</div>	
-
-	<div class="search">
-	</div>	
-
-	<div class="navigation">
-		<ul>
-			<li>Home</li>
-			<li>Profile</li>
-			<li>Log Out</li>
-		</ul>
-	</div>
-</header>
 
 
-<body>
-	<!-- photo code -->
-	<div class="photo">
-		<h1>Recent photos taken in...<%= @destination %></h1>
-	</div>
+	<body>
+		<h1><%= @destination %></h1>
 
-	<div class="clearfix bottom-wrapper">
-
-		<!-- flight code-->
-		<div class="flight">
-			<h1>Average flight price to <%= @destination %>: <%= @avg_price%> </h1>
+		<!-- photo code -->
+		<div class="photo">
+			<h1>Recent photos taken in...<%= @destination %></h1>
 		</div>
 
-		<!-- weather code -->
-		<div class="weather">
-			<h1>Historical weather in <%= @destination %>: 
-				High of <%= @max_temp %>
-				Low of <%= @min_temp %>
-				Average Rainfall <%= @precipitation %>
-			</h1>
-		</div>
+		<div class="clearfix bottom-wrapper">
 
-		<!-- big mac code -->
-		<div class="big-mac">
-			<h1>A Big Mac will cost ____ in <%= @destination %> </h1>
+			<!-- flight code-->
+			<div class="flight">
+				<h1>Average flight price to <%= @destination %>: $<%= @avg_price%> </h1>
+			</div>
+
+			<!-- weather code -->
+			<div class="weather">
+				<h1>Historical weather in <%= @destination %>: 
+					<p>High of <%= @max_temp %></p>
+					<p>Low of <%= @min_temp %></p>
+					<p>Average Rainfall <%= @avg_precipitation %></p>
+				</h1>
+			</div>
+
+			<!-- big mac code -->
+			<div class="big-mac">
+				<h1>A Big Mac will cost ____ in <%= @destination %> </h1>
+			</div>
 		</div>
-	</div>
-</body>
+	</body>

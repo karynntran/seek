@@ -6,7 +6,24 @@
     <%= javascript_include_tag 'application' %>
     <%= csrf_meta_tags %>
   </head>
+
   <body>
+
+    <header>
+      <div class="logo">
+      </div>  
+
+      <div class="search">
+      </div>  
+
+      <div class="navigation">
+        <ul>
+          <li>Home</li>
+          <li>Profile</li>
+          <li>Log Out</li>
+        </ul>
+      </div>
+    </header>
 
     <div class="container">
       <%= yield %>
