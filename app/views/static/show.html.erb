@@ -4,15 +4,22 @@
 	<div class="clearfix top-wrapper">
 		<!-- photo code -->
 		<div class="city">
-			<h1>CITY<%= @destination %></h1>
+			<h1><%= @destination %></h1>
 		</div>
 
 		<div class="clearfix photo">
 			<%= image_tag "camera.png", :class => "icon" %>
 			<h2>RECENT INSTAGRAM PHOTOS</h2>
-			<% @photos.each do |photo| %>
-			  <img src=<%= photo %> width="100px">
-			<% end %>
+			
+			<div class="cycle">
+
+			</div>
+
+			<div class="photo-grid">
+				<% @photos.each do |photo| %>
+				  <img src=<%= photo %> width="100px">
+				<% end %>
+			</div>
 
 		</div>
 	</div>
@@ -31,10 +38,18 @@
 		<div class="weather">
 			<%= image_tag "weather.png", :class => "icon" %>
 			<h2>HISTORICAL WEATHER</h2>
-				<p><%= image_tag "high.png", :class => "sub-icon" %>High of <%= @max_temp %></p>
-				<p><%= image_tag "low.png", :class => "sub-icon" %>Low of <%= @min_temp %></p>
-				<p><%= image_tag "rain.png", :class => "sub-icon" %>Average Rainfall <%= @avg_precipitation %></p>
-
+				<table>
+					<tr>
+						<td><%= image_tag "high.png", :class => "sub-icon" %></td>
+						<td><%= image_tag "low.png", :class => "sub-icon" %></td>
+						<td><%= image_tag "rain.png", :class => "sub-icon" %></td>
+					</tr>
+					<tr>
+						<td>High of <%= @max_temp %></td>
+						<td>Low of <%= @min_temp %></td>
+						<td>Average Rainfall <%= @avg_precipitation %></td>
+					</tr>
+				</table>
 		</div>
 
 		<!-- big mac code -->
