@@ -1,8 +1,10 @@
 class StaticController < ApplicationController
   layout 'show'
   layout 'application'
+  layout 'photos'
 
   def index
+    render :layout => 'application'
   end
 
   def autocomplete
@@ -26,5 +28,9 @@ class StaticController < ApplicationController
     @avg_precipitation = hotwire_hash[:precipitation].to_s
     @photos = Photo.get_photos(params)
     render :layout => 'show'
+  end
+
+  def photos
+    render :layout => 'photos'
   end
 end

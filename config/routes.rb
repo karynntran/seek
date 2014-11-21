@@ -6,6 +6,8 @@ Rails.application.routes.draw do
 
   get '/autocomplete' => 'static#autocomplete'
 
+  get '/photos' => 'static#photos'
+
   resources :users
 
   resources :sessions, :only => [:new, :create, :destroy]

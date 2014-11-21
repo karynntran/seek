@@ -1,3 +1,64 @@
+/*
+	Featured Content Slider
+	by: Chris Coyier
+*/
+* { 
+	margin: 0; 
+	padding: 0; 
+  	}
+					  				  
+/*
+	UTILITY STYLES
+*/				  				  
+					  				  
+/*.floatLeft { 
+	float: left; margin-right: 10px;
+	}
+.floatRight { 
+	float: right;
+	}
+.clear { 
+	clear: both; 
+	}*/
+a { 
+	outline: none; 
+}
+
+
+/*
+	PAGE STRUCTURE
+*/
+#page-wrap { 
+	width: 500px; 
+	margin: 25px auto; 
+	position: relative; 
+	min-height: 500px;
+	abackground: url(images/bg.png) top center; }
+
+
+/*
+	TYPOGRAPHY
+*/
+ul { 
+	list-style: square inside; 
+	}
+a, a:visited { 
+	color: #729dff;
+	text-decoration: none; 
+	}
+a:hover, a:active { 
+	color: white; 
+	}
+blockquote { 
+	padding: 0 20px; 
+	margin-left: 20px; 
+	border-left: 20px solid #ccc; 
+	font-size: 14px; 
+	font-family: Georgia, serif; 
+	font-style: italic; 
+	margin-top: 10px;
+	}
+
 .slider-wrap { 
 	width: 419px;
 	position: absolute;
