@@ -5,24 +5,23 @@
 		<!-- photo code -->
 		<div class="city">
 			<h1><%= @destination %></h1>
+			<br>
+			<div id="cycle-photos">
+				<% @photos.each do |photo| %>
+				  <img src=<%= photo %> width="200px">
+				<% end %>
+			</div>
 		</div>
 
 		<div class="clearfix photo">
 			<%= image_tag "camera.png", :class => "icon" %>
 			<h2>RECENT INSTAGRAM PHOTOS</h2>
 			
-			<div id="cycle-photos">
+			<div id="photo">
 				<% @photos.each do |photo| %>
-				  <img src=<%= photo %> width="100px">
+				  <img src=<%= photo %> width="90px">
 				<% end %>
 			</div>
-
-			<div id="cycle-photos">
-				<% @photos.each do |photo| %>
-				  <img src=<%= photo %> width="100px">
-				<% end %>
-			</div>
-
 <!--  -->
 
 		</div>
