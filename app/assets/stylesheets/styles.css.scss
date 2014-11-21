@@ -11,14 +11,14 @@ $primary-color: #6aa3df;
 .container {
   h1 {
   @include span-columns(12);
-  color: #0066CC;
+  color: #FFFFFF;
   font-size: 45px;
   text-align: center;
   font-family: 'Open Sans', sans-serif;
   }
   h2 {
   font-size: 15px;
-  color: #404040;
+  color: #FFFFFF;
   font-family: 'Open Sans', sans-serif;
   }
   p{
@@ -34,13 +34,15 @@ $primary-color: #6aa3df;
   	@include span-columns(4);
   	display: inline-block;
   }
+  .bottom-wrapper h2 {
+  	color: #000066;
+  }
   .photos div {
   	@include span-columns(8);
   }
   .city div {
   	@include span-columns(4);
   }
-
 }
 
 html, body {
@@ -48,6 +50,7 @@ html, body {
 	padding: 0;
 	margin: 0 auto;
 	font-family: 'Open Sans', sans-serif;
+	color: lightgray;
 }
 
 header {
@@ -65,6 +68,8 @@ body {
 	height: 100%;
 	margin: 0 auto;
 	font-family: 'Open Sans', sans-serif;
+	color: #0066CC;
+	background-color: #000066;
 }
 
 
