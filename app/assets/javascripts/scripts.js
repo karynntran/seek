@@ -97,8 +97,6 @@ $(function(){
 });
 
 
-
-
 // *********  show page backgrounds **********
 
 // *********  flickr backgrounds **********
