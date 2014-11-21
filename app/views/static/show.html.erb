@@ -10,6 +10,9 @@
 		<div class="photo">
 			<%= image_tag "camera.png", :class => "icon" %>
 			<h2>RECENT INSTAGRAM PHOTOS</h2>
+			<% @photos.each do |photo| %>
+			  <img src=<%= photo %> width="100px">
+			<% end %>
 		</div>
 	</div>
 

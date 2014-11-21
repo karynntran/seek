@@ -24,6 +24,7 @@ class StaticController < ApplicationController
     @max_temp = hotwire_hash[:max_temp].to_s
     @min_temp = hotwire_hash[:min_temp].to_s
     @avg_precipitation = hotwire_hash[:precipitation].to_s
+    @photos = Photo.get_photos(params)
     render :layout => 'show'
   end
 end

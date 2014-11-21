@@ -56,3 +56,10 @@ input.go[type='submit'] {
   color: red;
   display: none;
 }
+
+button#login {
+  position: fixed;
+  top: 2em;
+  right: 2em;
+  height: 3em;
+}

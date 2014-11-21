@@ -67,9 +67,7 @@ function showMonthandGo() {
 function validateAll() {
   if ($.inArray($("#origin").val(), origins) === -1) {
     $("#origin_error").fadeIn(600);
-  } else {
-
-  }
+  } 
   if ($.inArray($("#destination").val(), destinations) === -1) {
     $("#destination_error").fadeIn(600);
   }

@@ -9,9 +9,7 @@ module Photo
       photo['url_c'] ? photo['url_c'] : nil
     end.compact
 
-    photo_array.map do |url|
-      "<img width='100px' height='auto' class='destination_photos' src='#{url}'>"
-    end
+    photo_array.length > 15 ? photo_array[0..15] : photo_array
   end
 end
 
