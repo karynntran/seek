@@ -41,9 +41,6 @@ input.go[type='submit'] {
 
 /* background rotation*/
 
-// body {
-//   background: url('island.jpg') no-repeat top;
-// }
 #slideshow, img.bgM {
   min-height: 100%;
   min-width: 100%;
@@ -53,4 +50,9 @@ input.go[type='submit'] {
   top: 0;
   left: 0;
   z-index:-9999;
+}
+
+.form_error {
+  color: red;
+  display: none;
 }

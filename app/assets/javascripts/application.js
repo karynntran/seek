@@ -11,7 +11,7 @@
 // about supported directives.
 //
 //= require jquery
-//= require jquery-ui
+//= require jquery-ui/autocomplete
 //= require jquery_ujs
 //= require jquery.cycle.all.2.74
 //= require_tree .
