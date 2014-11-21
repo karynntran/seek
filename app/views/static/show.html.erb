@@ -17,6 +17,12 @@
 				<% end %>
 			</div>
 
+			<div id="cycle-photos">
+				<% @photos.each do |photo| %>
+				  <img src=<%= photo %> width="100px">
+				<% end %>
+			</div>
+
 <!--  -->
 
 		</div>
@@ -63,14 +69,14 @@
 
 <script>
 $( document ).ready(function() {
-    cycleImages;
+    cycleImages();
 });
 
-	function cycleImages(){
-	  $('#cycle-photos').cycle({
-	    fx: 'fade',
-	    speed: 1800,
-	    timeout:  3500 
-	  });
-	};
+	// function cycleImages(){
+	//   $('#cycle-photos').cycle({
+	//     fx: 'fade',
+	//     speed: 1800,
+	//     timeout:  3500 
+	//   });
+	// };
 </script>
