@@ -14,9 +14,5 @@
 //= require jquery-ui/autocomplete
 //= require jquery_ujs
 //= require jquery.cycle.all.2.74
-//= require coda-slider.1.1.1.pack.js
-//= require jquery-easing-1.3.pack.js
-//= require jquery-easing-compatibility.1.2.pack.js
-//= require ycodaslider-2.0.pack.js
 //= require_tree .
 
