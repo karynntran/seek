@@ -7,10 +7,10 @@
 			<h1>CITY<%= @destination %></h1>
 		</div>
 
-		<div class="photo">
+		<div class="clearfix photo">
 			<%= image_tag "camera.png", :class => "icon" %>
 			<h2>RECENT INSTAGRAM PHOTOS</h2>
-			<div><%= render partial: "photos" %></div>
+			<div class="gallery"><%= render partial: "photos" %></div>
 		</div>
 	</div>
 
