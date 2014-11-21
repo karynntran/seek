@@ -37,6 +37,16 @@ function validateDestination() {
   });
 }
 
+function validateOrigin() {
+  $("#origin").on('keyup', function(){
+    if ($.inArray($(this).val(), origins) > -1) {
+      $("#month_label").show();
+      $("#month").show();
+      $(".show")
+    }
+  });
+}
+
 function changeBackground(){
   $('#slideshow').cycle({
     fx: 'fade',
@@ -47,10 +57,11 @@ function changeBackground(){
   });
 };
 
-
-
-
-
+$(function(){
+  fetchData();
+  validateDestination();
+  validateOrigin(); 
+});
 
 
 
