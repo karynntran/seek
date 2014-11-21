@@ -7,7 +7,6 @@ module Hotwire
     days = Time.days_in_month(month, year)
     url = "http://api.hotwire.com/v1/tripstarter/air?apikey=sw32n4fn2u93rqan8cg92f3x&origin=#{origin_city}&dest=#{destination}&startdate=#{month}/1/#{year}&enddate=#{month}/#{days}/#{year}"
     api_response = HTTParty.get(url)
-    binding.pry
     array_of_flights = api_response["Hotwire"]["Result"]["AirPricing"]
     avg_price = average_price(array_of_flights)
     max_temp = max_temp(array_of_flights)
