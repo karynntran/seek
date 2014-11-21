@@ -1,15 +1,16 @@
 
 <h1> Login </h1>
 
-
-<%= form_tag("/sessions", method: "post") do %>
-    <div class='field'>
-    	<%= label_tag :username %><br>
-      <%= text_field_tag(:username, nil, placeholder: 'your name?') %>
-    </div>
-    <div class='field'>
-    	<%= label_tag :password %><br>
-      <%= password_field(:password, nil, placeholder: 'password?') %>
-      <%= submit_tag("Login") %>
-    </div>
+<%= form_for(@user) do |f| %>
+	<%= form_tag("/sessions", method: "post") do %>
+	    <div class='field'>
+	    	<%= f.label :username %><br>
+	      <%= f.text_field(:username, placeholder: '...Email') %>
+	    </div>
+	    <div class='field'>
+	    	<%= f.label :password %><br>
+	     	<%= f.text_field(:password, placeholder: 'password?') %>
+	      <%= f.submit("Login") %>
+	    </div>
+	<% end %>
 <% end %>
