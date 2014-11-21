@@ -8,3 +8,5 @@ Rails.application.config.assets.version = '1.0'
 # Rails.application.config.assets.precompile += %w( search.css )
 
 Rails.application.config.assets.precompile += %w( styles.css )
+Rails.application.config.assets.precompile += %w( photo.css )
+Rails.application.config.assets.precompile += %w( photos.js )

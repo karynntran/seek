@@ -1,8 +1,10 @@
 class StaticController < ApplicationController
   layout 'show'
   layout 'application'
+  layout 'photos'
 
   def index
+    render :layout => 'application'
   end
 
   def autocomplete
@@ -25,5 +27,9 @@ class StaticController < ApplicationController
     @min_temp = hotwire_hash[:min_temp].to_s
     @avg_precipitation = hotwire_hash[:precipitation].to_s
     render :layout => 'show'
+  end
+
+  def photos
+    render :layout => 'photos'
   end
 end
