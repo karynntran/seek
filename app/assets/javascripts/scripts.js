@@ -1,5 +1,7 @@
 var origins = []
 var destinations = []
+var fadeTime = 200
+
 function fetchData(){
 
   $.ajax({
@@ -31,21 +33,54 @@ function originComplete(){
 function validateDestination() {
   $("#destination").on('keyup', function(){
     if ($.inArray($(this).val(), destinations) > -1) {
-      $("#origin_label").show();
-      $("#origin").show();
+      // $("#origin_label").fadeIn(200);
+      $("#destination_error").fadeOut(fadeTime);
+      $("#origin").fadeIn(fadeTime);
     }
   });
-}
+};
 
 function validateOrigin() {
   $("#origin").on('keyup', function(){
     if ($.inArray($(this).val(), origins) > -1) {
-      $("#month_label").show();
-      $("#month").show();
-      $(".show")
-    }
+      $("#origin_error").fadeOut(fadeTime);
+      showMonthandGo();      
+    } 
   });
+};
+
+function showMonthandGo() {
+  $("#month_label").fadeIn(fadeTime);
+  $("#month").fadeIn(fadeTime);
+  $("input:submit").fadeIn(fadeTime);
+  setInterval(function() { validateAll(); },1000) 
 }
+
+// function clickGo() {
+//   .on('click', function(e){
+//     if (!validateAll()) {
+//       e.preventDefualt();
+//     }
+//   });
+// };
+
+function validateAll() {
+  if ($.inArray($("#origin").val(), origins) === -1) {
+    $("#origin_error").fadeIn(600);
+  } else {
+
+  }
+  if ($.inArray($("#destination").val(), destinations) === -1) {
+    $("#destination_error").fadeIn(600);
+  }
+  if (($.inArray($("#origin").val(), origins) > -1) && ($.inArray($("#destination").val(), destinations) > -1)) {
+    $("input:submit").prop( "disabled", false );
+    return true;
+  } else {
+    $("input:submit").prop( "disabled", true );
+    return false;
+  }
+};
 
 function changeBackground(){
   $('#slideshow').cycle({
@@ -59,8 +94,9 @@ function changeBackground(){
 
 $(function(){
   fetchData();
+  $("input:submit").prop( "disabled", true );
   validateDestination();
-  validateOrigin(); 
+  validateOrigin();
   changeBackground();
 });
 
