@@ -4,8 +4,56 @@
     <title>Seek</title>
     <%= stylesheet_link_tag    'styles', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+    <%= stylesheet_link_tag    'photo', media: 'all' %>
+    <%= javascript_include_tag 'photos' %>
     <%= csrf_meta_tags %>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+
+  <script type="text/javascript">
+  
+    var theInt = null;
+    var $crosslink, $navthumb;
+    var curclicked = 0;
+    
+    theInterval = function(cur){
+      clearInterval(theInt);
+      
+      if( typeof cur != 'undefined' )
+        curclicked = cur;
+      
+      $crosslink.removeClass("active-thumb");
+      $navthumb.eq(curclicked).parent().addClass("active-thumb");
+        $(".stripNav ul li a").eq(curclicked).trigger('click');
+      
+      theInt = setInterval(function(){
+        $crosslink.removeClass("active-thumb");
+        $navthumb.eq(curclicked).parent().addClass("active-thumb");
+        $(".stripNav ul li a").eq(curclicked).trigger('click');
+        curclicked++;
+        if( 6 == curclicked )
+          curclicked = 0;
+        
+      }, 3000);
+    };
+    
+    $(function(){
+      console.log(':)')
+      $("#main-photo-slider").codaSlider();
+      
+      $navthumb = $(".nav-thumb");
+      $crosslink = $(".cross-link");
+      
+      $navthumb
+      .click(function() {
+        var $this = $(this);
+        theInterval($this.parent().attr('href').slice(1) - 1);
+        return false;
+      });
+      
+      theInterval();
+    });
+  </script>
+
   </head>
 
   <body>

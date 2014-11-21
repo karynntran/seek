@@ -17,14 +17,14 @@ theInterval = function(cur){
 		$navthumb.eq(curclicked).parent().addClass("active-thumb");
 		$(".stripNav ul li a").eq(curclicked).trigger('click');
 		curclicked++;
-		if( 6 == curclicked )
+		if( 25 == curclicked )
 			curclicked = 0;
 		
 	}, 3000);
 };
 
 
-$(function(){
+function(){
 	
 	$("#main-photo-slider").codaSlider();
 	

@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   get '/autocomplete' => 'static#autocomplete'
 
-  get '/photos' => 'static#photo'
+  get '/photos' => 'static#photos'
 
   resources :users
 
