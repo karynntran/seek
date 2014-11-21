@@ -19,6 +19,7 @@ module Seek
     #config.autoload_paths << Rails.root.join('lib')
     config.assets.initialize_on_precompile = false
     config.autoload_paths += %W(#{config.root}/lib/modules)
+    config.serve_static_assets = true
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.

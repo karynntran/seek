@@ -1,0 +1,164 @@
+/*
+	Featured Content Slider
+	by: Chris Coyier
+*/
+/* line 6, /Users/mjprude/src/projects/seek/app/assets/stylesheets/photo.css.scss */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/*
+	UTILITY STYLES
+*/
+/*.floatLeft { 
+	float: left; margin-right: 10px;
+	}
+.floatRight { 
+	float: right;
+	}
+.clear { 
+	clear: both; 
+	}*/
+/* line 24, /Users/mjprude/src/projects/seek/app/assets/stylesheets/photo.css.scss */
+a {
+  outline: none;
+}
+
+/*
+	PAGE STRUCTURE
+*/
+/* line 32, /Users/mjprude/src/projects/seek/app/assets/stylesheets/photo.css.scss */
+#page-wrap {
+  width: 500px;
+  margin: 25px auto;
+  position: relative;
+  min-height: 500px;
+  abackground: url(images/bg.png) top center;
+}
+
+/*
+	TYPOGRAPHY
+*/
+/* line 43, /Users/mjprude/src/projects/seek/app/assets/stylesheets/photo.css.scss */
+ul {
+  list-style: square inside;
+}
+
+/* line 46, /Users/mjprude/src/projects/seek/app/assets/stylesheets/photo.css.scss */
+a, a:visited {
+  color: #729dff;
+  text-decoration: none;
+}
+
+/* line 50, /Users/mjprude/src/projects/seek/app/assets/stylesheets/photo.css.scss */
+a:hover, a:active {
+  color: white;
+}
+
+/* line 53, /Users/mjprude/src/projects/seek/app/assets/stylesheets/photo.css.scss */
+blockquote {
+  padding: 0 20px;
+  margin-left: 20px;
+  border-left: 20px solid #ccc;
+  font-size: 14px;
+  font-family: Georgia, serif;
+  font-style: italic;
+  margin-top: 10px;
+}
+
+/* line 63, /Users/mjprude/src/projects/seek/app/assets/stylesheets/photo.css.scss */
+.slider-wrap {
+  width: 419px;
+  position: absolute;
+  top: 87px;
+  left: 40px;
+}
+
+/* line 72, /Users/mjprude/src/projects/seek/app/assets/stylesheets/photo.css.scss */
+.stripViewer .panelContainer
+.panel ul {
+  text-align: left;
+  margin: 0 15px 0 30px;
+}
+
+/* line 77, /Users/mjprude/src/projects/seek/app/assets/stylesheets/photo.css.scss */
+.stripViewer {
+  position: relative;
+  overflow: hidden;
+  width: 419px;
+  height: 285px;
+}
+
+/* line 84, /Users/mjprude/src/projects/seek/app/assets/stylesheets/photo.css.scss */
+.stripViewer .panelContainer {
+  position: relative;
+  left: 0;
+  top: 0;
+}
+
+/* line 89, /Users/mjprude/src/projects/seek/app/assets/stylesheets/photo.css.scss */
+.stripViewer .panelContainer .panel {
+  float: left;
+  height: 100%;
+  position: relative;
+  width: 419px;
+}
+
+/* line 97, /Users/mjprude/src/projects/seek/app/assets/stylesheets/photo.css.scss */
+.stripNavL, .stripNavR, .stripNav {
+  display: none;
+}
+
+/* line 101, /Users/mjprude/src/projects/seek/app/assets/stylesheets/photo.css.scss */
+.nav-thumb {
+  border: 1px solid black;
+  margin-right: 5px;
+}
+
+/* line 106, /Users/mjprude/src/projects/seek/app/assets/stylesheets/photo.css.scss */
+#movers-row {
+  margin: -43px 0 0 62px;
+}
+
+/* line 110, /Users/mjprude/src/projects/seek/app/assets/stylesheets/photo.css.scss */
+#movers-row div {
+  width: 20%;
+  float: left;
+}
+
+/* line 115, /Users/mjprude/src/projects/seek/app/assets/stylesheets/photo.css.scss */
+#movers-row div a.cross-link {
+  float: right;
+}
+
+/* line 119, /Users/mjprude/src/projects/seek/app/assets/stylesheets/photo.css.scss */
+.photo-meta-data {
+  background: url(images/transpBlack.png);
+  padding: 10px;
+  height: 30px;
+  margin-top: -50px;
+  position: relative;
+  z-index: 9999;
+  color: white;
+}
+
+/* line 130, /Users/mjprude/src/projects/seek/app/assets/stylesheets/photo.css.scss */
+.photo-meta-data span {
+  font-size: 13px;
+}
+
+/* line 134, /Users/mjprude/src/projects/seek/app/assets/stylesheets/photo.css.scss */
+.cross-link {
+  display: block;
+  width: 62px;
+  margin-top: -14px;
+  position: relative;
+  padding-top: 15px;
+  z-index: 9999;
+}
+
+/* line 143, /Users/mjprude/src/projects/seek/app/assets/stylesheets/photo.css.scss */
+.active-thumb {
+  background: transparent url(images/icon-uparrowsmallwhite.png) top center no-repeat;
+}
