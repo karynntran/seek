@@ -61,6 +61,7 @@ $(function(){
   fetchData();
   validateDestination();
   validateOrigin(); 
+  changeBackground();
 });
 
 
