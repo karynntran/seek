@@ -8,13 +8,21 @@
   </head>
   <body>
     <div id="slideshow">
-      <img src="/assets/paris.jpg" class="bgM"/>
-      <img src="/assets/japan.jpg" class="bgM"/>
+      <%= image_tag "paris.jpg" %>
+      <%= image_tag "japan.jpg" %>
+      <%= image_tag "beach.jpg" %>
+      <%= image_tag "road.jpg" %>
+      <%= image_tag "island.jpg" %>
+      <%= image_tag "nyc.jpg" %>
+      <%= image_tag "rockies.jpg" %>
+      
+      <!-- <img src="/assets/paris.jpg" class="bgM"/> -->
+      <!-- <img src="/assets/japan.jpg" class="bgM"/>
       <img src="/assets/beach.jpg" class="bgM"/>
       <img src="/assets/road.jpg" class="bgM"/>
       <img src="/assets/island.jpg" class="bgM"/>
       <img src="/assets/nyc.jpg" class="bgM"/>
-      <img src="/assets/rockies.jpg" class="bgM"/>
+      <img src="/assets/rockies.jpg" class="bgM"/> -->
     </div>
     <div class="container">
       <%= yield %>
