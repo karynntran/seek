@@ -12,7 +12,7 @@ $primary-color: #6aa3df;
   h1 {
   @include span-columns(12);
   color: #FFFFFF;
-  font-size: 45px;
+  font-size: 60px;
   text-align: center;
   font-family: 'Open Sans', sans-serif;
   }
@@ -24,11 +24,19 @@ $primary-color: #6aa3df;
   p{
   	font-size: 15px;
   }
+  .top-wrapper {
+	width: 100%;
+  }
   .bottom-wrapper {
 	@include span-columns(12);
 	margin: 0 auto;
 	background: lightgray;
 	padding: 0 10px;
+	width:100%;
+	height:220px;
+	position:absolute;
+	bottom:0;
+	left:0;
   }
   .bottom-wrapper div {
   	@include span-columns(4);
@@ -37,11 +45,11 @@ $primary-color: #6aa3df;
   .bottom-wrapper h2 {
   	color: #000066;
   }
-  .photos div {
-  	@include span-columns(8);
+  .photo div {
+  	@include span-columns(7);
   }
   .city div {
-  	@include span-columns(4);
+  	@include span-columns(5);
   }
 }
 
@@ -84,15 +92,19 @@ div body {
 
 /* ---------->>> TOP WRAPPER <<<-----------*/
 
+
 .city {
 	float:left;
+	border: 1px solid white;
+	margin: 10px;
 }
 
 .photo  {
-	width: 100%;
-	height: 50%;
+	height: 70%;
 	min-height: 400px;
 	float: left;
+	border: 1px white solid;
+	margin: 10px;
 }
 
 /* ---------->>> BOTTOM WRAPPER <<<-----------*/
@@ -100,21 +112,21 @@ div body {
 .flight  {
 	width: 33%;
 	height: 50%;
-	min-height: 200px;
+	min-height: 300px;
 	float: left;
 }
 
 .weather  {
 	width: 33%;
 	height: 50%;
-	min-height: 200px;
+	min-height: 300px;
 	float: left;
 }
 
 .big-mac  {
 	width: 33%;
 	height: 50%;
-	min-height: 200px;
+	min-height: 300px;
 	float: left;
 }
 
