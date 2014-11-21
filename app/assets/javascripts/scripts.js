@@ -88,13 +88,13 @@ function changeBackground(){
   });
 };
 
-$(function(){
+function loadSearchPage() {
   fetchData();
   $("input:submit.go").prop( "disabled", true );
   validateDestination();
   validateOrigin();
   changeBackground();
-});
+};
 
 
 
