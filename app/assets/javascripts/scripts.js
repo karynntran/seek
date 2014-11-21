@@ -90,7 +90,7 @@ function changeBackground(){
 
 $(function(){
   fetchData();
-  $("input:submit").prop( "disabled", true );
+  $("input:submit.go").prop( "disabled", true );
   validateDestination();
   validateOrigin();
   changeBackground();
