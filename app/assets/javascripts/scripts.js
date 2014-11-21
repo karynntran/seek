@@ -100,3 +100,13 @@ $(function(){
 
 
 // *********  show page backgrounds **********
+
+// *********  flickr backgrounds **********
+
+function cycleImages(){
+  $('#cycle-photos').cycle({
+    fx: 'fade',
+    speed: 1800,
+    timeout:  3500 
+  });
+};
