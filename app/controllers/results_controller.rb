@@ -14,7 +14,6 @@ class ResultsController < ApplicationController
     @avg_precipitation = hotwire_hash[:precipitation].to_s
     @photos = Photo.get_photos(params)
 
-
   end
 
 end

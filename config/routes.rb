@@ -6,8 +6,9 @@ Rails.application.routes.draw do
 
   get '/result' => 'results#show'
 
-
   resources :users
+
+  patch '/users/favorites'
 
   resources :sessions, :only => [:new, :create, :destroy]
 

@@ -121,9 +121,7 @@ function loadSearchPage() {
 };
 
 
-// *********  show page backgrounds **********
-
-// *********  flickr backgrounds **********
+// *********  flickr images **********
 
 function cycleImages(){
   $('#cycle-photos').cycle({
@@ -132,3 +130,30 @@ function cycleImages(){
     timeout:  3500 
   });
 };
+
+// *********  favorites scripts **********
+
+
+function addFavoritesColor() {
+  console.log(':)');
+  $(".star").on('click', function(){
+    $(this).css({
+        'background-color': 'darkgray',
+        'color': 'lightgray',
+    });
+    $(this).html("[X] Remove from favorites");
+  });
+}
+
+// function addFavorites(){
+//   console.log('favorite');
+//   $.ajax {
+//     url: 'users/favorites',
+//     method: PATCH,
+//     dataType:
+//     success: function(data){
+//       var url = document.URL
+//     }
+//   }
+// }
+
