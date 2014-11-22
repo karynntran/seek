@@ -97,6 +97,14 @@ function loadSearchPage() {
 };
 
 
-
-
 // *********  show page backgrounds **********
+
+// *********  flickr backgrounds **********
+
+function cycleImages(){
+  $('#cycle-photos').cycle({
+    fx: 'fade',
+    speed: 1200,
+    timeout:  3500 
+  });
+};
