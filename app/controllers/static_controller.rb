@@ -4,6 +4,7 @@ class StaticController < ApplicationController
   layout 'photos'
 
   def index
+    @user = User.new
     render :layout => 'application'
   end
 

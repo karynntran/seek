@@ -1,3 +1,36 @@
+button#login {
+  position: fixed;
+  top: 2em;
+  right: 2em;
+  height: 3em;
+  padding: 0 1em;
+}
+
+input[name='commit'] {
+  // margin: 1.5em 0.7em;
+  float: left;
+}
+
+#user_username, #user_password {
+  @extend input[name='commit'];
+  font-size: 1.3em;
+  width: 10em;
+}
+
+// #user_username {
+//   position: fixed;
+//   top: 1.5em;
+//   right: 17.5em;
+//   width: 10em;
+//   font-size: 1.3em;
+//   display: none;
+// }
+
+// #user_password {
+//   @extend #user_username;
+//   right: 6.5em;
+// }
+
 .go {
   @include button(shiny);
   @include span-columns(3);
@@ -9,12 +42,14 @@ input.go[type='submit'] {
 }
 
 .searchbox {
-  @include span-columns(6);
-  @include shift(3);
-  margin-top: 12em;
+  // @include span-columns(6);
+  // @include shift(3);
+  margin: 8em auto;
+  width: 25em;
   text-align: center;
-  background-color: rgba(255,255,255,.7);
-  padding: 8em 14em;
+  //  background-color: rgba(255,255,255,.7);
+  font-size: 2em;
+  padding: 2em;
   border-radius: 1em;
 }
 
@@ -55,11 +90,4 @@ input.go[type='submit'] {
 .form_error {
   color: red;
   display: none;
-}
-
-button#login {
-  position: fixed;
-  top: 2em;
-  right: 2em;
-  height: 3em;
 }
