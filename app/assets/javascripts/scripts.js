@@ -105,9 +105,7 @@ function loadSearchPage() {
 };
 
 
-// *********  show page backgrounds **********
-
-// *********  flickr backgrounds **********
+// *********  flickr images **********
 
 function cycleImages(){
   $('#cycle-photos').cycle({
@@ -116,3 +114,21 @@ function cycleImages(){
     timeout:  3500 
   });
 };
+
+// *********  favorites scripts **********
+
+
+function addFavoritesColor() {
+  console.log(':)');
+  $(".star").on('click', function(){
+    $(this).css({
+        'background-color': 'darkgray',
+        'color': 'lightgray',
+    });
+  });
+}
+
+function addFavorites(){
+  console.log('favorite');
+}
+
