@@ -120,9 +120,10 @@ body {
 }
 
 #cycle-photos {
-  min-height: 100%;
-  min-width: 100%;
-  height: auto;
+  position: fixed;
+  margin: 100px 0;
+  width: 375px;
+  max-height: 300px;
 }
 
 

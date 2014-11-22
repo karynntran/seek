@@ -104,7 +104,7 @@ $(function(){
 function cycleImages(){
   $('#cycle-photos').cycle({
     fx: 'fade',
-    speed: 1800,
+    speed: 1200,
     timeout:  3500 
   });
 };
