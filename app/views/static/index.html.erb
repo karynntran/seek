@@ -1,14 +1,24 @@
+<%= stylesheet_link_tag 'search' %>
+
 <button id="login">Log In</button>
+<%= form_for(@user) do |f| %>
+  <%= form_tag("/sessions", method: "post") do %>
+      <div class='field'>
+        <%= f.email_field(:username, placeholder: '...Email') %>
+        <%= f.password_field(:password, placeholder: 'password?') %>
+        <%= f.submit("Log In") %>
+      </div>
+  <% end %>
+<% end %>
+
 
 <div class="searchbox ui-widget">
   
   <%= form_tag("/result", method: "get") do %>
-    <!-- <h2 id="destination_label">Where to?</h2> -->
     <div class='ui-menu'>
       <p class='form_error' id="destination_error">Please enter a valid destination...</p>
       <%= text_field_tag(:destination, nil, placeholder: 'Where To?') %>
     </div>
-    <!-- <h3 id="origin_label">Where from?</h2> -->
     <p class='form_error' id='origin_error'>Please enter a valid origin</p>
     <%= text_field_tag(:origin, nil, placeholder: 'Where From?') %>
           
@@ -16,13 +26,7 @@
     <%= select_tag :month, options_for_select(Date::MONTHNAMES[1..-1], "July") %>
     <%= submit_tag("GO", class: 'go') %>
   <% end %> 
-</div>
-
-<!-- <div id="login">
-  form
-</div>
-
- -->
+  </div>
 
 <script>
   $(function(){

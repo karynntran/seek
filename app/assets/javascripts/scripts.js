@@ -1,8 +1,16 @@
 var origins = []
 var destinations = []
-var fadeTime = 200
+var fadeTime = 300
 
-function fetchData(){
+function expandLogin() {
+    $("#login").on('click', function(){
+        $("#user_username").fadeIn(400);
+        $("#user_password").fadeIn(400);
+        $(this).text('Sign Up')
+    });
+}
+
+function fetchData() {
 
   $.ajax({
     url: '/autocomplete',
@@ -15,7 +23,6 @@ function fetchData(){
     }
   });
 }
-
 
 function destinationComplete(){
   $("#destination").autocomplete({
@@ -94,6 +101,7 @@ function loadSearchPage() {
   validateDestination();
   validateOrigin();
   changeBackground();
+  expandLogin();
 };
 
 
