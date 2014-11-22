@@ -73,8 +73,27 @@
 
 <script>
 $( document ).ready(function() {
+   	console.log('favorites');
     cycleImages();
     addFavoritesColor();
+
+	function addtoFavorites() {
+
+	    $(".star").on('click', function(e) {
+	        e.preventDefault();
+	        $.ajax({
+	            method: 'patch',
+	            url: '/users/favorites',
+	            dataType: 'json',
+	            data: { favorite: doc.URL },
+	            success: function(data) {
+
+	            }
+	        });
+	    });
+	}
+
+
 });
 
 

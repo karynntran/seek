@@ -3,7 +3,6 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    binding.pry
     @users = User.all
   end
 
@@ -63,7 +62,13 @@ class UsersController < ApplicationController
   ##FAVORITES
 
   def favorites
-    favorite = Favorite.new
+    respond_to do |format|
+        format.json { render json: { favorite: favorite} }
+    end
+
+    favorite = Favorite.create(favorite_params)
+    @user.favorites << favorite
+
   end
 
   private
@@ -75,5 +80,9 @@ class UsersController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
       params.require(:user).permit(:username, :password, :favorites)
+    end
+
+    def favorite_params
+      params.require(:favorite).permit(:user_id, :link)
     end
 end

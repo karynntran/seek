@@ -19,7 +19,7 @@ function ajaxLogin() {
             dataType: 'json',
             data: {user: { username: $("#user_username").val(), password: $("#user_password").val() }},
             success: function(data) {
-                debugger
+
             }
         });
     });
@@ -145,15 +145,4 @@ function addFavoritesColor() {
   });
 }
 
-// function addFavorites(){
-//   console.log('favorite');
-//   $.ajax {
-//     url: 'users/favorites',
-//     method: PATCH,
-//     dataType:
-//     success: function(data){
-//       var url = document.URL
-//     }
-//   }
-// }
 
