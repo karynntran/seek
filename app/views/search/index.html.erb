@@ -11,14 +11,16 @@
   
 </div>
 
-<button id="login">Log In</button>
-<%= form_for @user, url: {controller: 'sessions', action: 'create'} do |f| %>
+<div class="top_right">
   <div class='field'>
-    <%= f.email_field(:username, placeholder: 'email...') %>
-    <%= f.password_field(:password, placeholder: 'password...') %>
-    <%= f.submit("Log In", id: 'expanded_login') %>
-  </div>
-<% end %>
+  <%= form_for @user, url: {controller: 'sessions', action: 'create'} do |f| %>
+      <%= f.email_field(:username, placeholder: 'email...') %>
+      <%= f.password_field(:password, placeholder: 'password...') %>
+      <%= f.submit("Log In", id: 'expanded_login') %>
+    </div>
+  <% end %>
+  <button id="login">Log In</button>
+</div>
 
 <div class="searchbox ui-widget">
   

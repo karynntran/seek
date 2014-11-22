@@ -4,9 +4,10 @@ var fadeTime = 300
 
 function expandLogin() {
     $("#login").on('click', function(){
-        $("#user_username").fadeIn(400);
+        $("#user_username").fadeIn(400).focus();
         $("#user_password").fadeIn(400);
-        $(this).text('Sign Up')
+        $("#expanded_login").fadeIn(400);
+        $(this).text('First Time?').css('background-color', 'white').css('color', '#3867be')
     });
 }
 
@@ -18,11 +19,20 @@ function ajaxLogin() {
             url: '/sessions',
             dataType: 'json',
             data: {user: { username: $("#user_username").val(), password: $("#user_password").val() }},
-            success: function(data) {
-                debugger
-            }
+            success: loginSuccess
         });
     });
+}
+
+function loginSuccess(data) {
+    if (data.login === 'failed') {
+        $("#expanded_login").effect('shake');
+    } else {
+        $("#new_user").fadeOut(fadeTime);
+        $("#login").text(data.login).on('click', function(){
+            window.location.href='/users/' + data.id
+        });
+    }
 }
 
 function fetchData() {
