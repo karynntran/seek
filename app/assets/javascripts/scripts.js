@@ -133,33 +133,31 @@ function cycleImages(){
 
 // *********  favorites scripts **********
 
+  function determineFavoritesButton(status) {
+    console.log('determine button');
+    if (status = false || null) {
+      $(".favorites").show("#add-button")
+    } else {
+      $(".favorites").show("#delete-button")
+    }
+  }
 
   function checkFavorites() {
-
+      console.log('check favorites');
       $(".star").on('click', function(e) {
           e.preventDefault();
           $.ajax({
               method: 'patch',
-              url: '/users/favorites',
+              url: '/users/check_favorites',
               dataType: 'json',
               data: { url: doc.URL },
               success: function(data) {
-
+                determineFavoritesButton(data.status);
               }
           });
       });
   }
 
 
-function addFavoritesColor() {
-  console.log(':)');
-  $(".star").on('click', function(){
-    $(this).css({
-        'background-color': 'darkgray',
-        'color': 'lightgray',
-    });
-    $(this).html("[X] Remove from favorites");
-  });
-}
 
 

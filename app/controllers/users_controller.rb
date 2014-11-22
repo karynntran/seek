@@ -61,12 +61,17 @@ class UsersController < ApplicationController
 
   ##FAVORITES
 
-  def check_favorite
-    if current_user.favorites.includes? params[:url]
-
+  def check_favorites
+    respond_to do |format|
+      if current_user.favorites.include? params[:url]
+        format.json { render json: { status: true } }
+      else
+        format.json { render json: { status: false}  }
+      end
+    end
   end
 
-  def add_favorite
+  def add_favorites
     current_user.favorites << params[:favorite]
   end
 
@@ -81,7 +86,4 @@ class UsersController < ApplicationController
       params.require(:user).permit(:username, :password, :favorites)
     end
 
-    # def favorite_params
-    #   params.require(:favorite).permit(:user_id, :link)
-    # end
 end

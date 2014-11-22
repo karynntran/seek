@@ -2,7 +2,8 @@
 <body>
 
 	<div class="favorites">
-		<button class="star">&#9733 Add to favorite searches?</button>
+		<button id="add-button">&#9733 Add to favorite searches?</button>
+		<button id="delete-button">[ X ] Remove from favorite searches?</button>
 	</div>
 
 	<div class="clearfix top-wrapper">
@@ -75,20 +76,18 @@
 $( document ).ready(function() {
    	console.log('favorites');
     cycleImages();
-    addFavoritesColor();
+    checkFavorites();
 
 	function addtoFavorites() {
 
-	    $(".star").on('click', function(e) {
-	        
+	    $(".add-button").on('click', function(e) {
 	        e.preventDefault();
 	        $.ajax({
 	            method: 'patch',
-	            url: '/users/favorites',
+	            url: '/users/add_favorites',
 	            dataType: 'json',
 	            data: { favorite: doc.URL },
 	            success: function(data) {
-
 	            }
 	        });
 	    });
@@ -99,10 +98,3 @@ $( document ).ready(function() {
 
 </script>
 
-
-
-on document ready - send ajax call to see if url is in database
-	depending if true or false
-	send back the appropriate image
-
-	allow the add button to send back URL
