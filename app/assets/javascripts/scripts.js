@@ -143,19 +143,17 @@ function cycleImages(){
   }
 
   function checkFavorites() {
-      console.log('check favorites');
-      $(".star").on('click', function(e) {
-          e.preventDefault();
-          $.ajax({
-              method: 'patch',
-              url: '/users/check_favorites',
-              dataType: 'json',
-              data: { url: doc.URL },
-              success: function(data) {
-                determineFavoritesButton(data.status);
-              }
-          });
-      });
+    console.log('check favorites');
+    var url = document.URL;
+    $.ajax({
+      method: 'patch',
+      url: '/users/check_favorites',
+      dataType: 'json',
+      data: { url: url },
+      success: function(data) {
+        determineFavoritesButton(data.status);
+      }
+    });
   }
 
 

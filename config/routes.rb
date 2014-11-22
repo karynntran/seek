@@ -8,9 +8,8 @@ Rails.application.routes.draw do
 
   resources :users
 
-  patch '/users/check_favorites'
-
-  patch '/users/add_favorites'
+  patch 'check_favorites' => 'users#check_favorites'
+  patch 'add_favorites' => 'users#add_favorites'
 
   resources :sessions, :only => [:new, :create, :destroy]
 
