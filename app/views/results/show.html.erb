@@ -1,0 +1,75 @@
+
+<body>
+
+	<div class="clearfix top-wrapper">
+		<!-- photo code -->
+		<div class="city">
+			<h1><%= @destination %></h1>
+			<br>
+			<div id="cycle-photos">
+				<% @photos.each do |photo| %>
+				  <img src=<%= photo %>>
+				<% end %>
+			</div>
+		</div>
+
+		<div class="clearfix photo">
+			<%= image_tag "camera.png", :class => "icon" %>
+			<h2>RECENT INSTAGRAM PHOTOS</h2>
+			
+			<div id="photo">
+				<% @photos.each do |photo| %>
+				  <img src=<%= photo %> width="90px">
+				<% end %>
+			</div>
+<!--  -->
+
+		</div>
+	</div>
+
+
+
+	<div class="clearfix bottom-wrapper">
+
+		<!-- flight code-->
+		<div class="flight">
+			<%= image_tag "flights.png", :class => "icon" %>
+			<h2>AVERAGE FLIGHT PRICE: $<%= @avg_price%> </h2>
+		</div>
+
+		<!-- weather code -->
+		<div class="weather">
+			<%= image_tag "weather.png", :class => "icon" %>
+			<h2>HISTORICAL WEATHER</h2>
+				<table>
+					<tr>
+						<td><%= image_tag "high.png", :class => "sub-icon" %></td>
+						<td><%= image_tag "low.png", :class => "sub-icon" %></td>
+						<td><%= image_tag "rain.png", :class => "sub-icon" %></td>
+					</tr>
+					<tr>
+						<td>High of <%= @max_temp %></td>
+						<td>Low of <%= @min_temp %></td>
+						<td>Average Rainfall <%= @avg_precipitation %></td>
+					</tr>
+				</table>
+		</div>
+
+		<!-- big mac code -->
+		
+		<div class="big-mac">
+			<%= image_tag "food.png", :class => "icon" %>
+			<h2>A BIG MAC IN <%=@destination.upcase %> WILL COST YOU:</h2>
+			<p>$ <%= @bm_index %></p>
+		</div>
+		
+	</div>
+
+</body>
+
+<script>
+$( document ).ready(function() {
+    cycleImages();
+});
+
+</script>

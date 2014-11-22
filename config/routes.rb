@@ -1,12 +1,11 @@
 Rails.application.routes.draw do
 
-  root 'static#index'
+  root 'search#index'
 
-  get '/result' => 'static#show'
+  get '/autocomplete' => 'search#autocomplete'
 
-  get '/autocomplete' => 'static#autocomplete'
+  get '/result' => 'results#show'
 
-  get '/photos' => 'static#photos'
 
   resources :users
 
