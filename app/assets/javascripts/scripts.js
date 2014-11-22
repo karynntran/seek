@@ -134,6 +134,23 @@ function cycleImages(){
 // *********  favorites scripts **********
 
 
+  function checkFavorites() {
+
+      $(".star").on('click', function(e) {
+          e.preventDefault();
+          $.ajax({
+              method: 'patch',
+              url: '/users/favorites',
+              dataType: 'json',
+              data: { url: doc.URL },
+              success: function(data) {
+
+              }
+          });
+      });
+  }
+
+
 function addFavoritesColor() {
   console.log(':)');
   $(".star").on('click', function(){

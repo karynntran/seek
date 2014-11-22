@@ -80,6 +80,7 @@ $( document ).ready(function() {
 	function addtoFavorites() {
 
 	    $(".star").on('click', function(e) {
+	        
 	        e.preventDefault();
 	        $.ajax({
 	            method: 'patch',
@@ -96,6 +97,12 @@ $( document ).ready(function() {
 
 });
 
-
-
 </script>
+
+
+
+on document ready - send ajax call to see if url is in database
+	depending if true or false
+	send back the appropriate image
+
+	allow the add button to send back URL
