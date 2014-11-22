@@ -1,6 +1,10 @@
 
 <body>
 
+	<div class="favorites">
+		<button class="star">&#9733 Add to favorite searches?</button>
+	</div>
+
 	<div class="clearfix top-wrapper">
 		<!-- photo code -->
 		<div class="city">
@@ -15,7 +19,7 @@
 
 		<div class="clearfix photo">
 			<%= image_tag "camera.png", :class => "icon" %>
-			<h2>RECENT INSTAGRAM PHOTOS</h2>
+			<h2>MOST POPULAR FLICKR PHOTOS TAKEN IN <%=@destination.upcase%></h2>
 			
 			<div id="photo">
 				<% @photos.each do |photo| %>
