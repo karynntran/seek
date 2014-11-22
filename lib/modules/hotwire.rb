@@ -1,11 +1,8 @@
 module Hotwire
   def self.get_hotel_info(options)
-    origin_city = City.find_by(name: options[:origin]).airport
     destination = City.find_by(name: options[:destination]).airport
-    month = Date::MONTHNAMES.index(options[:month])
-    year = Time.now.year
-    days = Time.days_in_month(month, year)
-    url = "http://api.hotwire.com/v1/deal/hotel?apikey=sw32n4fn2u93rqan8cg92f3x&dest=#{destination}&startdate=#{month}/1/#{year}"
+    url = "http://api.hotwire.com/v1/deal/hotel?apikey=sw32n4fn2u93rqan8cg92f3x&dest=#{destination}"
+    binding.pry
     api_response = HTTParty.get(url)
     array_of_hotels = api_response["Hotwire"]["Result"]["HotelDeal"]
     avg_price = average_hotel_price(array_of_hotels)
