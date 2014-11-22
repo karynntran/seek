@@ -45,7 +45,7 @@ $primary-color: #6aa3df;
 	left:0;
   }
   .bottom-wrapper div {
-  	@include span-columns(4);
+  	@include span-columns(3);
   	display: inline-block;
   	background-color: lightgray;
   	border-radius: 10px;
