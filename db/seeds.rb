@@ -12,7 +12,7 @@ cities = [
 ["Atlanta", "ATL", "33.7550,-84.3900", true, "4.80"],
 ["Austin", "AUS", "30.2500,-97.7500", true, "4.80"],
 ["Baltimore", "BWI", "39.2833,-76.6167", true, "4.80"],
-["Boston", "BOS", "42.3581,-71.0636", true], "4.80",
+["Boston", "BOS", "42.3581,-71.0636", true, "4.80"],
 ["Buffalo", "BUF", "42.9047,-78.8494", true, "4.80"],
 ["Charlotte", "CLT", "35.2269,-80.8433", true, "4.80"],
 ["Chicago", "ORD", "41.8369,-87.6847", true, "4.80"],
@@ -166,8 +166,8 @@ cities = [
 ["Vienna", "VIE", "48.2000,16.3667", false, "4.95"]
 ]
 
-cities.each do |name, airport, lat_long, origin|
-  City.create(name: name, airport: airport, lat_long: lat_long, origin: origin)
+cities.each do |name, airport, lat_long, origin, bm_index|
+  City.create(name: name, airport: airport, lat_long: lat_long, origin: origin, bm_index: bm_index)
 end
 
 
