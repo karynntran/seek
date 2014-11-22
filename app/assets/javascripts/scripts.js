@@ -10,6 +10,21 @@ function expandLogin() {
     });
 }
 
+function ajaxLogin() {
+    $("#expanded_login").on('click', function(e) {
+        e.preventDefault();
+        $.ajax({
+            method: 'post',
+            url: '/sessions',
+            dataType: 'json',
+            data: {user: { username: $("#user_username").val(), password: $("#user_password").val() }},
+            success: function(data) {
+                debugger
+            }
+        });
+    });
+}
+
 function fetchData() {
 
   $.ajax({
@@ -96,12 +111,13 @@ function changeBackground(){
 };
 
 function loadSearchPage() {
-  fetchData();
-  $("input:submit.go").prop( "disabled", true );
-  validateDestination();
-  validateOrigin();
-  changeBackground();
-  expandLogin();
+    ajaxLogin();
+    fetchData();
+    $("input:submit.go").prop( "disabled", true );
+    validateDestination();
+    validateOrigin();
+    changeBackground();
+    expandLogin();
 };
 
 
