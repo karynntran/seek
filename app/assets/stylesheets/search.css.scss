@@ -1,18 +1,30 @@
-button#login {
-  position: fixed;
+.top_right {
+  @include clearfix;
+  position: absolute;
   top: 2em;
   right: 2em;
-  height: 3em;
-  padding: 0 1em;
+  display: inline;
 }
 
-input[name='commit'] {
-  // margin: 1.5em 0.7em;
+.top_right div {
   float: left;
+  margin: 0 0.3em;
+}
+
+
+#expanded_login {
+  margin: 0 0.3em;
+  float: left;
+  display: none;
+}
+#login, #expanded_login {
+  height: 3em;
 }
 
 #user_username, #user_password {
-  @extend input[name='commit'];
+  margin: 0 0.3em;
+  float: left;
+  display: none;
   font-size: 1.3em;
   width: 10em;
 }

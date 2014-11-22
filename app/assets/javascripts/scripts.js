@@ -4,9 +4,10 @@ var fadeTime = 300
 
 function expandLogin() {
     $("#login").on('click', function(){
-        $("#user_username").fadeIn(400);
+        $("#user_username").fadeIn(400).focus();
         $("#user_password").fadeIn(400);
-        $(this).text('Sign Up')
+        $("#expanded_login").fadeIn(400);
+        $(this).text('First Time?').css('background-color', 'white').css('color', '#3867be')
     });
 }
 
