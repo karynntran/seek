@@ -17,7 +17,6 @@ class StaticController < ApplicationController
   end
 
   def show
-    binding.pry
     @origin = params[:origin]
     @destination = params[:destination]
     @month = params[:month]
