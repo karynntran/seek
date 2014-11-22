@@ -59,7 +59,8 @@
 		
 		<div class="big-mac">
 			<%= image_tag "food.png", :class => "icon" %>
-			<h2>A BIG MAC WILL COST YOU</h2>
+			<h2>A BIG MAC IN <%=@destination.upcase %> WILL COST YOU:</h2>
+			<p>$ <%= @bm_index %></p>
 		</div>
 		
 	</div>

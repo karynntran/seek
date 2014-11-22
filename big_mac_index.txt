@@ -1,0 +1,57 @@
+Argentina,2.57
+Australia,4.81
+Brazil,5.86
+Britain,4.93
+Canada,5.25
+Chile,3.72
+China,2.73
+Colombia,4.65
+Costa Rica,4.00
+Czech Republic,3.46
+Denmark,5.15
+Egypt,2.37
+Euro area,4.95
+Hong Kong,2.43
+Hungary,3.77
+India,1.75
+Indonesia,2.43
+Israel,5.13
+Japan,3.64
+Lithuania,3.49
+Malaysia,2.41
+Mexico,3.25
+New Zealand,4.94
+Norway,7.76
+Pakistan,3.04
+Peru,3.59
+Philippines,3.70
+Poland,3.00
+Russia,2.55
+Saudi Arabia,2.93
+Singapore,3.80
+South Africa,2.33
+South Korea,4.00
+Sri Lanka,2.69
+Sweden,5.95
+Switzerland,6.83
+Taiwan,2.63
+Thailand,3.12
+Turkey,4.42
+United Arab Emirates,3.54
+Ukraine,1.63
+United States,4.80
+Uruguay,4.92
+Venezuela,6.82
+Vietnam,2.83
+Austria,4.56
+Belgium,4.98
+Estonia,3.90
+Finland,5.52
+France,5.25
+Germany,4.94
+Greece,4.11
+Ireland,4.70
+Italy,5.18
+Netherlands,4.64
+Portugal,4.04
+Spain,4.91
