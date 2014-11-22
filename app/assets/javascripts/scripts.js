@@ -18,11 +18,20 @@ function ajaxLogin() {
             url: '/sessions',
             dataType: 'json',
             data: {user: { username: $("#user_username").val(), password: $("#user_password").val() }},
-            success: function(data) {
-                debugger
-            }
+            success: loginSuccess
         });
     });
+}
+
+function loginSuccess(data) {
+    if (data.login === 'failed') {
+        $("#expanded_login").effect('shake');
+    } else {
+        $("#new_user").fadeOut(fadeTime);
+        $("#login").text(data.login).on('click', function(){
+            window.location.href='/users/' + data.id
+        });
+    }
 }
 
 function fetchData() {
