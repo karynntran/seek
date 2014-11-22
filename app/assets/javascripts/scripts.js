@@ -125,10 +125,19 @@ function addFavoritesColor() {
         'background-color': 'darkgray',
         'color': 'lightgray',
     });
+    $(this).html("[X] Remove from favorites");
   });
 }
 
-function addFavorites(){
-  console.log('favorite');
-}
+// function addFavorites(){
+//   console.log('favorite');
+//   $.ajax {
+//     url: 'users/favorites',
+//     method: PATCH,
+//     dataType:
+//     success: function(data){
+//       var url = document.URL
+//     }
+//   }
+// }
 

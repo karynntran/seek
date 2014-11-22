@@ -63,7 +63,7 @@ class UsersController < ApplicationController
   ##FAVORITES
 
   def favorites
-
+    favorite = Favorite.new
   end
 
   private
