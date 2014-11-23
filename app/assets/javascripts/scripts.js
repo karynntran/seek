@@ -47,7 +47,7 @@ function ajaxLogin() {
 
 function loginSuccess(data) {
     if (data.status === 'failed') {
-        $("#expanded_login").effect('shake');
+        $("#expanded_login").is(":visible") && $("#expanded_login").effect('shake');
     } else {
         $("#new_user").fadeOut(fadeTime);
         $("#top_button")
