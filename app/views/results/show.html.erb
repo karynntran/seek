@@ -59,7 +59,7 @@
 				<table>
 					<tr>
 						<td><%= image_tag "icons/weather.png", :class => "icon" %></td>
-						<td><h2>HISTORICAL WEATHER</h2></td>
+						<td colspan="2"><h2>HISTORICAL WEATHER</h2></td>
 					</tr>
 					<tr>
 						<td><%= image_tag "icons/hightemp-white.png", :class => "sub-icon" %></td>
@@ -77,16 +77,24 @@
 		<!-- big mac code -->
 		
 		<div class="big-mac">
-			<%= image_tag "icons/burger.png", :class => "icon" %>
-			<h2>A BIG MAC IN <%=@destination.upcase %> WILL COST YOU:</h2>
-			<p>$ <%= @bm_index %></p>
+			<table>
+				<tr>
+					<td><%= image_tag "icons/burger.png", :class => "icon" %></td>
+					<td><h2>A BIG MAC IN <%=@destination.upcase %> WILL COST YOU:</h2></td>
+				</tr>
+				<tr>
+					<td><p>$ <%= @bm_index %></p></td>
+				</tr>
+			</table>
+
 		</div>
 		
 		<div class="hotels">
-			<%= image_tag "icons/hotel.png", :class => "icon" %>
-			<h2>HOTEL RATES IN <%=@destination.upcase%></h2>
-			
 			<table>
+				<tr>
+					<td><%= image_tag "icons/hotel.png", :class => "icon" %></td>
+					<td colspan="2"><h2>HOTEL RATES IN <%=@destination.upcase%></h2></td>
+				</tr>
 				<tr>
 					<td>AVERAGE PRICE</td>
 					<td>LOWEST PRICE</td>
