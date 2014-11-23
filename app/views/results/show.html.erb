@@ -5,121 +5,113 @@
 	</div>
 </header>
 
-<body>
-	<div class="clearfix top-wrapper">
-		<!-- photo code -->
-		<div class="city">
-			<h1><%= @destination %></h1>
-			<br>
-			<div id="cycle-photos">
-				<% @photos.each do |photo| %>
-				  <img src=<%= photo %>>
-				<% end %>
-			</div>
+<div class="city">
+	<h1><%= @destination %></h1>
+	<br>
+</div>
+
+<div class="clearfix photo-wrapper">
+	<!-- photo code -->
+	<div id="photo">
+		<%= image_tag "icons/photos.png", :class => "icon" %><h2>MOST POPULAR FLICKR PHOTOS TAKEN IN <%=@destination.upcase%></h2>
+	</div>
+
+	<div id="cycle-photos">
+		<% @photos.each do |photo| %>
+		<img src=<%= photo %>>
+		<% end %>
+	</div>
+
+	<div id="tiled-photo">
+		<% @photos.each do |photo| %>
+		<img src=<%= photo %> width="130px">
+		<% end %>
+	</div>
+</div>
+
+<div class="clearfix tr-wrapper">
+
+	<!-- flight code-->
+	<div class="flight">
+		<%= image_tag "icons/flights.png", :class => "icon" %>
+		<div>
+			<h2>FLIGHT INFO</h2>
 		</div>
-
-		<div class="clearfix photo">
-			<table>
-				<tr>
-					<td><%= image_tag "icons/photos.png", :class => "icon" %></td>
-					<td><h2>MOST POPULAR FLICKR PHOTOS TAKEN IN <%=@destination.upcase%></h2></td>
-				</tr>
-			</table>
-			
-			<div id="photo">
-				<% @photos.each do |photo| %>
-				  <img src=<%= photo %> width="90px">
-				<% end %>
-			</div>
-<!--  -->
-
+		<div>
+			<%= @destination.upcase %> IS <%= @distance %> MILES FROM <%= @origin.upcase %>
+		</div>
+		<div>
+			AVERAGE FLIGHT PRICE: $<%= @avg_price%>
 		</div>
 	</div>
 
+	<!-- weather code -->
+	<div class="weather">
+		<table>
+			<tr>
+				<td><%= image_tag "icons/weather.png", :class => "icon" %></td>
+				<td colspan="2"><h2>HISTORICAL WEATHER</h2></td>
+			</tr>
+			<tr>
+				<td><%= image_tag "icons/hightemp-white.png", :class => "sub-icon" %></td>
+				<td><%= image_tag "icons/lowtemp-white.png", :class => "sub-icon" %></td>
+				<td><%= image_tag "icons/precipitation-white.png", :class => "sub-icon" %></td>
+			</tr>
+			<tr>
+				<td>High of <%= @max_temp %></td>
+				<td>Low of <%= @min_temp %></td>
+				<td>Average Rainfall <%= @avg_precipitation %></td>
+			</tr>
+		</table>
+	</div>
+</div>
 
 
-	<div class="clearfix bottom-wrapper">
 
-		<!-- flight code-->
-		<div class="flight">
-			<table>
-				<tr>
-					<td><%= image_tag "icons/flights.png", :class => "icon" %></td>
-					<td><h2>FLIGHT INFO</h2></td>
-				</tr>
-				<tr>
-					<td><%= @destination.upcase %> IS <%= @distance %> MILES FROM <%= @origin.upcase %></td>
-					<td>AVERAGE FLIGHT PRICE: $<%= @avg_price%> </td>
-				</tr>
-			</table>
-		</div>
-
-		<!-- weather code -->
-		<div class="weather">
-				<table>
-					<tr>
-						<td><%= image_tag "icons/weather.png", :class => "icon" %></td>
-						<td colspan="2"><h2>HISTORICAL WEATHER</h2></td>
-					</tr>
-					<tr>
-						<td><%= image_tag "icons/hightemp-white.png", :class => "sub-icon" %></td>
-						<td><%= image_tag "icons/lowtemp-white.png", :class => "sub-icon" %></td>
-						<td><%= image_tag "icons/precipitation-white.png", :class => "sub-icon" %></td>
-					</tr>
-					<tr>
-						<td>High of <%= @max_temp %></td>
-						<td>Low of <%= @min_temp %></td>
-						<td>Average Rainfall <%= @avg_precipitation %></td>
-					</tr>
-				</table>
-		</div>
-
-		<!-- big mac code -->
-		
-		<div class="big-mac">
-			<table>
-				<tr>
-					<td><%= image_tag "icons/burger.png", :class => "icon" %></td>
-					<td><h2>A BIG MAC IN <%=@destination.upcase %> WILL COST YOU:</h2></td>
-				</tr>
-				<tr>
-					<td><p>$ <%= @bm_index %></p></td>
-				</tr>
-			</table>
-
-		</div>
-		
-		<div class="hotels">
-			<table>
-				<tr>
-					<td><%= image_tag "icons/hotel.png", :class => "icon" %></td>
-					<td colspan="2"><h2>HOTEL RATES IN <%=@destination.upcase%></h2></td>
-				</tr>
-				<tr>
-					<td>AVERAGE PRICE</td>
-					<td>LOWEST PRICE</td>
-					<td>HIGHEST PRICE</td>
-				</tr>
-				<tr>
-					<td>$<%= @avg_hotel_price %></td>
-					<td><%= @low_hotel_price %></td>
-					<td>$<%= @high_hotel_price %></td>
-				</tr>
-
-			</table>
-		</div>
+<div class="clearfix br-wrapper">
+	<!-- big mac code -->	
+	<div class="big-mac">
+		<table>
+			<tr>
+				<td><%= image_tag "icons/burger.png", :class => "icon" %></td>
+				<td><h2>A BIG MAC IN <%=@destination.upcase %> WILL COST YOU:</h2></td>
+			</tr>
+			<tr>
+				<td><p>$ <%= @bm_index %></p></td>
+			</tr>
+		</table>
 
 	</div>
+	<!-- hotel code -->
+	<div class="hotels">
+		<table>
+			<tr>
+				<td><%= image_tag "icons/hotel.png", :class => "icon" %></td>
+				<td colspan="2"><h2>HOTEL RATES IN <%=@destination.upcase%></h2></td>
+			</tr>
+			<tr>
+				<td>AVERAGE PRICE</td>
+				<td>LOWEST PRICE</td>
+				<td>HIGHEST PRICE</td>
+			</tr>
+			<tr>
+				<td>$<%= @avg_hotel_price %></td>
+				<td><%= @low_hotel_price %></td>
+				<td>$<%= @high_hotel_price %></td>
+			</tr>
 
-</body>
+		</table>
+	</div>
+</div>
+<!-- </div> -->
 
 <script>
 $( document ).ready(function() {
-   	console.log(':)');
-    cycleImages();
-    checkFavorites();
-    addtoFavorites();
-    deletefromFavorites();
+	console.log(':)');
+	cycleImages();
+	checkFavorites();
+	addtoFavorites();
+	deletefromFavorites();
 
 
 });
