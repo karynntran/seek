@@ -86,14 +86,14 @@ function validatePasswordsMatch() {
     }
 }
 
-function keydownValidations() {
-    $("#confirm_password").on('keydown', function() {
+function keyupValidations() {
+    $("#confirm_password").on('keyup', function() {
         validatePasswordsMatch();
     });
-    $("#signup_username").on('keydown', function() {
+    $("#signup_username").on('keyup', function() {
         validateElementLength($(this), 5, 'Email');
     });
-    $("#signup_password").on('keydown', function() {
+    $("#signup_password").on('keyup', function() {
         validateElementLength($(this), 1, 'Password');
     });
 }
@@ -110,7 +110,7 @@ function clickSignup() {
         var validEmail = validateElementLength($("#signup_username"), 5, 'Email');
         var validPassword = validateElementLength($("#signup_password"), 1, 'Password');
         validatePasswordsMatch();
-        keydownValidations();
+        keyupValidations();
         if (validEmail && validPassword && validatePasswordsMatch()) {
             submitSignup();
         }
