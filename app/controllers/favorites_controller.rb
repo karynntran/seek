@@ -1,7 +1,6 @@
 class FavoritesController < ApplicationController
 
   def check_favorites
-    binding.pry
     respond_to do |format|
       if current_user && current_user.favorites && current_user.favorites.include?(params[:url])
         format.json { render json: { status: "true" } }
