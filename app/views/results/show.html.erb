@@ -12,37 +12,37 @@
 
 <div class="clearfix photo-wrapper">
 	<!-- photo code -->
-	<div id="photo">
+	<div class="left-photo">
+		<div id="photo">
 		<%= image_tag "icons/photos.png", :class => "icon" %><h2>MOST POPULAR FLICKR PHOTOS TAKEN IN <%=@destination.upcase%></h2>
-	</div>
+		</div>
 
-	<div id="cycle-photos">
-		<% @photos.each do |photo| %>
-		<img src=<%= photo %>>
-		<% end %>
+		<div id="tiled-photo">
+			<% @photos.each do |photo| %>
+			<img src=<%= photo %> width="100px">
+			<% end %>
+		</div>
 	</div>
-
-	<div id="tiled-photo">
-		<% @photos.each do |photo| %>
-		<img src=<%= photo %> width="130px">
-		<% end %>
+	<div class="right-photo">
+		<div id="cycle-photos">
+			<% @photos.each do |photo| %>
+			<img src=<%= photo %>>
+			<% end %>
+		</div>
 	</div>
 </div>
 
-<div class="clearfix tr-wrapper">
+<div class="clearfix bottom-wrapper">
 
 	<!-- flight code-->
 	<div class="flight">
 		<%= image_tag "icons/flights.png", :class => "icon" %>
-		<div>
+
 			<h2>FLIGHT INFO</h2>
-		</div>
-		<div>
+
 			<%= @destination.upcase %> IS <%= @distance %> MILES FROM <%= @origin.upcase %>
-		</div>
-		<div>
+
 			AVERAGE FLIGHT PRICE: $<%= @avg_price%>
-		</div>
 	</div>
 
 	<!-- weather code -->
@@ -64,11 +64,7 @@
 			</tr>
 		</table>
 	</div>
-</div>
 
-
-
-<div class="clearfix br-wrapper">
 	<!-- big mac code -->	
 	<div class="big-mac">
 		<table>
@@ -80,7 +76,6 @@
 				<td><p>$ <%= @bm_index %></p></td>
 			</tr>
 		</table>
-
 	</div>
 	<!-- hotel code -->
 	<div class="hotels">
