@@ -22,6 +22,8 @@ class ResultsController < ApplicationController
     destination_lat = City.where(name: @destination)[0].lat_long.split(',')[0].to_f
     destination_long = City.where(name: @destination)[0].lat_long.split(',')[1].to_f
     @distance = Haversine.distance(origin_lat, origin_long, destination_lat, destination_long).to_miles.to_i
+    zone = NearestTimeZone.to(destination_lat, destination_long)
+    @time = Time.now.in_time_zone(zone).strftime("%l:%M%p")
   end
 
 end
