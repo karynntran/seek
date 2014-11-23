@@ -12,7 +12,10 @@ function changeBackground(){
 
 function checkUser() {
     $.ajax({
-
+        method: 'get',
+        url: '/checkuser',
+        dataType: 'json',
+        success: loginSuccess
     });
 }
 
@@ -37,9 +40,7 @@ function ajaxLogin() {
             url: '/sessions',
             dataType: 'json',
             data: {user: { username: $("#user_username").val(), password: $("#user_password").val() }},
-
             success: loginSuccess
-
         });
     });
 }
@@ -49,7 +50,11 @@ function loginSuccess(data) {
         $("#expanded_login").effect('shake');
     } else {
         $("#new_user").fadeOut(fadeTime);
-        $("#top_button").text(data.username).on('click', function(){
+        $("#top_button")
+            .text(data.username)
+            .css('background-color', 'white')
+            .css('color', '#3867be')
+            .on('click', function(){
             window.location.href='/users/' + data.id;
         });
     }
@@ -258,6 +263,7 @@ function cycleImages(){
 // ******* document ready functions ********
 
 function loadSearchPage() {
+    checkUser();
     ajaxLogin();
     fetchData();
     inputListener();
