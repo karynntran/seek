@@ -22,21 +22,18 @@ $primary-color: #6aa3df;
   font-family: 'Open Sans', sans-serif;
   }
   .top-wrapper {
-	display: inline-block;
 	@include span-columns(12);
+	display: inline-block;
 	width: 100%;
 	margin: 0 auto;
-
   }
   .top-wrapper div {
   	margin: 10px 5px 0 5px;
   	padding: 10px;
   }
-
   .bottom-wrapper {
 	@include span-columns(12);
 	margin: 0 auto;
-/*	background: lightgray;*/
 	padding: 0 10px;
 	width:100%;
 	height:125px;
@@ -80,13 +77,13 @@ html, body {
 }
 
 header {
-	background-color: #000066;
+	background-image: url('/assets/diamond_upholstery/diamond_upholstery.png');
 	height: 50px;
 	width: 100%;
 	margin: 0;
 	padding: 0;
-	font-size: 40px;
 	font-family: 'Open Sans', sans-serif;
+
 }
 
 body {
@@ -95,7 +92,7 @@ body {
 	margin: 0 auto;
 	font-family: 'Open Sans', sans-serif;
 	color: #0066CC;
-	background-color: #000066;
+
 }
 
 
@@ -190,24 +187,32 @@ li {
 
 /* ---------->>> FAVORITES <<<-----------*/
 
-#add-button {
-	color: yellow;
-	float: right;
-	font-size: 20px;
-	height: 50px;
-	margin: 5px;
-	display: none;
+
+button {
+	margin: 0 auto;
+	#add-button {
+		background-color: darkblue;
+		color: yellow;
+		text-align: right;
+		font-size: 20px;
+		height: 50px;
+		margin: 5px;
+		display: none;
+	}
+
+	#delete-button {
+		color: darkgray;
+		background-color: gray;
+		text-align: right;
+		font-size: 20px;
+		height: 50px;
+		margin: 5px;
+		display: none;
+	}
+
 }
 
-#delete-button {
-	color: darkgray;
-	background-color: gray;
-	float: right;
-	font-size: 20px;
-	height: 50px;
-	margin: 5px;
-	display: none;
-}
+
 
 /* ---------->>> TABLE <<<-----------*/
 
