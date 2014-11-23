@@ -92,7 +92,7 @@ function validateOrigin(value) {
 function showMonthandGo() {
   $("#month_label").fadeIn(fadeTime);
   $("#month").fadeIn(fadeTime).focus();
-  $("input:submit").fadeIn(fadeTime);
+  $(".go").fadeIn(fadeTime);
   setInterval(function() { validateAll(); },1000) 
 }
 
