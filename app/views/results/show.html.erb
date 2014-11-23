@@ -1,8 +1,17 @@
 <header>
+	
+<!-- LOGIN CODE HERE -->
+
+
+
+
+<!-- LOGIN CODE HERE -->
+
 	<div class="favorites">
 		<button id="add-button">&#9733 Add to favorite searches?</button>
 		<button id="delete-button">[ X ] Remove from favorite searches?</button>
 	</div>
+
 </header>
 
 <div class="city">
@@ -14,12 +23,15 @@
 	<!-- photo code -->
 	<div class="left-photo">
 		<div id="photo">
-			<%= image_tag "icons/photos.png", :class => "icon" %><h2>MOST POPULAR FLICKR PHOTOS TAKEN IN <%=@destination.upcase%></h2>
+			<ul>
+				<li><%= image_tag "icons/photos.png", :class => "icon" %><li>
+				<li><h2>MOST POPULAR FLICKR PHOTOS TAKEN IN <%=@destination.upcase%></h2></li>
+			</ul>
 		</div>
 
 		<div id="tiled-photo">
 			<% @photos.each do |photo| %>
-			<img src=<%= photo %> width="100px">
+			<img src=<%= photo %> width="90px">
 			<% end %>
 		</div>
 	</div>
@@ -36,37 +48,26 @@
 <div class="clearfix bottom-wrapper">
 
 	<!-- flight code-->
-	<div class="flight">
-		<table>
-			<tr>
-				<td><%= image_tag "icons/flights.png", :class => "icon" %></td>
-				<td><h2>FLIGHT INFO</h2></td>
-			</tr>
-			<tr>
-				<td><%= @destination.upcase %> IS <%= @distance %> MILES FROM <%= @origin.upcase %></td>
-				<td>AVERAGE FLIGHT PRICE: $<%= @avg_price%> </td>
-			</tr>
-			<tr>
-				<td>
-					<h2> LOCAL TIME IS: <%= @time %> </h2>
-				</td>
-			</tr>
-		</table>
+	<div class="flight hover">
+		<ul>
+				<li><%= image_tag "icons/flights.png", :class => "icon" %></li>
+				<li><h2>FLIGHT INFO</h2></li>
+		</ul>
+			<%= @destination.upcase %> IS <%= @distance %> MILES FROM <%= @origin.upcase %>
+			AVERAGE FLIGHT PRICE: $<%= @avg_price%> 
+			LOCAL TIME IS: <%= @time %>
 	</div>
 
 	<!-- weather code -->
-	<div class="weather">
-		<table>
-			<tr>
-				<td><%= image_tag "icons/weather.png", :class => "icon" %></td>
-				<td colspan="2"><h2>HISTORICAL WEATHER</h2></td>
-			</tr>
-			<tr>
-				<td><%= image_tag "icons/hightemp-white.png", :class => "sub-icon" %></td>
-				<td><%= image_tag "icons/lowtemp-white.png", :class => "sub-icon" %></td>
-				<td><%= image_tag "icons/precipitation-white.png", :class => "sub-icon" %></td>
-			</tr>
-			<tr>
+	<div class="weather hover">
+		<ul>
+				<li><%= image_tag "icons/weather.png", :class => "icon" %></li>
+				<li><h2>HISTORICAL WEATHER</h2></li>
+		</ul>
+				<%= image_tag "icons/hightemp-white.png", :class => "sub-icon" %>
+				<%= image_tag "icons/lowtemp-white.png", :class => "sub-icon" %>
+				<%= image_tag "icons/precipitation-white.png", :class => "sub-icon" %>
+
 				<td>High of <%= @max_temp %></td>
 				<td>Low of <%= @min_temp %></td>
 				<td>Average Rainfall <%= @avg_precipitation %></td>
@@ -75,7 +76,7 @@
 	</div>
 
 	<!-- big mac code -->	
-	<div class="big-mac">
+	<div class="big-mac hover">
 		<table>
 			<tr>
 				<td><%= image_tag "icons/burger.png", :class => "icon" %></td>
@@ -87,7 +88,7 @@
 		</table>
 	</div>
 	<!-- hotel code -->
-	<div class="hotels">
+	<div class="hotels hover">
 		<table>
 			<tr>
 				<td><%= image_tag "icons/hotel.png", :class => "icon" %></td>
@@ -117,7 +118,8 @@ $( document ).ready(function() {
 	addtoFavorites();
 	deletefromFavorites();
 
-
 });
+
+
 
 </script>

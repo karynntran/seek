@@ -280,6 +280,7 @@ function addtoFavorites() {
   });
 }
 
+
 function deletefromFavorites(){
 console.log('delete from favorites');
 $("#delete-button").on('click', function(e){
@@ -312,3 +313,4 @@ function loadSearchPage() {
     clickSignup();
     cancelSignup();
 };
+

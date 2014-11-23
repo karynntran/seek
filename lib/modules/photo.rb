@@ -9,7 +9,7 @@ module Photo
       photo['url_c'] ? photo['url_c'] : nil
     end.compact
 
-    photo_array.length > 15 ? photo_array[0..15] : photo_array
+    photo_array.length > 15 ? photo_array[0..19] : photo_array
   end
 end
 

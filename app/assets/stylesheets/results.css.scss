@@ -14,12 +14,12 @@ $primary-color: #6aa3df;
   color: darkblue;
   font-size: 60px;
   text-align: center;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Oxygen', sans-serif;
   }
   h2 {
   font-size: 15px;
   color: #FFFFFF;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Oxygen', sans-serif;
   }
   .city {
   	@include span-columns(12);
@@ -34,18 +34,18 @@ $primary-color: #6aa3df;
   	height: auto;
   }
   .left-photo {
-  	@include span-columns(7);
+  	@include span-columns(8);
   }
   #tiled-photo{
-  	@include span-columns(7);
+  	@include span-columns(8);
   	width: 100%;
   }
   .right-photo {
   	@include span-columns(4);
   }
-  #cycle-photos {
+/*  #cycle-photos {
   	width: 30%;
-  }
+  }*/
   .photo-wrapper div {
   	padding: 10px;
   }
@@ -81,7 +81,7 @@ html, body {
 	height: 100%;
 	padding: 0;
 	margin: 0 auto;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Oxygen', sans-serif;
 	color: #0066CC;
 }
 
@@ -91,14 +91,14 @@ header {
 	width: 100%;
 	margin: 0;
 	padding: 0;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Oxygen', sans-serif;
 }
 
 body {
 	font-size: 15px;
 	height: 100%;
 	margin: 0 auto;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Oxygen', sans-serif;
 }
 
 
@@ -119,12 +119,18 @@ body {
 
 img {
 	border-radius: 5px;
-	max-height: 400px;
+	max-height: 300px;
+	max-width: 325px;
 	margin: 0 auto;
 }
 
 
 /* ---------->>> BOTTOM WRAPPER <<<-----------*/
+
+.bottom-wrapper div:hover { 
+    background-image: none;
+    background-color: white;
+}
 
 .flight  {
 	height: 10%;
@@ -166,22 +172,22 @@ img {
 }
 
 
-/* ---------->>> NAVIGATION <<<-----------*/
+/* ---------->>> HEADERS <<<-----------*/
 
 ul {
-	text-align: right;
+	text-align: left;
 }
 
 li {
-	display: inline;
-	color: #FFFFFF;
-	border: white solid 2px;
-	font-size: 15px;
-	padding: 0 4px;
+	display: inline-block;
+	vertical-align: middle;
 }
 
 /* ---------->>> FAVORITES <<<-----------*/
 
+.favorites {
+	float: right;
+}
 
 button {
 	margin: 0 auto;
@@ -208,18 +214,6 @@ button {
 }
 
 
-
-/* ---------->>> TABLE <<<-----------*/
-
-table {
-	border: none;
-	margin: 0 auto;
-}
-td {
-	padding: 0;
-	border: none;
-}
-
 /* ---------->>> CLEARFIX <<<-----------*/
 
 
@@ -238,4 +232,12 @@ td {
 /* close commented backslash hack */
 
 
+
+
+/*<!-- LOGIN CODE HERE -->
+
+
+
+
+<!-- LOGIN CODE HERE -->*/
 
