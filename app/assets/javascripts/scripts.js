@@ -10,6 +10,12 @@ function changeBackground(){
   });
 }
 
+function checkUser() {
+    $.ajax({
+
+    });
+}
+
 function expandLogin() {
     $(".login_button").on('click', function(){
         $("#user_username").fadeIn(400).focus();
@@ -39,11 +45,11 @@ function ajaxLogin() {
 }
 
 function loginSuccess(data) {
-    if (data.login === 'failed') {
+    if (data.status === 'failed') {
         $("#expanded_login").effect('shake');
     } else {
         $("#new_user").fadeOut(fadeTime);
-        $("#login").text(data.login).on('click', function(){
+        $("#top_button").text(data.username).on('click', function(){
             window.location.href='/users/' + data.id;
         });
     }
@@ -121,9 +127,10 @@ function submitSignup() {
             username: $("#signup_username").val(),
             password: $("#signup_password").val()
         },
-        success: function() {
+        success: function(data) {
             $("#signup_form").fadeOut(fadeTime);
             debugger
+            loginSuccess(data);
         }
     })
 }
