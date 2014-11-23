@@ -6,8 +6,8 @@
 </p>
 
 
-<p>
-  <strong>Favorites:</strong>
+<div class="container">
+  <strong>Here are your saved Favorites:</strong>
   <% @user.favorites.map do |favorite| %>		
 		<% destination = /(?<=destination=)[\w\+]+(?=&)/.match(favorite[:link]).to_s %> 
 		<% origin = /(?<=origin=)[\w\+]+(?=&)/.match(favorite[:link]).to_s %>
@@ -17,7 +17,7 @@
 		</a>
 	<% end %>
  
-</p>
+</div>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
