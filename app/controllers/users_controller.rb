@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  # before_action :current_user, only: [:show, :edit, :update, :destroy]
   # GET /users
   # GET /users.json
   def index
@@ -62,6 +62,7 @@ class UsersController < ApplicationController
   ##FAVORITES
 
   def check_favorites
+    current_user
     respond_to do |format|
       if current_user.favorites.include? params[:url]
         format.json { render json: { status: true } }
