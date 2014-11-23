@@ -7,7 +7,10 @@ function expandLogin() {
         $("#user_username").fadeIn(400).focus();
         $("#user_password").fadeIn(400);
         $("#expanded_login").fadeIn(400);
-        $(this).text('First Time?').css('background-color', 'white').css('color', '#3867be')
+        $(this).text('First Time?')
+            .css('background-color', 'white')
+            .css('color', '#3867be')
+            .addClass('signup')
     });
 }
 
@@ -36,6 +39,13 @@ function loginSuccess(data) {
         });
     }
 }
+
+function signup() {
+    $("")
+}
+
+
+// ****** search form *******
 
 function fetchData() {
   $.ajax({
@@ -72,7 +82,7 @@ function originComplete(){
 
 function inputListener() {
     $("#destination").on('keyup', function(){validateDestination($(this).val());});
-    $("#origin").on('keyup change', function(){validateOrigin($(this).val());});
+    $("#origin").on('keyup', function(){validateOrigin($(this).val());});
 }
 
 

@@ -13,14 +13,15 @@
 
 <div class="top_right">
   <div class='field'>
-  <%= form_for @user, url: {controller: 'sessions', action: 'create'} do |f| %>
+    <%= form_for @user, url: {controller: 'sessions', action: 'create'} do |f| %>
       <%= f.email_field(:username, placeholder: 'email...') %>
       <%= f.password_field(:password, placeholder: 'password...') %>
       <%= f.submit("Log In", id: 'expanded_login') %>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
   <button id="login">Log In</button>
 </div>
+
 
 <div class="searchbox ui-widget">
   
@@ -37,6 +38,17 @@
     <%= submit_tag("GO", class: 'go') %>
   <% end %> 
   </div>
+
+<%= form_tag '/users', method: 'post', id: 'signup_form' do %>
+  <%= label_tag 'signup[username]', 'Email' %>
+  <%= text_field_tag 'signup[username]', nil, placeholder: 'travler@example.com...' %>
+  <%= label_tag 'signup[password]', 'Password' %>
+  <%= password_field_tag 'signup[password]' %>
+  <%= label_tag 'signup[password]', 'Confirm Password' %>
+  <%= password_field_tag 'signup[password]' %>
+  <%= submit_tag('Sign Up', id: 'signup_submit') %>
+  <%= button_tag 'Cancel', id: 'signup_cancel' %>
+<% end %>
 
 <script>
   $(function(){

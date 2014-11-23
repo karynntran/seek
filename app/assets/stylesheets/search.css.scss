@@ -8,16 +8,15 @@
 
 .top_right div {
   float: left;
-  margin: 0 0.3em;
 }
 
 
 #expanded_login {
-  margin: 0 0.3em;
   float: left;
   display: none;
 }
 #login, #expanded_login {
+  margin: 0 0.3em;
   height: 3em;
 }
 
@@ -51,6 +50,27 @@
 
 input.go[type='submit'] {
   display: none;
+}
+
+#signup_form {
+  position: absolute;
+  font-size: 1.2em;
+  width: 40em;
+  padding: 2em;
+  background-color: white;
+  margin: 0 -20em;
+  left: 50%;
+  top: 12em;
+  border-radius: .5em;
+}
+
+#signup_form label {
+  font-size: 1.15em;
+}
+
+#signup_cancel {
+  color: white;
+  background: gray;
 }
 
 .searchbox {
@@ -96,7 +116,7 @@ input.go[type='submit'] {
   position: fixed;
   top: 0;
   left: 0;
-  z-index:-9999;
+  z-index:-9999;  
 }
 
 .form_error {
