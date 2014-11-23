@@ -154,6 +154,8 @@ function cycleImages(){
 
 // *********  favorites scripts **********
 
+
+
   function determineFavoritesButton(status) {
     console.log('determine button');
     if (status === "false") {
