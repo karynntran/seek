@@ -2,7 +2,6 @@ module Hotwire
   def self.get_hotel_info(options)
     destination = City.find_by(name: options[:destination]).airport
     url = "http://api.hotwire.com/v1/deal/hotel?apikey=sw32n4fn2u93rqan8cg92f3x&dest=#{destination}"
-    binding.pry
     api_response = HTTParty.get(url)
     array_of_hotels = api_response["Hotwire"]["Result"]["HotelDeal"]
     avg_price = average_hotel_price(array_of_hotels)
