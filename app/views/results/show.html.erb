@@ -74,20 +74,21 @@
 
 <script>
 $( document ).ready(function() {
-   	console.log('favorites');
+   	console.log(':)');
     cycleImages();
     checkFavorites();
 
 	function addtoFavorites() {
-
-	    $(".add-button").on('click', function(e) {
+	    $("#add-button").on('click', function(e) {
 	        e.preventDefault();
 	        $.ajax({
 	            method: 'patch',
 	            url: '/add_favorites',
 	            dataType: 'json',
 	            data: { favorite: doc.URL },
-	            success: function(data) {
+	            success: function() {
+	            	console.log('yay');
+	            	checkFavorites();
 	            }
 	        });
 	    });

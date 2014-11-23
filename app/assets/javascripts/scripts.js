@@ -135,10 +135,10 @@ function cycleImages(){
 
   function determineFavoritesButton(status) {
     console.log('determine button');
-    if (status = false || null) {
-      $(".favorites").show("#add-button")
+    if (status === "false") {
+      $("#add-button").show()
     } else {
-      $(".favorites").show("#delete-button")
+      $("#delete-button").show()
     }
   }
 
