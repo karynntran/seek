@@ -36,7 +36,6 @@ function loginSuccess(data) {
 }
 
 function fetchData() {
-
   $.ajax({
     url: '/autocomplete',
     dataType: 'json',
@@ -51,39 +50,48 @@ function fetchData() {
 
 function destinationComplete(){
   $("#destination").autocomplete({
-    source: destinations
+    source: destinations,
+    select: function(event, ui) {
+        validateDestination(ui.item.value);
+    }
   });
 }
 
 
 function originComplete(){
   $("#origin").autocomplete({
-    source: origins
+    source: origins,
+    select: function(event, ui) {
+        validateOrigin(ui.item.value);
+    }
+
   });
 }
 
-function validateDestination() {
-  $("#destination").on('keyup', function(){
-    if ($.inArray($(this).val(), destinations) > -1) {
+function inputListener() {
+    $("#destination").on('keyup', function(){validateDestination($(this).val());});
+    $("#origin").on('keyup change', function(){validateOrigin($(this).val());});
+}
+
+
+function validateDestination(value) {
+    if ($.inArray(value, destinations) > -1) {
       // $("#origin_label").fadeIn(200);
       $("#destination_error").fadeOut(fadeTime);
-      $("#origin").fadeIn(fadeTime);
+      $("#origin").fadeIn(fadeTime).focus();
     }
-  });
-};
+}
 
-function validateOrigin() {
-  $("#origin").on('keyup', function(){
-    if ($.inArray($(this).val(), origins) > -1) {
+function validateOrigin(value) {
+    if ($.inArray(value, origins) > -1) {
       $("#origin_error").fadeOut(fadeTime);
       showMonthandGo();      
     } 
-  });
 };
 
 function showMonthandGo() {
   $("#month_label").fadeIn(fadeTime);
-  $("#month").fadeIn(fadeTime);
+  $("#month").fadeIn(fadeTime).focus();
   $("input:submit").fadeIn(fadeTime);
   setInterval(function() { validateAll(); },1000) 
 }
@@ -123,6 +131,7 @@ function changeBackground(){
 function loadSearchPage() {
     ajaxLogin();
     fetchData();
+    inputListener();
     $("input:submit.go").prop( "disabled", true );
     validateDestination();
     validateOrigin();
