@@ -34,18 +34,18 @@ $primary-color: #6aa3df;
   	height: auto;
   }
   .left-photo {
-  	@include span-columns(7);
+  	@include span-columns(8);
   }
   #tiled-photo{
-  	@include span-columns(7);
+  	@include span-columns(8);
   	width: 100%;
   }
   .right-photo {
   	@include span-columns(4);
   }
-  #cycle-photos {
+/*  #cycle-photos {
   	width: 30%;
-  }
+  }*/
   .photo-wrapper div {
   	padding: 10px;
   }
@@ -119,12 +119,18 @@ body {
 
 img {
 	border-radius: 5px;
-	max-height: 400px;
+	max-height: 300px;
+	max-width: 325px;
 	margin: 0 auto;
 }
 
 
 /* ---------->>> BOTTOM WRAPPER <<<-----------*/
+
+.bottom-wrapper div:hover { 
+    background-image: none;
+    background-color: white;
+}
 
 .flight  {
 	height: 10%;

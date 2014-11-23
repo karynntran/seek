@@ -19,7 +19,7 @@
 
 		<div id="tiled-photo">
 			<% @photos.each do |photo| %>
-			<img src=<%= photo %> width="100px">
+			<img src=<%= photo %> width="90px">
 			<% end %>
 		</div>
 	</div>
@@ -36,7 +36,7 @@
 <div class="clearfix bottom-wrapper">
 
 	<!-- flight code-->
-	<div class="flight">
+	<div class="flight hover">
 		<table>
 			<tr>
 				<td><%= image_tag "icons/flights.png", :class => "icon" %></td>
@@ -55,7 +55,7 @@
 	</div>
 
 	<!-- weather code -->
-	<div class="weather">
+	<div class="weather hover">
 		<table>
 			<tr>
 				<td><%= image_tag "icons/weather.png", :class => "icon" %></td>
@@ -75,7 +75,7 @@
 	</div>
 
 	<!-- big mac code -->	
-	<div class="big-mac">
+	<div class="big-mac hover">
 		<table>
 			<tr>
 				<td><%= image_tag "icons/burger.png", :class => "icon" %></td>
@@ -87,7 +87,7 @@
 		</table>
 	</div>
 	<!-- hotel code -->
-	<div class="hotels">
+	<div class="hotels hover">
 		<table>
 			<tr>
 				<td><%= image_tag "icons/hotel.png", :class => "icon" %></td>
@@ -117,7 +117,8 @@ $( document ).ready(function() {
 	addtoFavorites();
 	deletefromFavorites();
 
-
 });
+
+
 
 </script>
