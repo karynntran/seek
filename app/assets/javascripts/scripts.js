@@ -158,6 +158,8 @@ function cycleImages(){
 
   function determineFavoritesButton(status) {
     console.log('determine button');
+    $("#add-button").hide();
+    $("#delete-button").hide();
     if (status === "false") {
       $("#add-button").show()
     } else {
@@ -190,7 +192,6 @@ function cycleImages(){
               data: { favorite: document.URL },
               success: function() {
                 console.log('yay');
-                debugger;
                 checkFavorites();
               }
           });
