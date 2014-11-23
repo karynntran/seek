@@ -179,6 +179,23 @@ function cycleImages(){
     });
   }
 
+  function addtoFavorites() {
+      console.log('add to favorites');
+      $("#add-button").on('click', function(e) {
+          e.preventDefault();
+          $.ajax({
+              method: 'patch',
+              url: '/add_favorites',
+              dataType: 'json',
+              data: { favorite: document.URL },
+              success: function() {
+                console.log('yay');
+                debugger;
+                checkFavorites();
+              }
+          });
+      });
+  }
 
 
 
