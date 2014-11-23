@@ -19,8 +19,12 @@
 		</div>
 
 		<div class="clearfix photo">
-			<%= image_tag "icons/photos.png", :class => "icon" %>
-			<h2>MOST POPULAR FLICKR PHOTOS TAKEN IN <%=@destination.upcase%></h2>
+			<table>
+				<tr>
+					<td><%= image_tag "icons/photos.png", :class => "icon" %></td>
+					<td><h2>MOST POPULAR FLICKR PHOTOS TAKEN IN <%=@destination.upcase%></h2></td>
+				</tr>
+			</table>
 			
 			<div id="photo">
 				<% @photos.each do |photo| %>
@@ -38,18 +42,25 @@
 
 		<!-- flight code-->
 		<div class="flight">
-			<%= image_tag "icons/flights.png", :class => "icon" %>
-			<h2>AVERAGE FLIGHT PRICE: $<%= @avg_price%> </h2>
-			<p>
-				<%= @destination.upcase %> IS <%= @distance %> MILES FROM <%= @origin.upcase %>
-			</p>
+			<table>
+				<tr>
+					<td><%= image_tag "icons/flights.png", :class => "icon" %></td>
+					<td><h2>FLIGHT INFO</h2></td>
+				</tr>
+				<tr>
+					<td><%= @destination.upcase %> IS <%= @distance %> MILES FROM <%= @origin.upcase %></td>
+					<td>AVERAGE FLIGHT PRICE: $<%= @avg_price%> </td>
+				</tr>
+			</table>
 		</div>
 
 		<!-- weather code -->
 		<div class="weather">
-			<%= image_tag "icons/weather.png", :class => "icon" %>
-			<h2>HISTORICAL WEATHER</h2>
 				<table>
+					<tr>
+						<td><%= image_tag "icons/weather.png", :class => "icon" %></td>
+						<td><h2>HISTORICAL WEATHER</h2></td>
+					</tr>
 					<tr>
 						<td><%= image_tag "icons/hightemp-white.png", :class => "sub-icon" %></td>
 						<td><%= image_tag "icons/lowtemp-white.png", :class => "sub-icon" %></td>
@@ -74,12 +85,20 @@
 		<div class="hotels">
 			<%= image_tag "icons/hotel.png", :class => "icon" %>
 			<h2>HOTEL RATES IN <%=@destination.upcase%></h2>
-			<h3>AVERAGE PRICE</h3>
-			<p>$<%= @avg_hotel_price %></p>
-			<h3>LOW PRICE</h3>
-			<p>$<%= @low_hotel_price %></p>
-			<h3>HIGH PRICE</h3>
-			<p>$<%= @high_hotel_price %></p>
+			
+			<table>
+				<tr>
+					<td>AVERAGE PRICE</td>
+					<td>LOWEST PRICE</td>
+					<td>HIGHEST PRICE</td>
+				</tr>
+				<tr>
+					<td>$<%= @avg_hotel_price %></td>
+					<td><%= @low_hotel_price %></td>
+					<td>$<%= @high_hotel_price %></td>
+				</tr>
+
+			</table>
 		</div>
 
 	</div>
