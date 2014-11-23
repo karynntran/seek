@@ -49,3 +49,4 @@ gem 'dotenv-rails'
 
 gem 'httparty'
 gem 'haversine'
+gem 'timezone'
