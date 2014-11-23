@@ -18,7 +18,14 @@ class FavoritesController < ApplicationController
       current_user.favorites << favorite
     format.json { render json: { status: "OK" } }
     end
+  end
 
+  def delete_favorites
+    respond_to do |format|
+      favorite = Favorite.where({user_id: current_user.id, link: params[:remove]})
+      Favorite.destroy(favorite)
+    format.json {render json: { status: "OK"} }
+    end
   end
 end
 

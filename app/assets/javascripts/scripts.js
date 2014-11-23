@@ -198,5 +198,21 @@ function cycleImages(){
       });
   }
 
+  function deletefromFavorites(){
+    console.log('delete from favorites');
+    $("#delete-button").on('click', function(e){
+        e.preventDefault();
+        $.ajax({
+            method: 'patch',
+            url: '/delete_favorites',
+            dataType: 'json',
+            data: { remove: document.URL },
+            success: function() {
+              console.log('yay-removing!');
+              checkFavorites();
+            }
+        });
+    });
+  }
 
 
