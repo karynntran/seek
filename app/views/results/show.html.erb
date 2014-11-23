@@ -19,7 +19,7 @@
 		</div>
 
 		<div class="clearfix photo">
-			<%= image_tag "camera.png", :class => "icon" %>
+			<%= image_tag "icons/photos.png", :class => "icon" %>
 			<h2>MOST POPULAR FLICKR PHOTOS TAKEN IN <%=@destination.upcase%></h2>
 			
 			<div id="photo">
@@ -38,7 +38,7 @@
 
 		<!-- flight code-->
 		<div class="flight">
-			<%= image_tag "flights.png", :class => "icon" %>
+			<%= image_tag "icons/flights.png", :class => "icon" %>
 			<h2>AVERAGE FLIGHT PRICE: $<%= @avg_price%> </h2>
 			<p>
 				<%= @destination.upcase %> IS <%= @distance %> MILES FROM <%= @origin.upcase %>
@@ -47,13 +47,13 @@
 
 		<!-- weather code -->
 		<div class="weather">
-			<%= image_tag "weather.png", :class => "icon" %>
+			<%= image_tag "icons/weather.png", :class => "icon" %>
 			<h2>HISTORICAL WEATHER</h2>
 				<table>
 					<tr>
-						<td><%= image_tag "high.png", :class => "sub-icon" %></td>
-						<td><%= image_tag "low.png", :class => "sub-icon" %></td>
-						<td><%= image_tag "rain.png", :class => "sub-icon" %></td>
+						<td><%= image_tag "icons/hightemp-white.png", :class => "sub-icon" %></td>
+						<td><%= image_tag "icons/lowtemp-white.png", :class => "sub-icon" %></td>
+						<td><%= image_tag "icons/precipitation-white.png", :class => "sub-icon" %></td>
 					</tr>
 					<tr>
 						<td>High of <%= @max_temp %></td>
@@ -66,12 +66,13 @@
 		<!-- big mac code -->
 		
 		<div class="big-mac">
-			<%= image_tag "food.png", :class => "icon" %>
+			<%= image_tag "icons/burger.png", :class => "icon" %>
 			<h2>A BIG MAC IN <%=@destination.upcase %> WILL COST YOU:</h2>
 			<p>$ <%= @bm_index %></p>
 		</div>
 		
 		<div class="hotels">
+			<%= image_tag "icons/hotel.png", :class => "icon" %>
 			<h2>HOTEL RATES IN <%=@destination.upcase%></h2>
 			<h3>AVERAGE PRICE</h3>
 			<p>$<%= @avg_hotel_price %></p>
