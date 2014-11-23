@@ -12,6 +12,8 @@ Rails.application.routes.draw do
 
   patch '/add_favorites' => 'favorites#add_favorites'
 
+  patch '/delete_favorites' => 'favorites#delete_favorites'
+
 
   resources :sessions, :only => [:new, :create, :destroy]
 

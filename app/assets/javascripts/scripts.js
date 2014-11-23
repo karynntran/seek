@@ -236,30 +236,67 @@ function cycleImages(){
 
 // *********  favorites scripts **********
 
-  function determineFavoritesButton(status) {
-    console.log('determine button');
-    if (status === "false") {
-      $("#add-button").show()
-    } else {
-      $("#delete-button").show()
-    }
-  }
 
-  function checkFavorites() {
+
+function determineFavoritesButton(status) {
+    console.log('determine button');
+    $("#add-button").hide();
+    $("#delete-button").hide();
+    if (status === "false") {
+        $("#add-button").show()
+    } else {
+        $("#delete-button").show()
+    }
+}
+
+function checkFavorites() {
     console.log('check favorites');
     var url = document.URL;
     $.ajax({
-      method: 'patch',
-      url: '/check_favorites',
-      dataType: 'json',
-      data: { url: url },
-      success: function(data) {
-        determineFavoritesButton(data.status);
-      }
+        method: 'patch',
+        url: '/check_favorites',
+        dataType: 'json',
+        data: { url: url },
+        success: function(data) {
+            determineFavoritesButton(data.status);
+        }
     });
-  }
+}
 
+function addtoFavorites() {
+    console.log('add to favorites');
+    $("#add-button").on('click', function(e) {
+      e.preventDefault();
+      $.ajax({
+          method: 'patch',
+          url: '/add_favorites',
+          dataType: 'json',
+          data: { favorite: document.URL },
+          success: function() {
+            console.log('yay');
+            checkFavorites();
+        }
+    });
+  });
+}
 
+function deletefromFavorites(){
+console.log('delete from favorites');
+$("#delete-button").on('click', function(e){
+    e.preventDefault();
+    $.ajax({
+        method: 'patch',
+        url: '/delete_favorites',
+        dataType: 'json',
+        data: { remove: document.URL },
+        success: function() {
+          console.log('yay-removing!');
+          checkFavorites();
+        }
+    });
+});
+}
+  
 // ******* document ready functions ********
 
 function loadSearchPage() {

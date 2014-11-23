@@ -11,7 +11,7 @@ $primary-color: #6aa3df;
 .container {
   h1 {
   @include span-columns(12);
-  color: #FFFFFF;
+  color: darkblue;
   font-size: 60px;
   text-align: center;
   font-family: 'Open Sans', sans-serif;
@@ -21,54 +21,60 @@ $primary-color: #6aa3df;
   color: #FFFFFF;
   font-family: 'Open Sans', sans-serif;
   }
-  .top-wrapper {
-	display: inline-block;
-	@include span-columns(12);
-	width: 100%;
-	margin: 0 auto;
-
+  .city {
+  	@include span-columns(12);
   }
-  .top-wrapper div {
-  	margin: 10px 5px 0 5px;
+  .photo-wrapper {
+	@include span-columns(11.5);
+	background-image: url('/assets/noise_lines/noise_lines.png');
+	display: inline-block;
+	border-radius: 10px;
+	box-shadow: 8px 8px 5px #888888;
+  	margin: 20px;
+  	height: auto;
+  }
+  .left-photo {
+  	@include span-columns(7);
+  }
+  #tiled-photo{
+  	@include span-columns(7);
+  	width: 100%;
+  }
+  .right-photo {
+  	@include span-columns(4);
+  }
+  #cycle-photos {
+  	width: 30%;
+  }
+  .photo-wrapper div {
   	padding: 10px;
   }
-
+  #photo h2 {
+  	color: #000066;
+  }
   .bottom-wrapper {
-	@include span-columns(12);
-	margin: 0 auto;
-/*	background: lightgray;*/
+	@include span-columns(11.5);
+	margin: 20px;
 	padding: 0 10px;
-	width:100%;
 	height:125px;
-	position:absolute;
-	bottom:0;
-	left:0;
-	opacity: 0.8;
+	display: inline-block;
   }
   .bottom-wrapper div {
   	@include span-columns(3);
   	display: inline-block;
-  	background-color: lightgray;
+  	background-image: url('/assets/noise_lines/noise_lines.png');
   	border-radius: 10px;
   	padding: 10px;
-  	margin-bottom: 10px;
+  	box-shadow: 8px 8px 5px #888888;
   }
   .bottom-wrapper h2 {
   	color: #000066;
-  }
-  .photo {
-  	@include span-columns(8);
-  }
-  .photo h2 {
-  	color: #000066;
-  }
-  .city {
-  	@include span-columns(4);
   }
 }
 
 body {
 	font-size: 20px;
+	background-color: lightgray;
 }
 
 html, body {
@@ -76,16 +82,15 @@ html, body {
 	padding: 0;
 	margin: 0 auto;
 	font-family: 'Open Sans', sans-serif;
-	color: lightgray;
+	color: #0066CC;
 }
 
 header {
-	background-color: #000066;
+	background-color: #0066CC;
 	height: 50px;
 	width: 100%;
 	margin: 0;
 	padding: 0;
-	font-size: 40px;
 	font-family: 'Open Sans', sans-serif;
 }
 
@@ -94,61 +99,48 @@ body {
 	height: 100%;
 	margin: 0 auto;
 	font-family: 'Open Sans', sans-serif;
-	color: #0066CC;
-	background-color: #000066;
 }
 
 
+/* ---------->>> PHOTO WRAPPER <<<-----------*/
 
-/* ---------->>> KEY SECTION STRUCTURE <<<-----------*/
-
-
-/* ---------->>> TOP WRAPPER <<<-----------*/
-
-
-.city {
-	float:left;
-	width: 33%;
+#photo  {
 }
 
-.photo  {
-	height: 70%;
-	min-height: 400px;
-	float: left;
+#tiled-photo {
 	border-radius: 10px;
-	background-color: white;
-	width: 66%;
 }
 
 #cycle-photos {
-  position: fixed;
-  margin: 100px 0;
-  width: 375px;
-  max-height: 300px;
+  position: absolute;
+  margin: 25px 0;
+/*  height: 300px;*/
+}
+
+img {
+	border-radius: 5px;
+	max-height: 400px;
+	margin: 0 auto;
 }
 
 
 /* ---------->>> BOTTOM WRAPPER <<<-----------*/
 
 .flight  {
-	width: 33%;
 	height: 10%;
 	min-height: 200px;
-	float: left;
+
 }
 
 .weather  {
-	width: 33%;
 	height: 10%;
 	min-height: 200px;
-	float: left;
+
 }
 
 .big-mac  {
-	width: 33%;
 	height: 10%;
 	min-height: 200px;
-	float: left;
 }
 
 
@@ -190,24 +182,32 @@ li {
 
 /* ---------->>> FAVORITES <<<-----------*/
 
-#add-button {
-	color: yellow;
-	float: right;
-	font-size: 20px;
-	height: 50px;
-	margin: 5px;
-	display: none;
+
+button {
+	margin: 0 auto;
+	#add-button {
+		background-color: darkblue;
+		color: yellow;
+		text-align: right;
+		font-size: 20px;
+		height: 50px;
+		margin: 5px;
+		display: none;
+	}
+
+	#delete-button {
+		color: darkgray;
+		background-color: gray;
+		text-align: right;
+		font-size: 20px;
+		height: 50px;
+		margin: 5px;
+		display: none;
+	}
+
 }
 
-#delete-button {
-	color: darkgray;
-	background-color: gray;
-	float: right;
-	font-size: 20px;
-	height: 50px;
-	margin: 5px;
-	display: none;
-}
+
 
 /* ---------->>> TABLE <<<-----------*/
 
@@ -215,7 +215,7 @@ table {
 	border: none;
 	margin: 0 auto;
 }
-td{
+td {
 	padding: 0;
 	border: none;
 }

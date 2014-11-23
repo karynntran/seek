@@ -48,4 +48,5 @@ gem 'bitters'
 gem 'dotenv-rails'
 
 gem 'httparty'
-
+gem 'haversine'
+gem 'nearest_time_zone', '~> 0.0.3'
