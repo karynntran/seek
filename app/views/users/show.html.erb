@@ -8,14 +8,13 @@
 
 <p>
   <strong>Favorites:</strong>
-  <% @user.favorites.map do |favorite| %>
-		<div class="favorites">
-			<% destination = /(?<=destination=)[\w\+]+(?=&)/.match(favorite[:link]).to_s %> 
-			<% origin = /(?<=origin=)[\w\+]+(?=&)/.match(favorite[:link]).to_s %>
-			<% month = /(?<=month=)[\w\+]+(?=&)/.match(favorite[:link]).to_s %>
+  <% @user.favorites.map do |favorite| %>		
+		<% destination = /(?<=destination=)[\w\+]+(?=&)/.match(favorite[:link]).to_s %> 
+		<% origin = /(?<=origin=)[\w\+]+(?=&)/.match(favorite[:link]).to_s %>
+		<% month = /(?<=month=)[\w\+]+(?=&)/.match(favorite[:link]).to_s %>
+		<a class="favorites" href=<%=favorite[:link]%>>
 			<%= origin.gsub("+", " ") %> to <%= destination.gsub("+", " ") %> during <%= month %>
-
-		</div>
+		</a>
 	<% end %>
  
 </p>
