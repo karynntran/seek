@@ -17,6 +17,11 @@ class ResultsController < ApplicationController
     @low_hotel_price = hotwire_hotel_hash[:low_price]
     @high_hotel_price = hotwire_hotel_hash[:high_price]
     @avg_hotel_price = hotwire_hotel_hash[:avg_hotel_price]
+    origin_lat = City.where(name: @origin)[0].lat_long.split(',')[0].to_f
+    origin_long = City.where(name: @origin)[0].lat_long.split(',')[1].to_f
+    destination_lat = City.where(name: @destination)[0].lat_long.split(',')[0].to_f
+    destination_long = City.where(name: @destination)[0].lat_long.split(',')[1].to_f
+    @distance = Haversine.distance(origin_lat, origin_long, destination_lat, destination_long).to_miles.to_i
   end
 
 end
