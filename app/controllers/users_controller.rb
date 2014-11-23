@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  # before_action :current_user, only: [:show, :edit, :update, :destroy]
+  before_action :set_user, only: [:show, :edit, :update, :destroy]
   # GET /users
   # GET /users.json
   def index
@@ -61,20 +61,20 @@ class UsersController < ApplicationController
 
   ##FAVORITES
 
-  def check_favorites
-    current_user
-    respond_to do |format|
-      if current_user.favorites.include? params[:url]
-        format.json { render json: { status: true } }
-      else
-        format.json { render json: { status: false}  }
-      end
-    end
-  end
+  # def check_favorites
+  #   current_user
+  #   respond_to do |format|
+  #     if current_user.favorites.include? params[:url]
+  #       format.json { render json: { status: true } }
+  #     else
+  #       format.json { render json: { status: false}  }
+  #     end
+  #   end
+  # end
 
-  def add_favorites
-    current_user.favorites << params[:favorite]
-  end
+  # def add_favorites
+  #   current_user.favorites << params[:favorite]
+  # end
 
   private
     # Use callbacks to share common setup or constraints between actions.

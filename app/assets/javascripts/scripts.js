@@ -147,7 +147,7 @@ function cycleImages(){
     var url = document.URL;
     $.ajax({
       method: 'patch',
-      url: '/users/check_favorites',
+      url: '/check_favorites',
       dataType: 'json',
       data: { url: url },
       success: function(data) {

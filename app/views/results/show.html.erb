@@ -84,7 +84,7 @@ $( document ).ready(function() {
 	        e.preventDefault();
 	        $.ajax({
 	            method: 'patch',
-	            url: '/users/add_favorites',
+	            url: '/add_favorites',
 	            dataType: 'json',
 	            data: { favorite: doc.URL },
 	            success: function(data) {
