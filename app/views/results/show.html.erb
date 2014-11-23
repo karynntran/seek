@@ -39,6 +39,9 @@
 		<div class="flight">
 			<%= image_tag "flights.png", :class => "icon" %>
 			<h2>AVERAGE FLIGHT PRICE: $<%= @avg_price%> </h2>
+			<p>
+				<%= @destination.upcase %> IS <%= @distance %> MILES FROM <%= @origin.upcase %>
+			</p>
 		</div>
 
 		<!-- weather code -->
