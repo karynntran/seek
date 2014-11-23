@@ -64,48 +64,34 @@
 				<li><%= image_tag "icons/weather.png", :class => "icon" %></li>
 				<li><h2>HISTORICAL WEATHER</h2></li>
 		</ul>
-				<%= image_tag "icons/hightemp-white.png", :class => "sub-icon" %>
-				<%= image_tag "icons/lowtemp-white.png", :class => "sub-icon" %>
-				<%= image_tag "icons/precipitation-white.png", :class => "sub-icon" %>
+				<%= image_tag "icons/hightemp-white.png", :class => "sub-icon" %>High of <%= @max_temp %>
+				<%= image_tag "icons/lowtemp-white.png", :class => "sub-icon" %>Low of <%= @min_temp %>
+				<%= image_tag "icons/precipitation-white.png", :class => "sub-icon" %>Average Rainfall <%= @avg_precipitation %>
 
-				<td>High of <%= @max_temp %></td>
-				<td>Low of <%= @min_temp %></td>
-				<td>Average Rainfall <%= @avg_precipitation %></td>
-			</tr>
-		</table>
+			
+			
+			
+
 	</div>
 
 	<!-- big mac code -->	
 	<div class="big-mac hover">
-		<table>
-			<tr>
-				<td><%= image_tag "icons/burger.png", :class => "icon" %></td>
-				<td><h2>A BIG MAC IN <%=@destination.upcase %> WILL COST YOU:</h2></td>
-			</tr>
-			<tr>
-				<td><p>$ <%= @bm_index %></p></td>
-			</tr>
-		</table>
+		<ul>
+				<li><%= image_tag "icons/burger.png", :class => "icon" %></li>
+				<li><h2>A BIG MAC IN <%=@destination.upcase %> WILL COST YOU:</h2></li>
+		</ul>
+			<p>$ <%= @bm_index %></p>
 	</div>
 	<!-- hotel code -->
 	<div class="hotels hover">
-		<table>
-			<tr>
-				<td><%= image_tag "icons/hotel.png", :class => "icon" %></td>
-				<td colspan="2"><h2>HOTEL RATES IN <%=@destination.upcase%></h2></td>
-			</tr>
-			<tr>
-				<td>AVERAGE PRICE</td>
-				<td>LOWEST PRICE</td>
-				<td>HIGHEST PRICE</td>
-			</tr>
-			<tr>
-				<td>$<%= @avg_hotel_price %></td>
-				<td><%= @low_hotel_price %></td>
-				<td>$<%= @high_hotel_price %></td>
-			</tr>
+		<ul>
+				<li><%= image_tag "icons/hotel.png", :class => "icon" %></li>
+				<li><h2>HOTEL RATES IN <%=@destination.upcase%></h2></li>
+		</ul>
 
-		</table>
+				<p>AVERAGE PRICE $<%= @avg_hotel_price %></p>
+				<p>LOWEST PRICE $<%= @low_hotel_price %></p>
+				<p>HIGHEST PRICE $<%= @high_hotel_price %></p>
 	</div>
 </div>
 <!-- </div> -->
