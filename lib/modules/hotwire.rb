@@ -26,15 +26,15 @@ module Hotwire
     hotwire_hash = Hash[avg_price: avg_price, max_temp: max_temp, min_temp: min_temp, precipitation: precipitation]
   end
 
-  def self.get_distance(options)
-    origin_city = City.find_by(name: options[:origin]).name.gsub(" ", "+")
-    destination = City.find_by(name: options[:destination]).name.gsub(" ", "+")
-    url = "https://maps.googleapis.com/maps/api/directions/json?origin=#{origin_city}&destination=#{destination}&key=AIzaSyAa7bQcyNDPl9OMUZSFqfdXsHZErjDWpfk"
-    api_response = HTTParty.get(url)
-    distance_in_meters = api_response["routes"][0]['legs'][0]['distance']['value']
-    distance_in_miles = distance_in_meters*0.000621371192
-    distance_hash = Hash[distance: distance_in_miles]
-  end
+  # def self.get_distance(options)
+  #   origin_city = City.find_by(name: options[:origin]).name.gsub(" ", "+")
+  #   destination = City.find_by(name: options[:destination]).name.gsub(" ", "+")
+  #   url = "https://maps.googleapis.com/maps/api/directions/json?origin=#{origin_city}&destination=#{destination}&key=AIzaSyAa7bQcyNDPl9OMUZSFqfdXsHZErjDWpfk"
+  #   api_response = HTTParty.get(url)
+  #   distance_in_meters = api_response["routes"][0]['legs'][0]['distance']['value']
+  #   distance_in_miles = distance_in_meters*0.000621371192
+  #   distance_hash = Hash[distance: distance_in_miles]
+  # end
 
   def self.hotwire_api_key
     ENV['HotWire']

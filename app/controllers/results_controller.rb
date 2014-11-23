@@ -17,8 +17,8 @@ class ResultsController < ApplicationController
     @low_hotel_price = hotwire_hotel_hash[:low_price]
     @high_hotel_price = hotwire_hotel_hash[:high_price]
     @avg_hotel_price = hotwire_hotel_hash[:avg_hotel_price]
-    distance_hash = Hotwire.get_distance(hash)
-    @distance = distance_hash[:distance].to_i
+    # distance_hash = Hotwire.get_distance(hash)
+    # @distance = distance_hash[:distance].to_i
   end
 
 end
