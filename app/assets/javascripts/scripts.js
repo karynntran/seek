@@ -19,7 +19,9 @@ function ajaxLogin() {
             url: '/sessions',
             dataType: 'json',
             data: {user: { username: $("#user_username").val(), password: $("#user_password").val() }},
+
             success: loginSuccess
+
         });
     });
 }
@@ -152,27 +154,29 @@ function cycleImages(){
 
 // *********  favorites scripts **********
 
+  function determineFavoritesButton(status) {
+    console.log('determine button');
+    if (status === "false") {
+      $("#add-button").show()
+    } else {
+      $("#delete-button").show()
+    }
+  }
 
-function addFavoritesColor() {
-  console.log(':)');
-  $(".star").on('click', function(){
-    $(this).css({
-        'background-color': 'darkgray',
-        'color': 'lightgray',
+  function checkFavorites() {
+    console.log('check favorites');
+    var url = document.URL;
+    $.ajax({
+      method: 'patch',
+      url: '/check_favorites',
+      dataType: 'json',
+      data: { url: url },
+      success: function(data) {
+        determineFavoritesButton(data.status);
+      }
     });
-    $(this).html("[X] Remove from favorites");
-  });
-}
+  }
 
-// function addFavorites(){
-//   console.log('favorite');
-//   $.ajax {
-//     url: 'users/favorites',
-//     method: PATCH,
-//     dataType:
-//     success: function(data){
-//       var url = document.URL
-//     }
-//   }
-// }
+
+
 

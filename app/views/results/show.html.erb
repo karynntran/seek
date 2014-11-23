@@ -2,7 +2,8 @@
 <body>
 
 	<div class="favorites">
-		<button class="star">&#9733 Add to favorite searches?</button>
+		<button id="add-button">&#9733 Add to favorite searches?</button>
+		<button id="delete-button">[ X ] Remove from favorite searches?</button>
 	</div>
 
 	<div class="clearfix top-wrapper">
@@ -83,10 +84,28 @@
 
 <script>
 $( document ).ready(function() {
+   	console.log(':)');
     cycleImages();
-    addFavoritesColor();
+    checkFavorites();
+
+	function addtoFavorites() {
+	    $("#add-button").on('click', function(e) {
+	        e.preventDefault();
+	        $.ajax({
+	            method: 'patch',
+	            url: '/add_favorites',
+	            dataType: 'json',
+	            data: { favorite: doc.URL },
+	            success: function() {
+	            	console.log('yay');
+	            	checkFavorites();
+	            }
+	        });
+	    });
+	}
+
+
 });
 
-
-
 </script>
+
