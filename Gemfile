@@ -48,4 +48,4 @@ gem 'bitters'
 gem 'dotenv-rails'
 
 gem 'httparty'
-
+gem 'haversine'
