@@ -15,7 +15,7 @@
   float: left;
   display: none;
 }
-#login, #expanded_login {
+.login_button, .signup_button, #expanded_login {
   margin: 0 0.3em;
   height: 3em;
 }
@@ -27,20 +27,6 @@
   font-size: 1.3em;
   width: 10em;
 }
-
-// #user_username {
-//   position: fixed;
-//   top: 1.5em;
-//   right: 17.5em;
-//   width: 10em;
-//   font-size: 1.3em;
-//   display: none;
-// }
-
-// #user_password {
-//   @extend #user_username;
-//   right: 6.5em;
-// }
 
 .go {
   @include button(shiny);
@@ -62,6 +48,7 @@ input.go[type='submit'] {
   left: 50%;
   top: 12em;
   border-radius: .5em;
+  display: none;
 }
 
 #signup_form label {

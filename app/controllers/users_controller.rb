@@ -26,7 +26,8 @@ class UsersController < ApplicationController
     if user_params
       @user = User.create(user_params)
     else
-      user = User.create(username: params[:signup][:username])
+      binding.pry
+      @user = User.create(username: params[:signup][:username])
     end
 
     respond_to do |format|

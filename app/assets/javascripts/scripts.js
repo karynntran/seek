@@ -2,15 +2,24 @@ var origins = []
 var destinations = []
 var fadeTime = 300
 
+function changeBackground(){
+  $('#slideshow').cycle({
+    fx: 'fade',
+    speed: 1800,
+    timeout:  3500 
+  });
+}
+
 function expandLogin() {
-    $("#login").on('click', function(){
+    $(".login_button").on('click', function(){
         $("#user_username").fadeIn(400).focus();
         $("#user_password").fadeIn(400);
         $("#expanded_login").fadeIn(400);
         $(this).text('First Time?')
             .css('background-color', 'white')
             .css('color', '#3867be')
-            .addClass('signup')
+            .switchClass('login_button', 'signup_button');
+        expandSignup();
     });
 }
 
@@ -35,14 +44,90 @@ function loginSuccess(data) {
     } else {
         $("#new_user").fadeOut(fadeTime);
         $("#login").text(data.login).on('click', function(){
-            window.location.href='/users/' + data.id
+            window.location.href='/users/' + data.id;
         });
     }
 }
 
-function signup() {
-    $("")
+function validateElementLength($el, len, type) {
+    var id = $el.attr("id");
+    var $label = $("label[for="+id+"]");
+    if ($el.val().length < len) {
+        $el.css('background-color', '#ea777a');
+        $label.text(type + ' must be at least '+len+' characters...');
+        return false;
+    } else {
+        $el.css('background-color', 'white');
+        $label.text(type);
+        return true;
+    }
 }
+
+function validatePasswordsMatch() {
+    var $p1 = $("#signup_password")
+    var $p2 = $("#confirm_password")
+    if ($p1.val() === $p2.val()) {
+        $p2.css('background-color', 'white')
+        return true;
+    } else {
+        $p2.css('background-color', '#ea777a')
+        return false;
+    }
+}
+
+function keydownValidations() {
+    $("#confirm_password").on('keydown', function() {
+        validatePasswordsMatch();
+    });
+    $("#signup_username").on('keydown', function() {
+        validateElementLength($(this), 5, 'Email');
+    });
+    $("#signup_password").on('keydown', function() {
+        validateElementLength($(this), 1, 'Password');
+    });
+}
+
+function expandSignup() {
+    $(".signup_button").on('click', function(){
+        $("#signup_form").fadeIn(fadeTime);
+    });
+}
+
+function clickSignup() {
+    $("#signup_submit").on('click', function(e) {
+        e.preventDefault();
+        var validEmail = validateElementLength($("#signup_username"), 5, 'Email');
+        var validPassword = validateElementLength($("#signup_password"), 1, 'Password');
+        validatePasswordsMatch();
+        keydownValidations();
+        if (validEmail && validPassword && validatePasswordsMatch()) {
+            submitSignup();
+        }
+    });
+}
+function cancelSignup() {
+    $("#signup_cancel").on('click', function(e) {
+        e.preventDefault();
+        $("#signup_form").fadeOut(fadeTime);
+    });
+}
+
+function submitSignup() {
+    $.ajax({
+        url: '/users',
+        method: 'POST',
+        dataType: 'json',
+        data: {
+            username: $("#signup_username").val(),
+            password: $("#signup_password").val()
+        },
+        success: function() {
+            $("#signup_form").fadeOut(fadeTime);
+            debugger
+        }
+    })
+}
+
 
 
 // ****** search form *******
@@ -99,22 +184,14 @@ function validateOrigin(value) {
       $("#origin_error").fadeOut(fadeTime);
       showMonthandGo();      
     } 
-};
+}
 
 function showMonthandGo() {
   $("#month_label").fadeIn(fadeTime);
-  $("#month").fadeIn(fadeTime).focus();
+  $("#month").fadeIn(fadeTime)
   $(".go").fadeIn(fadeTime);
   setInterval(function() { validateAll(); },1000) 
 }
-
-// function clickGo() {
-//   .on('click', function(e){
-//     if (!validateAll()) {
-//       e.preventDefualt();
-//     }
-//   });
-// };
 
 function validateAll() {
   if ($.inArray($("#origin").val(), origins) === -1) {
@@ -132,24 +209,7 @@ function validateAll() {
   }
 };
 
-function changeBackground(){
-  $('#slideshow').cycle({
-    fx: 'fade',
-    speed: 1800,
-    timeout:  3500 
-  });
-};
 
-function loadSearchPage() {
-    ajaxLogin();
-    fetchData();
-    inputListener();
-    $("input:submit.go").prop( "disabled", true );
-    validateDestination();
-    validateOrigin();
-    changeBackground();
-    expandLogin();
-};
 
 
 // *********  flickr images **********
@@ -188,5 +248,17 @@ function cycleImages(){
   }
 
 
+// ******* document ready functions ********
 
-
+function loadSearchPage() {
+    ajaxLogin();
+    fetchData();
+    inputListener();
+    $("input:submit.go").prop( "disabled", true );
+    validateDestination();
+    validateOrigin();
+    changeBackground();
+    expandLogin();
+    clickSignup();
+    cancelSignup();
+};

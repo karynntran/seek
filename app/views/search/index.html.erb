@@ -19,7 +19,7 @@
       <%= f.submit("Log In", id: 'expanded_login') %>
     <% end %>
   </div>
-  <button id="login">Log In</button>
+  <button class="login_button">Log In</button>
 </div>
 
 
@@ -44,8 +44,8 @@
   <%= text_field_tag 'signup[username]', nil, placeholder: 'travler@example.com...' %>
   <%= label_tag 'signup[password]', 'Password' %>
   <%= password_field_tag 'signup[password]' %>
-  <%= label_tag 'signup[password]', 'Confirm Password' %>
-  <%= password_field_tag 'signup[password]' %>
+  <%= label_tag 'confirm[password]', 'Confirm Password' %>
+  <%= password_field_tag 'confirm[password]' %>
   <%= submit_tag('Sign Up', id: 'signup_submit') %>
   <%= button_tag 'Cancel', id: 'signup_cancel' %>
 <% end %>
