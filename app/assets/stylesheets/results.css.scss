@@ -172,22 +172,22 @@ img {
 }
 
 
-/* ---------->>> NAVIGATION <<<-----------*/
+/* ---------->>> HEADERS <<<-----------*/
 
 ul {
-	text-align: right;
+	text-align: left;
 }
 
 li {
-	display: inline;
-	color: #FFFFFF;
-	border: white solid 2px;
-	font-size: 15px;
-	padding: 0 4px;
+	display: inline-block;
+	vertical-align: middle;
 }
 
 /* ---------->>> FAVORITES <<<-----------*/
 
+.favorites {
+	float: right;
+}
 
 button {
 	margin: 0 auto;
@@ -214,18 +214,6 @@ button {
 }
 
 
-
-/* ---------->>> TABLE <<<-----------*/
-
-table {
-	border: none;
-	margin: 0 auto;
-}
-td {
-	padding: 0;
-	border: none;
-}
-
 /* ---------->>> CLEARFIX <<<-----------*/
 
 
@@ -244,4 +232,12 @@ td {
 /* close commented backslash hack */
 
 
+
+
+/*<!-- LOGIN CODE HERE -->
+
+
+
+
+<!-- LOGIN CODE HERE -->*/
 
