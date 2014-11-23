@@ -3,7 +3,6 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    binding.pry
     @users = User.all
   end
 
@@ -62,9 +61,20 @@ class UsersController < ApplicationController
 
   ##FAVORITES
 
-  def favorites
-    favorite = Favorite.new
-  end
+  # def check_favorites
+  #   current_user
+  #   respond_to do |format|
+  #     if current_user.favorites.include? params[:url]
+  #       format.json { render json: { status: true } }
+  #     else
+  #       format.json { render json: { status: false}  }
+  #     end
+  #   end
+  # end
+
+  # def add_favorites
+  #   current_user.favorites << params[:favorite]
+  # end
 
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -76,4 +86,5 @@ class UsersController < ApplicationController
     def user_params
       params.require(:user).permit(:username, :password, :favorites)
     end
+
 end

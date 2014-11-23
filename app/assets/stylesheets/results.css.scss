@@ -187,12 +187,23 @@ li {
 
 /* ---------->>> FAVORITES <<<-----------*/
 
-.star {
+#add-button {
 	color: yellow;
 	float: right;
 	font-size: 20px;
 	height: 50px;
 	margin: 5px;
+	display: none;
+}
+
+#delete-button {
+	color: darkgray;
+	background-color: gray;
+	float: right;
+	font-size: 20px;
+	height: 50px;
+	margin: 5px;
+	display: none;
 }
 
 /* ---------->>> CLEARFIX <<<-----------*/
