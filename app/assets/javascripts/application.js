@@ -15,5 +15,6 @@
 //= require jquery-ui/effect-shake
 //= require jquery_ujs
 //= require jquery.cycle.all.2.74
+//= require jcarousel
 //= require_tree .
 

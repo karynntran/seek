@@ -42,27 +42,20 @@
 
 <div class="clearfix photo-wrapper">
 	<!-- photo code -->
-	<div class="left-photo">
-		<div id="photo">
+	
+	<div class="jcarousel-wrapper">
+		<div class="jcarousel">
 			<ul>
-				<li><%= image_tag "icons/photos.png", :class => "icon" %><li>
-				<li><h2>MOST POPULAR FLICKR PHOTOS TAKEN IN <%=@destination.upcase%></h2></li>
+				<% @photos.each do |photo| %>
+					<li><img src=<%= photo %>></li>
+				<% end %>
 			</ul>
 		</div>
 
-		<div id="tiled-photo">
-			<% @photos.each do |photo| %>
-			<img src=<%= photo %> width="90px">
-			<% end %>
-		</div>
-	</div>
+		<a href="#" class="jcarousel-control-prev">&lsaquo;</a>
+		<a href="#" class="jcarousel-control-next">&rsaquo;</a>
 
-	<div class="right-photo">
-		<div id="cycle-photos">
-			<% @photos.each do |photo| %>
-			<img src=<%= photo %>>
-			<% end %>
-		</div>
+		
 	</div>
 </div>
 
@@ -127,8 +120,130 @@ $( document ).ready(function() {
 	addtoFavorites();
 	deletefromFavorites();
 	loadLogin();
+
+	var jcarousel = $('.jcarousel');
+
+	jcarousel
+	.on('jcarousel:reload jcarousel:create', function () {
+		var width = jcarousel.innerWidth();
+
+		if (width >= 600) {
+			width = width / 3;
+		} else if (width >= 350) {
+			width = width / 2;
+		}
+
+		jcarousel.jcarousel('items').css('width', width + 'px');
+	})
+	.jcarousel({
+		wrap: 'circular'
+	});
+
+	$('.jcarousel-control-prev')
+	.jcarouselControl({
+		target: '-=1'
+	});
+
+	$('.jcarousel-control-next')
+	.jcarouselControl({
+		target: '+=1'
+	});
+
+	$('.jcarousel-pagination')
+	.on('jcarouselpagination:active', 'a', function() {
+		$(this).addClass('active');
+	})
+	.on('jcarouselpagination:inactive', 'a', function() {
+		$(this).removeClass('active');
+	})
+	.on('click', function(e) {
+		e.preventDefault();
+	})
+	.jcarouselPagination({
+		perPage: 1,
+		item: function(page) {
+			return '<a href="#' + page + '">' + page + '</a>';
+		}
+	});
 });
 
 
 
 </script>
+
+<style>
+	.jcarousel-wrapper {
+    margin: 20px auto;
+    position: relative;
+    border: 10px solid #fff;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-box-shadow: 0 0 2px #999;
+    -moz-box-shadow: 0 0 2px #999;
+    box-shadow: 0 0 2px #999;
+}
+
+/** Carousel **/
+
+.jcarousel {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.jcarousel ul {
+    width: 20000em;
+    position: relative;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.jcarousel li {
+    width: 200px;
+    float: left;
+    border: 1px solid #fff;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.jcarousel img {
+    display: block;
+    max-width: 100%;
+    height: auto !important;
+}
+
+/** Carousel Controls **/
+
+.jcarousel-control-prev,
+.jcarousel-control-next {
+    position: absolute;
+    top: 50%;
+    margin-top: -15px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    background: #4E443C;
+    color: #fff;
+    text-decoration: none;
+    text-shadow: 0 0 1px #000;
+    font: 24px/27px Arial, sans-serif;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    border-radius: 30px;
+    -webkit-box-shadow: 0 0 4px #F0EFE7;
+    -moz-box-shadow: 0 0 4px #F0EFE7;
+    box-shadow: 0 0 4px #F0EFE7;
+}
+
+.jcarousel-control-prev {
+    left: 15px;
+}
+
+.jcarousel-control-next {
+    right: 15px;
+}
+
+</style>
