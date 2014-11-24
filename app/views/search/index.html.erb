@@ -13,6 +13,9 @@
 
 <div class="searchbox ui-widget">
   
+  <div class="errors">
+    <%= flash[:error] if flash[:error] %>
+  </div>
   <%= form_tag("/result", method: "get") do %>
     <div class='ui-menu'>
       <p class='form_error' id="destination_error">Please enter a valid destination...</p>
