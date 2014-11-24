@@ -24,7 +24,8 @@
 	<!-- CITY -->
 
 	<div class="city">
-		<h1><%= @destination %></h1>
+		<h1 class="city-name"><%= @destination %></h1>
+		<h1>LOCAL TIME IS</h1> <%= @time %>
 	</div>
 
 		<!-- FLIGHT -->
@@ -33,8 +34,8 @@
 			<%= image_tag "icons/flights.png", :class => "icon" %>
 			<h1>FLIGHT INFO</h1>
 				<%= @destination.upcase %> IS <%= @distance %> MILES FROM <%= @origin.upcase %>
-			<h1>AVERAGE FLIGHT PRICE:</h1> $<%= @avg_price%> 
-			<h1>LOCAL TIME IS:</h1> <%= @time %>
+			<h1>AVERAGE FLIGHT PRICE</h1> $<%= @avg_price%> 
+			<h1>LOCAL TIME IS</h1> <%= @time %>
 		</div>
 
 		<!-- WEATHER -->
@@ -51,7 +52,7 @@
 
 		<div class="big-mac">
 			<%= image_tag "icons/burger.png", :class => "icon" %>
-			<h1>A BIG MAC IN</h1> <%=@destination.upcase %> <%= @bm_index %>
+			<h1>A BIG MAC IN</h1> <%=@destination.upcase %>> <%= @bm_index %>
 		</div>
 
 		<!-- HOTEL -->
