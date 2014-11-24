@@ -3,10 +3,10 @@
 	<!-- NAV BAR -->
 <header>
   <%= form_tag("/result", method: "get", id: 'reroute_form') do %>
-    <%= label_tag :destination, 'FROM:' %>
-    <%= select_tag(:destination, options_for_select(@destinations, @destination)) %>
-    <%= label_tag :origin, 'TO:' %>
+    <%= label_tag :origin, 'FROM:' %>
     <%= select_tag(:origin, options_for_select(@origins, @origin)) %>      
+    <%= label_tag :destination, 'TO:' %>
+    <%= select_tag(:destination, options_for_select(@destinations, @destination)) %>
     <%= label_tag :month, 'IN:' %>
     <%= select_tag :month, options_for_select(Date::MONTHNAMES[1..-1], @month) %>
     <%= submit_tag("GO") %>
