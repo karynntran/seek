@@ -1,9 +1,10 @@
 <div class="results">	
 
 	<!-- NAV BAR -->
+<header>
 
-	<div class="top_right">
-		<div class='field'>
+	<div class="clearfix top_right">
+		<div class="field">
 			<%= form_for @user, url: {controller: 'sessions', action: 'create'} do |f| %>
 			<%= f.email_field(:username, placeholder: 'email...') %>
 			<%= f.password_field(:password, placeholder: 'password...') %>
@@ -11,9 +12,14 @@
 			<% end %>
 		</div>
 		<button class="login_button" id="top_button">Log In</button>
+
+		<div class="favorites">
+			<button id="add-button">&#9733 Add to favorite searches?</button>
+			<button id="delete-button">[ X ] Remove from favorite searches?</button>
+		</div>
 	</div>
 
-	<header>
+
 		
 		<!-- LOGIN CODE HERE -->
 
@@ -61,10 +67,6 @@
 			<h3>LOCAL TIME IS <%= @time %></h3>
 		</div>
 
-		<div class="favorites">
-			<button id="add-button">&#9733 Add to favorite searches?</button>
-			<button id="delete-button">[ X ] Remove from favorite searches?</button>
-		</div>
 	</div>
 
 	<!-- FLIGHT -->
