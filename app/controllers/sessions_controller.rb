@@ -19,11 +19,11 @@ class SessionsController < ApplicationController
       user = User.find_by({username: params[:user][:username]})
       if user && user.authenticate(params[:user][:password])
         session[:user_id] = user.id
-        # redirect_to user_path(user)
+        format.html { redirect_to user_path(user) }
         format.json { render json: {status: 'created', username: user.username, id: user.id} }
       else
         session[:user_id] = nil
-        # redirect_to root_path
+        format.html { redirect_to root_path }
         format.json { render json: {status: 'failed'} }
       end
 
@@ -31,7 +31,9 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    session[:current_user_id] = nil
+    binding.pry
+    session[:user_id] = nil
+    binding.pry
     redirect_to root_path
   end
 end
