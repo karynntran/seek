@@ -2,14 +2,15 @@ module Photo
 
   def self.get_photos(options)
     lat_long = City.find_by(name: options[:destination]).lat_long
-
-    api = HTTParty.get("https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=63cc42384b112fe6bd9597dd5e25cc0f&lat=#{lat_long.split(',')[0]}&lon=#{lat_long.split(',')[1]}&format=rest&safe_search=1&extras=url_c&sort=interestingness-desc")
+    api = HTTParty.get("https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=63cc42384b112fe6bd9597dd5e25cc0f&lat=#{lat_long.split(',')[0]}&lon=#{lat_long.split(',')[1]}&format=rest&safe_search=1&extras=url_l&sort=interestingness-desc&orientation=landscape&width=1024&per_page=300")
 
     photo_array = api['rsp']['photos']['photo'].map do |photo|
-      photo['url_c'] ? photo['url_c'] : nil
+      if photo['height_l'].to_i.between?(680, 685)
+        photo['url_l'] ? photo['url_l'] : nil
+      end
     end.compact
 
-    photo_array.length > 15 ? photo_array[0..19] : photo_array
+    photo_array.length > 19 ? photo_array[0..19] : photo_array
   end
 end
 
