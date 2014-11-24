@@ -1,8 +1,6 @@
-<%= stylesheet_link_tag '/results/results' %>
+<div class="results">	
 
-<header>
-	
-<!-- LOGIN CODE HERE -->
+	<!-- NAV BAR -->
 
 <div class="top_right">
   <div class='field'>
@@ -15,6 +13,11 @@
   <button class="login_button" id="top_button">Log In</button>
 </div>
 
+	<header>
+		
+	<!-- LOGIN CODE HERE -->
+
+
 <%= form_tag '/users', method: 'post', id: 'signup_form' do %>
   <%= label_tag 'signup[username]', 'Email' %>
   <%= text_field_tag 'signup[username]', nil, placeholder: 'travler@example.com...' %>
@@ -26,19 +29,8 @@
   <%= button_tag 'Cancel', id: 'signup_cancel' %>
 <% end %>
 
-<!-- LOGIN CODE HERE -->
 
-	<div class="favorites">
-		<button id="add-button">&#9733 Add to favorite searches?</button>
-		<button id="delete-button">[ X ] Remove from favorite searches?</button>
-	</div>
-
-</header>
-
-<div class="city">
-	<h1><%= @destination %></h1>
-	<br>
-</div>
+	<!-- LOGIN CODE HERE -->
 
 <div class="clearfix photo-wrapper">
 	<!-- photo code -->
@@ -59,58 +51,69 @@
 	</div>
 </div>
 
-<div class="clearfix bottom-wrapper">
+		<div class="photos">
+		</div>
 
-	<!-- flight code-->
-	<div class="flight hover">
-		<ul>
-				<li><%= image_tag "icons/flights.png", :class => "icon" %></li>
-				<li><h2>FLIGHT INFO</h2></li>
-		</ul>
-			<%= @destination.upcase %> IS <%= @distance %> MILES FROM <%= @origin.upcase %>
-			AVERAGE FLIGHT PRICE: $<%= @avg_price%> 
-			LOCAL TIME IS: <%= @time %>
+		<div class="favorites">
+			<button id="add-button">&#9733 Add to favorite searches?</button>
+			<button id="delete-button">[ X ] Remove from favorite searches?</button>
+		</div>
+
+	</header>
+
+	<!-- CITY -->
+
+	<div class="city">
+		<h1 class="city-name"><%= @destination %></h1>
+		<h1>LOCAL TIME IS</h1> <%= @time %>
 	</div>
 
-	<!-- weather code -->
-	<div class="weather hover">
-		<ul>
-				<li><%= image_tag "icons/weather.png", :class => "icon" %></li>
-				<li><h2>HISTORICAL WEATHER</h2></li>
-		</ul>
-				<%= image_tag "icons/hightemp-white.png", :class => "sub-icon" %>High of <%= @max_temp %>
-				<%= image_tag "icons/lowtemp-white.png", :class => "sub-icon" %>Low of <%= @min_temp %>
-				<%= image_tag "icons/precipitation-white.png", :class => "sub-icon" %>Average Rainfall <%= @avg_precipitation %>
+		<!-- FLIGHT -->
+	<div class="content">
+		<div class="flight">
+			<%= image_tag "icons/flights.png", :class => "icon" %>
+			<h1>FLIGHT INFO</h1>
+				<%= @destination.upcase %> IS <%= @distance %> MILES FROM <%= @origin.upcase %>
+			<h1>AVERAGE FLIGHT PRICE</h1> $<%= @avg_price%> 
+			<h1>LOCAL TIME IS</h1> <%= @time %>
+		</div>
 
-			
-			
-			
 
+		<!-- WEATHER -->
+
+		<div class="weather">
+			<%= image_tag "icons/weather.png", :class => "icon" %>
+			<h1>HISTORICAL WEATHER</h1>
+					<%= image_tag "icons/hightemp-white.png", :class => "sub-icon" %>High of <%= @max_temp %>
+					<%= image_tag "icons/lowtemp-white.png", :class => "sub-icon" %>Low of <%= @min_temp %>
+					<%= image_tag "icons/precipitation-white.png", :class => "sub-icon" %>Average Rainfall <%= @avg_precipitation %>
+		</div>
+
+		<!-- BIG MAC -->
+
+		<div class="big-mac">
+			<%= image_tag "icons/burger.png", :class => "icon" %>
+			<h1>A BIG MAC IN</h1> <%=@destination.upcase %>> <%= @bm_index %>
+		</div>
+
+		<!-- HOTEL -->
+
+		<div class="hotels ">
+			<%= image_tag "icons/hotel.png", :class => "icon" %>
+			<h1>AVERAGE HOTEL RATES IN <%=@destination.upcase%></h1>
+
+				<figure class="hotel_rates">	
+					<span>$<%= @low_hotel_price %></span>
+					<span id='average_rate'>$<%= @avg_hotel_price %></span>
+					<span>$<%= @high_hotel_price %></span>
+				</figure>
+		</div>
 	</div>
 
-	<!-- big mac code -->	
-	<div class="big-mac hover">
-		<ul>
-			<li><%= image_tag "icons/burger.png", :class => "icon" %></li>
-			<li><h2>A BIG MAC IN <%=@destination.upcase %> WILL COST YOU:</h2></li>
-		</ul>
-		<p>$ <%= @bm_index %></p>
-	</div>
-	<!-- hotel code -->
-	<div class="hotels hover">
-		<ul>
-			<li><%= image_tag "icons/hotel.png", :class => "icon" %></li>
-			<li><h2>AVERAGE HOTEL RATES IN <%=@destination.upcase%></h2></li>
-		</ul>
-
-		<figure class="hotel_rates">	
-			<span>$<%= @low_hotel_price %></span>
-			<span id='average_rate'>$<%= @avg_hotel_price %></span>
-			<span>$<%= @high_hotel_price %></span>
-		</figure>
-	</div>
+	<footer>
+		<p>SEEK</p>
+	</footer>
 </div>
-<!-- </div> -->
 
 <script>
 $( document ).ready(function() {
