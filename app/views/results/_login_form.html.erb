@@ -1,0 +1,7 @@
+<div class="field">
+  <%= form_for @user, url: {controller: 'sessions', action: 'create'} do |f| %>
+    <%= f.email_field(:username, placeholder: 'email...') %>
+    <%= f.password_field(:password, placeholder: 'password...') %>
+    <%= f.submit("Log In", id: 'expanded_login') %>
+  <% end %>
+</div>

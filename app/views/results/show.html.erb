@@ -3,14 +3,22 @@
 	<!-- NAV BAR -->
 <header>
 
+  <%= form_tag("/result", method: "get") do %>
+    <%= select_tag(:destination, City.all, :name, :name) %>
+    <%= text_field_tag(:destination, nil, placeholder: 'Where To?') %>
+    </div>
+    <p class='form_error' id='origin_error'>Please enter a valid origin</p>
+    <%= text_field_tag(:origin, nil, placeholder: 'Where From?') %>
+          
+    <h4 id="month_label">Tell me when to go...</h2>
+    <%= select_tag :month, options_for_select(Date::MONTHNAMES[1..-1], "July") %>
+    <%= submit_tag("GO", class: 'go') %>
+  <% end %>  
+
 	<div class="clearfix top_right">
-		<div class="field">
-			<%= form_for @user, url: {controller: 'sessions', action: 'create'} do |f| %>
-			<%= f.email_field(:username, placeholder: 'email...') %>
-			<%= f.password_field(:password, placeholder: 'password...') %>
-			<%= f.submit("Log In", id: 'expanded_login') %>
-			<% end %>
-		</div>
+		
+    <%= render 'login_form' %>
+
 		<button class="login_button" id="top_button">Log In</button>
 
 		<div class="favorites">
