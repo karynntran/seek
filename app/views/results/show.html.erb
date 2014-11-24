@@ -85,23 +85,24 @@
 		<div class="weather">
 			<%= image_tag "icons/weather.png", :class => "icon" %>
 			<h1>HISTORICAL WEATHER</h1>
-			<%= image_tag "icons/hightemp-white.png", :class => "sub-icon" %>High of <%= @max_temp %>
-			<%= image_tag "icons/lowtemp-white.png", :class => "sub-icon" %>Low of <%= @min_temp %>
-			<%= image_tag "icons/precipitation-white.png", :class => "sub-icon" %>Average Rainfall <%= @avg_precipitation %>
+			<div><%= image_tag "icons/hightemp-white.png", :class => "sub-icon" %>High of <%= @max_temp %></div>
+			<div><%= image_tag "icons/lowtemp-white.png", :class => "sub-icon" %>Low of <%= @min_temp %></div>
+			<div><%= image_tag "icons/precipitation-white.png", :class => "sub-icon" %>Average Rainfall <%= @avg_precipitation %></div>
 		</div>
 
 		<!-- BIG MAC -->
 
 		<div class="big-mac">
 			<%= image_tag "icons/burger.png", :class => "icon" %>
-			<h1>A BIG MAC IN</h1> <%=@destination.upcase %>> <%= @bm_index %>
+			<h1>A BIG MAC IN <%=@destination.upcase %></h1> 
+			<figure><span><%= @bm_index %></span></figure>
 		</div>
 
 		<!-- HOTEL -->
 
 		<div class="hotels ">
 			<%= image_tag "icons/hotel.png", :class => "icon" %>
-			<h1>AVERAGE HOTEL RATES IN <%=@destination.upcase%></h1>
+			<h1>AVERAGE HOTEL RATES</h1>
 
 			<figure class="hotel_rates">	
 				<span>$<%= @low_hotel_price %></span>
