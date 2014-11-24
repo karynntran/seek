@@ -1,0 +1,10 @@
+<%= form_tag '/users', method: 'post', id: 'signup_form' do %>
+  <%= label_tag 'signup[username]', 'Email' %>
+  <%= email_field_tag 'signup[username]', nil, placeholder: 'travler@example.com...' %>
+  <%= label_tag 'signup[password]', 'Password' %>
+  <%= password_field_tag 'signup[password]' %>
+  <%= label_tag 'confirm[password]', 'Confirm Password' %>
+  <%= password_field_tag 'confirm[password]' %>
+  <%= submit_tag('Sign Up', id: 'signup_submit') %>
+  <%= button_tag 'Cancel', id: 'signup_cancel' %>
+<% end %>
