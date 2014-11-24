@@ -2,7 +2,8 @@ module Hotwire
 
   def self.get_hotel_info(options)
     destination = City.find_by(name: options[:destination]).airport
-    url = "http://api.hotwire.com/v1/deal/hotel?apikey=sw32n4fn2u93rqan8cg92f3x&dest=#{destination}"
+    url = "http://api.hotwire.com/v1/deal/hotel?apikey=#{api_key}&dest=#{destination}"
+    binding.pry
     api_response = HTTParty.get(url)
 
     array_of_hotels = api_response["Hotwire"]["Result"]["HotelDeal"]
@@ -18,7 +19,7 @@ module Hotwire
     month = Date::MONTHNAMES.index(options[:month])
     year = Time.now.year - 1
     days = Time.days_in_month(month, year)
-    url = "http://api.hotwire.com/v1/tripstarter/air?apikey=sw32n4fn2u93rqan8cg92f3x&origin=#{origin_city}&dest=#{destination}&startdate=#{month}/1/#{year}&enddate=#{month}/#{days}/#{year}"
+    url = "http://api.hotwire.com/v1/tripstarter/air?apikey=#{api_key}&origin=#{origin_city}&dest=#{destination}&startdate=#{month}/1/#{year}&enddate=#{month}/#{days}/#{year}"
     api_response = HTTParty.get(url)
       if api_response['Hotwire']['Result'] == nil
         return "failed"
@@ -39,7 +40,7 @@ module Hotwire
     hotwire_hash = Hash[avg_price: avg_price, max_temp: max_temp, min_temp: min_temp, precipitation: precipitation]
   end
 
-  def self.hotwire_api_key
+  def self.api_key
     ENV['HotWire']
   end
 
