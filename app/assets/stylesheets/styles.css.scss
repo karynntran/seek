@@ -2,6 +2,7 @@
 $circle_size: 43px;
 $green-icon: #4f612a;
 
+
 body {
   background-color: white;
   margin: 0 auto;
@@ -204,16 +205,37 @@ button {
 
 .users {
   header {
-  
     @include span-columns(12);
-    height:100px;
-    padding: 0;
+    height:120px;
+    padding: 10px;
     top: 0;
     left: 0;
-    background-color: darkblue;
-    color: white;
+    background-color: lightgray;
+    color: black;
     font-size: 20px;
-  
+    display: inline;
+    vertical-align: center;
+    text-align: right;
+    .logout {
+      padding: 5px;
+    }
+    .user-icon {
+      border-radius: 50%;
+      width:90px;
+      height: 90px;
+      float: left;
+      margin: 10px 10px;
+    }
+  }
+  h1 {
+    padding: 20px;
+  }
+  .saved {
+    background-color: #336633;
+    width: 100%;
+    text-align: left;
+    color: white;
+    vertical-align: center;
   }
   .user-action {
     padding: 5px;
@@ -223,9 +245,21 @@ button {
     background-image: url('/assets/noise_lines/noise_lines.png');
     border-radius: 10px;
     width: fit-content;
+    min-width: 400px;
     display: inline-block;
     box-shadow: 3px 3px 1px #888888;
     margin: 10px 10px;
+  }
+  .delete-button {
+    padding: 8px;
+    border-radius: 5px;
+    font-size: 12px;
+  }
+  ul {
+
+  }
+  li {
+    display: inline-block;
   }
 }
 
@@ -292,5 +326,10 @@ button {
   .form_error {
     color: red;
     display: none;
+  }
+
+  h2 {
+    color: lightgray;
+    text-glow: 0 0 3px #FFF000;
   }
 }

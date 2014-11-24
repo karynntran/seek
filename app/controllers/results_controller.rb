@@ -10,8 +10,8 @@ class ResultsController < ApplicationController
     @bm_index = City.where(name: @destination)[0].bm_index
     hotwire_flight_hash = Hotwire.get_flight_info(hash)
 
-    @origins = City.where(origin: true).map{ |city| [city.name, city.id] }
-    @destinations = City.all.map{ |city| [city.name, city.id] }
+    @origins = City.where(origin: true).map{ |city| city.name }
+    @destinations = City.all.map{ |city| city.name }
 
     if hotwire_flight_hash == "failed"
         flash.now[:error] = "Unfortunately, We could not find any flights to your destination.  Please search for another."
