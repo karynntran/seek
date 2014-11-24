@@ -9,6 +9,7 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+    @session = session
   end
 
   # GET /users/new

@@ -49,6 +49,7 @@ input.go[type='submit'] {
   top: 12em;
   border-radius: .5em;
   display: none;
+  z-index: 100;
 }
 
 #signup_form label {
