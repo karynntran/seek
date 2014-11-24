@@ -22,6 +22,8 @@
 			<li><button class="user"><a class="favorites" href=<%=favorite[:link]%>>
 				<%= origin.gsub("+", " ") %> to <%= destination.gsub("+", " ") %> during <%= month %>
 			</a></button></li>
+			<li><%= button_to "delete", {:controller => :favorites,
+      		:action => 'destroy', :id => favorite.id }, :method => :delete %></li>
 		</ul>
 		<% end %>
 	</div>

@@ -27,5 +27,10 @@ class FavoritesController < ApplicationController
       format.json {render json: { status: "OK"} }
     end
   end
+
+  def destroy
+    Favorite.destroy(params[:id])
+    redirect_to current_user
+  end
 end
 
