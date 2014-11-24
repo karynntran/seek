@@ -1,0 +1,38 @@
+
+$circle_size: 43px;
+$green-icon: #4f612a;
+
+h1 {
+  font-size: 15px;
+}
+
+/* ---------->>> RESULTS <<<-----------*/
+.results {
+  height: 100%;
+  background-color: white;
+  color: darkblue;
+  header {
+    @include span-columns(12);
+    height:20%;
+    background-color: darkblue;
+  }
+  footer {
+    @include span-columns(12);
+    height: 5%;
+    background-color: darkgray;
+    bottom: 0px;
+    left: 0px;
+    position: fixed;
+  }
+  .content {
+    @include span-columns(12);
+    height: 70%;
+    .flight, .weather, .big-mac, .hotels {
+      @include span-columns(3);
+      height: 200px;
+      width: 350px;
+    }
+  }
+}
+
+

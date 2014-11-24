@@ -1,7 +1,33 @@
-$primary-color: #6aa3df;
-$circle_size: 43px;
-$green-icon: #4f612a;
-/* ---------->>> PRIMARY STRUCTURE <<<-----------*/
+<div class="clearfix photo-wrapper">
+	<!-- photo code -->
+	<div class="left-photo">
+		<div id="photo">
+			<ul>
+				<li><%= image_tag "icons/photos.png", :class => "icon" %><li>
+				<li><h2>MOST POPULAR FLICKR PHOTOS TAKEN IN <%=@destination.upcase%></h2></li>
+			</ul>
+		</div>
+
+		<div id="tiled-photo">
+			<% @photos.each do |photo| %>
+			<img src=<%= photo %> width="90px">
+			<% end %>
+		</div>
+	</div>
+
+	<div class="right-photo">
+		<div id="cycle-photos">
+			<% @photos.each do |photo| %>
+			<img src=<%= photo %>>
+			<% end %>
+		</div>
+	</div>
+</div> --> -->
+
+
+
+
+
 
 
 .container {
@@ -265,4 +291,3 @@ button {
 
 
 <!-- LOGIN CODE HERE -->*/
-
