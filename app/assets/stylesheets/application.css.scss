@@ -2,6 +2,7 @@
 @import "base/base";
 @import "neat";
 @import "jquery-ui";
-@import "search";
-@import "results";
-@import "users";
+@import "search/search";
+@import "results/results";
+@import "users/users";
+@import "favorites/favorites";

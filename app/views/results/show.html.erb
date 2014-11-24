@@ -1,3 +1,5 @@
+<%= stylesheet_link_tag '/results/results' %>
+
 <header>
 	
 <!-- LOGIN CODE HERE -->
@@ -77,21 +79,23 @@
 	<!-- big mac code -->	
 	<div class="big-mac hover">
 		<ul>
-				<li><%= image_tag "icons/burger.png", :class => "icon" %></li>
-				<li><h2>A BIG MAC IN <%=@destination.upcase %> WILL COST YOU:</h2></li>
+			<li><%= image_tag "icons/burger.png", :class => "icon" %></li>
+			<li><h2>A BIG MAC IN <%=@destination.upcase %> WILL COST YOU:</h2></li>
 		</ul>
-			<p>$ <%= @bm_index %></p>
+		<p>$ <%= @bm_index %></p>
 	</div>
 	<!-- hotel code -->
 	<div class="hotels hover">
 		<ul>
-				<li><%= image_tag "icons/hotel.png", :class => "icon" %></li>
-				<li><h2>HOTEL RATES IN <%=@destination.upcase%></h2></li>
+			<li><%= image_tag "icons/hotel.png", :class => "icon" %></li>
+			<li><h2>AVERAGE HOTEL RATES IN <%=@destination.upcase%></h2></li>
 		</ul>
 
-				<p>AVERAGE PRICE $<%= @avg_hotel_price %></p>
-				<p>LOWEST PRICE $<%= @low_hotel_price %></p>
-				<p>HIGHEST PRICE $<%= @high_hotel_price %></p>
+		<figure class="hotel_rates">	
+			<span>$<%= @low_hotel_price %></span>
+			<span id='average_rate'>$<%= @avg_hotel_price %></span>
+			<span>$<%= @high_hotel_price %></span>
+		</figure>
 	</div>
 </div>
 <!-- </div> -->
