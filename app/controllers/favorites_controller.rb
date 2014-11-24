@@ -16,7 +16,7 @@ class FavoritesController < ApplicationController
     respond_to do |format|
       favorite = Favorite.create({user_id: current_user.id, link: params[:favorite]})
       current_user.favorites << favorite
-    format.json { render json: { status: "OK" } }
+      format.json { render json: { status: "OK" } }
     end
   end
 
@@ -24,7 +24,7 @@ class FavoritesController < ApplicationController
     respond_to do |format|
       favorite = Favorite.where({user_id: current_user.id, link: params[:remove]})
       Favorite.destroy(favorite)
-    format.json {render json: { status: "OK"} }
+      format.json {render json: { status: "OK"} }
     end
   end
 end

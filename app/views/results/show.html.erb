@@ -19,45 +19,23 @@
 		</div>
 	</div>
 
+  <%= render 'signup_form' %>
 
-		
-		<!-- LOGIN CODE HERE -->
-
-
-		<%= form_tag '/users', method: 'post', id: 'signup_form' do %>
-		<%= label_tag 'signup[username]', 'Email' %>
-		<%= text_field_tag 'signup[username]', nil, placeholder: 'travler@example.com...' %>
-		<%= label_tag 'signup[password]', 'Password' %>
-		<%= password_field_tag 'signup[password]' %>
-		<%= label_tag 'confirm[password]', 'Confirm Password' %>
-		<%= password_field_tag 'confirm[password]' %>
-		<%= submit_tag('Sign Up', id: 'signup_submit') %>
-		<%= button_tag 'Cancel', id: 'signup_cancel' %>
-		<% end %>
-
-
-		<!-- LOGIN CODE HERE -->
-
-		<div class="clearfix">
-			<!-- photo code -->
-
-			<div class="jcarousel-wrapper">
-				<div class="jcarousel">
-					<ul>
-						<% @photos.each do |photo| %>
-						<li><img src=<%= photo %>></li>
-						<% end %>
-					</ul>
-				</div>
-
-				<a href="#" class="jcarousel-control-prev">&lsaquo;</a>
-				<a href="#" class="jcarousel-control-next">&rsaquo;</a>
-
-
+	<div class="clearfix">
+		<div class="jcarousel-wrapper">
+			<div class="jcarousel">
+				<ul>
+					<% @photos.each do |photo| %>
+  					<li><img src=<%= photo %>></li>
+					<% end %>
+				</ul>
 			</div>
+			<a href="#" class="jcarousel-control-prev">&lsaquo;</a>
+			<a href="#" class="jcarousel-control-next">&rsaquo;</a>
 		</div>
+	</div>
 
-	</header>
+</header>
 
 	<!-- CITY -->
 
