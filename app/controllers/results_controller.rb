@@ -10,6 +10,8 @@ class ResultsController < ApplicationController
     @bm_index = City.where(name: @destination)[0].bm_index
     hotwire_flight_hash = Hotwire.get_flight_info(hash)
     if hotwire_flight_hash == "failed"
+        flash.now[:error] = "Unfortunately, We could not find any flights to your destination.  Please search for another."
+        flash.keep(:error)
         redirect_to root_path
     else
         @avg_price = hotwire_flight_hash[:avg_price]

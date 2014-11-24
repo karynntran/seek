@@ -1,12 +1,4 @@
 module Hotwire
-  class InvalidSearchError < StandardError
-  end
-
-  def check_valid_search
-    if api_response['Hotwire']['Result'] == nil
-      raise(InvalidSearchError, "Unfortunately, We could not find any flights to your destination.  Please search for another.")
-    end
-  end
 
   def self.get_hotel_info(options)
     destination = City.find_by(name: options[:destination]).airport
