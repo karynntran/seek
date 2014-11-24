@@ -1,8 +1,18 @@
 module Hotwire
+  class InvalidSearchError < StandardError
+  end
+
+  def check_valid_search
+    if api_response['Hotwire']['Result'] == nil
+      raise(InvalidSearchError, "Unfortunately, We could not find any flights to your destination.  Please search for another.")
+    end
+  end
+
   def self.get_hotel_info(options)
     destination = City.find_by(name: options[:destination]).airport
     url = "http://api.hotwire.com/v1/deal/hotel?apikey=sw32n4fn2u93rqan8cg92f3x&dest=#{destination}"
     api_response = HTTParty.get(url)
+
     array_of_hotels = api_response["Hotwire"]["Result"]["HotelDeal"]
     avg_price = average_hotel_price(array_of_hotels)
     high_price = high_price(array_of_hotels)
@@ -18,11 +28,22 @@ module Hotwire
     days = Time.days_in_month(month, year)
     url = "http://api.hotwire.com/v1/tripstarter/air?apikey=sw32n4fn2u93rqan8cg92f3x&origin=#{origin_city}&dest=#{destination}&startdate=#{month}/1/#{year}&enddate=#{month}/#{days}/#{year}"
     api_response = HTTParty.get(url)
-    array_of_flights = api_response["Hotwire"]["Result"]["AirPricing"]
-    avg_price = average_flight_price(array_of_flights)
-    max_temp = max_temp(array_of_flights)
-    min_temp = min_temp(array_of_flights)
-    precipitation = precipitation(array_of_flights)
+      if api_response['Hotwire']['Result'] == nil
+        return "failed"
+      else
+        parsed_response = api_response["Hotwire"]["Result"]["AirPricing"]
+        if parsed_response.class == Hash
+          avg_price = hash_average_flight_price(parsed_response)
+          max_temp = hash_max_temp(parsed_response)
+          min_temp = hash_min_temp(parsed_response)
+          precipitation = hash_precipitation(parsed_response)
+        else
+          avg_price = average_flight_price(parsed_response)
+          max_temp = max_temp(parsed_response)
+          min_temp = min_temp(parsed_response)
+          precipitation = precipitation(parsed_response)
+        end
+      end
     hotwire_hash = Hash[avg_price: avg_price, max_temp: max_temp, min_temp: min_temp, precipitation: precipitation]
   end
 
@@ -30,11 +51,20 @@ module Hotwire
     ENV['HotWire']
   end
 
-  def self.average_flight_price(arr)
-    averages = arr.map do |flight|
-      flight["AveragePrice"].to_i
-    end
-    averages.reduce(:+)/averages.length
+  def self.hash_average_flight_price(hash)
+    average = hash["AveragePrice"].to_i
+  end
+
+  def self.hash_max_temp(hash)
+      hash["AverageMaxTemp"].to_i
+  end
+
+  def self.hash_min_temp(hash)
+      hash["AverageMinTemp"].to_i
+  end
+
+  def self.hash_precipitation(hash)
+      hash["AveragePrecipitationInches"].to_i
   end
 
   def self.average_hotel_price(arr)
@@ -52,6 +82,14 @@ module Hotwire
   def self.low_price(arr)
     prices = arr.map { |hotel| hotel["Price"].to_i }
     prices.min
+  end
+
+  def self.average_flight_price(arr)
+    averages = arr.map do |flight|
+
+      flight["AveragePrice"].to_i
+    end
+    averages.reduce(:+)/averages.length
   end
 
   def self.max_temp(arr)
