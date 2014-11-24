@@ -64,12 +64,13 @@ button {
       font-size: 1.2em;
       width: 40em;
       padding: 2em;
-      background-color: white;
+      background: rgba(0,0,0,0.8);
       margin: 0 -20em;
       left: 50%;
-      top: 12em;
+      top: 3em;
       border-radius: .5em;
       display: none;
+      z-index: 100;
     }
     #signup_form label {
       font-size: 1.15em;
