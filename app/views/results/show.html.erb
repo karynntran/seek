@@ -54,7 +54,6 @@
 			<h1>FLIGHT INFO</h1>
 			<%= @destination.upcase %> IS <%= @distance %> MILES FROM <%= @origin.upcase %>
 			<h1>AVERAGE FLIGHT PRICE</h1> $<%= @avg_price%> 
-			<h1>LOCAL TIME IS</h1> <%= @time %>
 		</div>
 
 
@@ -65,7 +64,7 @@
 			<h1>HISTORICAL WEATHER</h1>
 			<div><%= image_tag "icons/hightemp-white.png", :class => "sub-icon" %>High of <%= @max_temp %></div>
 			<div><%= image_tag "icons/lowtemp-white.png", :class => "sub-icon" %>Low of <%= @min_temp %></div>
-			<div><%= image_tag "icons/precipitation-white.png", :class => "sub-icon" %>Average Rainfall <%= @avg_precipitation %></div>
+			<div><%= image_tag "icons/precipitation-white.png", :class => "sub-icon" %>Average Rainfall <%= @avg_precipitation %> INCHES PER MONTH</div>
 		</div>
 
 		<!-- BIG MAC -->
