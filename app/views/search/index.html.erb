@@ -11,10 +11,10 @@
     <%= image_tag "rockies.jpg", class: "bgM" %>
     
   </div>
-
+  
   <div class="searchbox ui-widget">
     <div class="errors">
-      <%= flash[:error] if flash[:error] %>
+      <h5> <%= flash[:error] if flash[:error] %> </h5>
     </div>
     <%= form_tag("/result", method: "get") do %>
       <div class='ui-menu'>

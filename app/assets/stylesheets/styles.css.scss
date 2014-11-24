@@ -251,6 +251,13 @@ button {
     font-size: 20px;
     padding: 10px;
     border-radius: 1em;
+    .errors {
+      background-color: lightgray;
+      color: darkblue;
+      margin-bottom: 20px;
+      font-size: 15px;
+      opacity: 0.8;
+    }
   }
   .searchbox select {
     @include span-columns(4);
