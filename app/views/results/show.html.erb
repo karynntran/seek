@@ -1,8 +1,6 @@
-<%= stylesheet_link_tag '/results/results' %>
+<div class="results">	
 
-<header>
-	
-<!-- LOGIN CODE HERE -->
+	<!-- NAV BAR -->
 
 <div class="top_right">
   <div class='field'>
@@ -15,6 +13,11 @@
   <button class="login_button" id="top_button">Log In</button>
 </div>
 
+	<header>
+		
+	<!-- LOGIN CODE HERE -->
+
+
 <%= form_tag '/users', method: 'post', id: 'signup_form' do %>
   <%= label_tag 'signup[username]', 'Email' %>
   <%= text_field_tag 'signup[username]', nil, placeholder: 'travler@example.com...' %>
@@ -26,98 +29,91 @@
   <%= button_tag 'Cancel', id: 'signup_cancel' %>
 <% end %>
 
-<!-- LOGIN CODE HERE -->
 
-	<div class="favorites">
-		<button id="add-button">&#9733 Add to favorite searches?</button>
-		<button id="delete-button">[ X ] Remove from favorite searches?</button>
-	</div>
-
-</header>
-
-<div class="city">
-	<h1><%= @destination %></h1>
-	<br>
-</div>
+	<!-- LOGIN CODE HERE -->
 
 <div class="clearfix photo-wrapper">
 	<!-- photo code -->
-	<div class="left-photo">
-		<div id="photo">
+	
+	<div class="jcarousel-wrapper">
+		<div class="jcarousel">
 			<ul>
-				<li><%= image_tag "icons/photos.png", :class => "icon" %><li>
-				<li><h2>MOST POPULAR FLICKR PHOTOS TAKEN IN <%=@destination.upcase%></h2></li>
+				<% @photos.each do |photo| %>
+					<li><img src=<%= photo %>></li>
+				<% end %>
 			</ul>
 		</div>
 
-		<div id="tiled-photo">
-			<% @photos.each do |photo| %>
-			<img src=<%= photo %> width="90px">
-			<% end %>
-		</div>
-	</div>
+		<a href="#" class="jcarousel-control-prev">&lsaquo;</a>
+		<a href="#" class="jcarousel-control-next">&rsaquo;</a>
 
-	<div class="right-photo">
-		<div id="cycle-photos">
-			<% @photos.each do |photo| %>
-			<img src=<%= photo %>>
-			<% end %>
-		</div>
+		
 	</div>
 </div>
 
-<div class="clearfix bottom-wrapper">
+		<div class="photos">
+		</div>
 
-	<!-- flight code-->
-	<div class="flight hover">
-		<ul>
-				<li><%= image_tag "icons/flights.png", :class => "icon" %></li>
-				<li><h2>FLIGHT INFO</h2></li>
-		</ul>
-			<%= @destination.upcase %> IS <%= @distance %> MILES FROM <%= @origin.upcase %>
-			AVERAGE FLIGHT PRICE: $<%= @avg_price%> 
-			LOCAL TIME IS: <%= @time %>
+		<div class="favorites">
+			<button id="add-button">&#9733 Add to favorite searches?</button>
+			<button id="delete-button">[ X ] Remove from favorite searches?</button>
+		</div>
+
+	</header>
+
+	<!-- CITY -->
+
+	<div class="city">
+		<h1 class="city-name"><%= @destination %></h1>
+		<h1>LOCAL TIME IS</h1> <%= @time %>
 	</div>
 
-	<!-- weather code -->
-	<div class="weather hover">
-		<ul>
-				<li><%= image_tag "icons/weather.png", :class => "icon" %></li>
-				<li><h2>HISTORICAL WEATHER</h2></li>
-		</ul>
-				<%= image_tag "icons/hightemp-white.png", :class => "sub-icon" %>High of <%= @max_temp %>
-				<%= image_tag "icons/lowtemp-white.png", :class => "sub-icon" %>Low of <%= @min_temp %>
-				<%= image_tag "icons/precipitation-white.png", :class => "sub-icon" %>Average Rainfall <%= @avg_precipitation %>
+		<!-- FLIGHT -->
+	<div class="content">
+		<div class="flight">
+			<%= image_tag "icons/flights.png", :class => "icon" %>
+			<h1>FLIGHT INFO</h1>
+				<%= @destination.upcase %> IS <%= @distance %> MILES FROM <%= @origin.upcase %>
+			<h1>AVERAGE FLIGHT PRICE</h1> $<%= @avg_price%> 
+			<h1>LOCAL TIME IS</h1> <%= @time %>
+		</div>
 
-			
-			
-			
 
+		<!-- WEATHER -->
+
+		<div class="weather">
+			<%= image_tag "icons/weather.png", :class => "icon" %>
+			<h1>HISTORICAL WEATHER</h1>
+					<%= image_tag "icons/hightemp-white.png", :class => "sub-icon" %>High of <%= @max_temp %>
+					<%= image_tag "icons/lowtemp-white.png", :class => "sub-icon" %>Low of <%= @min_temp %>
+					<%= image_tag "icons/precipitation-white.png", :class => "sub-icon" %>Average Rainfall <%= @avg_precipitation %>
+		</div>
+
+		<!-- BIG MAC -->
+
+		<div class="big-mac">
+			<%= image_tag "icons/burger.png", :class => "icon" %>
+			<h1>A BIG MAC IN</h1> <%=@destination.upcase %>> <%= @bm_index %>
+		</div>
+
+		<!-- HOTEL -->
+
+		<div class="hotels ">
+			<%= image_tag "icons/hotel.png", :class => "icon" %>
+			<h1>AVERAGE HOTEL RATES IN <%=@destination.upcase%></h1>
+
+				<figure class="hotel_rates">	
+					<span>$<%= @low_hotel_price %></span>
+					<span id='average_rate'>$<%= @avg_hotel_price %></span>
+					<span>$<%= @high_hotel_price %></span>
+				</figure>
+		</div>
 	</div>
 
-	<!-- big mac code -->	
-	<div class="big-mac hover">
-		<ul>
-			<li><%= image_tag "icons/burger.png", :class => "icon" %></li>
-			<li><h2>A BIG MAC IN <%=@destination.upcase %> WILL COST YOU:</h2></li>
-		</ul>
-		<p>$ <%= @bm_index %></p>
-	</div>
-	<!-- hotel code -->
-	<div class="hotels hover">
-		<ul>
-			<li><%= image_tag "icons/hotel.png", :class => "icon" %></li>
-			<li><h2>AVERAGE HOTEL RATES IN <%=@destination.upcase%></h2></li>
-		</ul>
-
-		<figure class="hotel_rates">	
-			<span>$<%= @low_hotel_price %></span>
-			<span id='average_rate'>$<%= @avg_hotel_price %></span>
-			<span>$<%= @high_hotel_price %></span>
-		</figure>
-	</div>
+	<footer>
+		<p>SEEK</p>
+	</footer>
 </div>
-<!-- </div> -->
 
 <script>
 $( document ).ready(function() {
@@ -127,8 +123,130 @@ $( document ).ready(function() {
 	addtoFavorites();
 	deletefromFavorites();
 	loadLogin();
+
+	var jcarousel = $('.jcarousel');
+
+	jcarousel
+	.on('jcarousel:reload jcarousel:create', function () {
+		var width = jcarousel.innerWidth();
+
+		if (width >= 600) {
+			width = width / 3;
+		} else if (width >= 350) {
+			width = width / 2;
+		}
+
+		jcarousel.jcarousel('items').css('width', width + 'px');
+	})
+	.jcarousel({
+		wrap: 'circular'
+	});
+
+	$('.jcarousel-control-prev')
+	.jcarouselControl({
+		target: '-=1'
+	});
+
+	$('.jcarousel-control-next')
+	.jcarouselControl({
+		target: '+=1'
+	});
+
+	$('.jcarousel-pagination')
+	.on('jcarouselpagination:active', 'a', function() {
+		$(this).addClass('active');
+	})
+	.on('jcarouselpagination:inactive', 'a', function() {
+		$(this).removeClass('active');
+	})
+	.on('click', function(e) {
+		e.preventDefault();
+	})
+	.jcarouselPagination({
+		perPage: 1,
+		item: function(page) {
+			return '<a href="#' + page + '">' + page + '</a>';
+		}
+	});
 });
 
 
 
 </script>
+
+<style>
+	.jcarousel-wrapper {
+    margin: 20px auto;
+    position: relative;
+    border: 10px solid #fff;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-box-shadow: 0 0 2px #999;
+    -moz-box-shadow: 0 0 2px #999;
+    box-shadow: 0 0 2px #999;
+}
+
+/** Carousel **/
+
+.jcarousel {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.jcarousel ul {
+    width: 20000em;
+    position: relative;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.jcarousel li {
+    width: 200px;
+    float: left;
+    border: 1px solid #fff;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.jcarousel img {
+    display: block;
+    max-width: 100%;
+    height: auto !important;
+}
+
+/** Carousel Controls **/
+
+.jcarousel-control-prev,
+.jcarousel-control-next {
+    position: absolute;
+    top: 50%;
+    margin-top: -15px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    background: #4E443C;
+    color: #fff;
+    text-decoration: none;
+    text-shadow: 0 0 1px #000;
+    font: 24px/27px Arial, sans-serif;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    border-radius: 30px;
+    -webkit-box-shadow: 0 0 4px #F0EFE7;
+    -moz-box-shadow: 0 0 4px #F0EFE7;
+    box-shadow: 0 0 4px #F0EFE7;
+}
+
+.jcarousel-control-prev {
+    left: 15px;
+}
+
+.jcarousel-control-next {
+    right: 15px;
+}
+
+</style>
