@@ -6,16 +6,19 @@
 
 
 
-<p>
-  <strong>Password hash:</strong>
-  <%= @user.password_digest %>
-</p>
 
-
-<p>
-  <strong>Favorites:</strong>
-  <%= @user.favorites %>
-</p>
+<div class="container">
+  <strong>Here are your saved Favorites:</strong>
+  <% @user.favorites.map do |favorite| %>		
+		<% destination = /(?<=destination=)[\w\+]+(?=&)/.match(favorite[:link]).to_s %> 
+		<% origin = /(?<=origin=)[\w\+]+(?=&)/.match(favorite[:link]).to_s %>
+		<% month = /(?<=month=)[\w\+]+(?=&)/.match(favorite[:link]).to_s %>
+		<a class="favorites" href=<%=favorite[:link]%>>
+			<%= origin.gsub("+", " ") %> to <%= destination.gsub("+", " ") %> during <%= month %>
+		</a>
+	<% end %>
+ 
+</div>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
