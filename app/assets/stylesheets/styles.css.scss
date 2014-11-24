@@ -203,7 +203,6 @@ button {
 
 .users {
   header {
-  
     @include span-columns(12);
     height:100px;
     padding: 0;
@@ -212,7 +211,12 @@ button {
     background-color: darkblue;
     color: white;
     font-size: 20px;
-  
+    display: inline;
+    vertical-align: center;
+    text-align: right;
+    .logout {
+      padding: 5px;
+    }
   }
   .user-action {
     padding: 5px;
@@ -225,6 +229,17 @@ button {
     display: inline-block;
     box-shadow: 3px 3px 1px #888888;
     margin: 10px 10px;
+  }
+  .delete-button {
+    padding: 8px;
+    border-radius: 5px;
+    font-size: 12px;
+  }
+  ul {
+
+  }
+  li {
+    display: inline-block;
   }
 }
 
@@ -284,5 +299,10 @@ button {
   .form_error {
     color: red;
     display: none;
+  }
+
+  h2 {
+    color: lightgray;
+    text-glow: 0 0 3px #FFF000;
   }
 }

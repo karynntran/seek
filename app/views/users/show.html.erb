@@ -2,28 +2,36 @@
 
 
 	<header>
-		<%= @user.username %>		
 		
-		<%= form_tag sessions_path, method: 'delete' do %>
-		  <%= submit_tag 'Logout' %>
-		<% end %>
+		<div class="username">
+			Welcome, <%= @user.username %>!
+		</div>		
+		
+		<div class="logout">
+			<%= form_tag sessions_path, method: 'delete' do %>
+			  <%= submit_tag 'Logout' %>
+			<% end %>
+		</div>
 	</header>
 
 	<p id="notice"><%= notice %></p>
 
 	<div class="links">
-	  <strong>Your saved Favorites:</strong>
+	  <strong><h1>Your Saved Favorites:</h1></strong><br>
 	  <% @user.favorites.map do |favorite| %>		
 			<% destination = /(?<=destination=)[\w\+]+(?=&)/.match(favorite[:link]).to_s %> 
 			<% origin = /(?<=origin=)[\w\+]+(?=&)/.match(favorite[:link]).to_s %>
 			<% month = /(?<=month=)[\w\+]+(?=&)/.match(favorite[:link]).to_s %>
 			
 		<ul>
-			<li><button class="user"><a class="favorites" href=<%=favorite[:link]%>>
-				<%= origin.gsub("+", " ") %> to <%= destination.gsub("+", " ") %> during <%= month %>
-			</a></button></li>
-			<li><%= button_to "delete", {:controller => :favorites,
-      		:action => 'destroy', :id => favorite.id }, :method => :delete %></li>
+			<li>
+				<button class="user"><a class="favorites" href=<%=favorite[:link]%>>
+				<%= origin.gsub("+", " ") %> to <%= destination.gsub("+", " ") %> during <%= month %></a>
+				</button>
+			</li>
+			<li><%= button_to "Delete favorite?", {:controller => :favorites,
+      		:action => 'destroy', :id => favorite.id }, :method => :delete, :class => "delete-button" %>
+      		</li>
 		</ul>
 		<% end %>
 	</div>
