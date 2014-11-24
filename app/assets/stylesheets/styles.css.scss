@@ -30,6 +30,7 @@ button {
     left: 0;
     background-color: white;
     margin: 0;
+    font-size: 13px;
   }
     /*box-shadow: 0 0 2px #999;*/
   .top_right {
@@ -57,18 +58,18 @@ button {
     margin: 0 0.3em;
     float: left;
     display: none;
-    font-size: 1.3em;
+    font-size: 17px;
     width: 10em;
   }
   #signup_form {
       position: absolute;
-      font-size: 1.2em;
+      font-size: 13px;
       width: 40em;
       padding: 2em;
       background: rgba(0,0,0,0.8);
       margin: 0 -20em;
       left: 50%;
-      top: 3em;
+      top: 5em;
       border-radius: .5em;
       display: none;
       z-index: 100;
