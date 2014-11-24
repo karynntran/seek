@@ -2,17 +2,14 @@
 
 	<!-- NAV BAR -->
 <header>
-
-  <%= form_tag("/result", method: "get") do %>
-    <%= select_tag(:destination, City.all, :name, :name) %>
-    <%= text_field_tag(:destination, nil, placeholder: 'Where To?') %>
-    </div>
-    <p class='form_error' id='origin_error'>Please enter a valid origin</p>
-    <%= text_field_tag(:origin, nil, placeholder: 'Where From?') %>
-          
-    <h4 id="month_label">Tell me when to go...</h2>
-    <%= select_tag :month, options_for_select(Date::MONTHNAMES[1..-1], "July") %>
-    <%= submit_tag("GO", class: 'go') %>
+  <%= form_tag("/result", method: "get", id: 'reroute_form') do %>
+    <%= label_tag :destination, 'FROM:' %>
+    <%= select_tag(:destination, options_for_select(@destinations, @destination)) %>
+    <%= label_tag :origin, 'TO:' %>
+    <%= select_tag(:origin, options_for_select(@origins, @origin)) %>      
+    <%= label_tag :month, 'IN:' %>
+    <%= select_tag :month, options_for_select(Date::MONTHNAMES[1..-1], @month) %>
+    <%= submit_tag("GO") %>
   <% end %>  
 
 	<div class="clearfix top_right">
