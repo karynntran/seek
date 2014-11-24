@@ -301,14 +301,17 @@ $("#delete-button").on('click', function(e){
 // ******* document ready functions ********
 
 function loadSearchPage() {
-    checkUser();
-    ajaxLogin();
     fetchData();
     inputListener();
     $("input:submit.go").prop( "disabled", true );
     validateDestination();
     validateOrigin();
     changeBackground();
+};
+
+function loadLogin() {
+    checkUser();
+    ajaxLogin();
     expandLogin();
     clickSignup();
     cancelSignup();

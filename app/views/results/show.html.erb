@@ -4,8 +4,27 @@
 	
 <!-- LOGIN CODE HERE -->
 
+<div class="top_right">
+  <div class='field'>
+    <%= form_for @user, url: {controller: 'sessions', action: 'create'} do |f| %>
+      <%= f.email_field(:username, placeholder: 'email...') %>
+      <%= f.password_field(:password, placeholder: 'password...') %>
+      <%= f.submit("Log In", id: 'expanded_login') %>
+    <% end %>
+  </div>
+  <button class="login_button" id="top_button">Log In</button>
+</div>
 
-
+<%= form_tag '/users', method: 'post', id: 'signup_form' do %>
+  <%= label_tag 'signup[username]', 'Email' %>
+  <%= text_field_tag 'signup[username]', nil, placeholder: 'travler@example.com...' %>
+  <%= label_tag 'signup[password]', 'Password' %>
+  <%= password_field_tag 'signup[password]' %>
+  <%= label_tag 'confirm[password]', 'Confirm Password' %>
+  <%= password_field_tag 'confirm[password]' %>
+  <%= submit_tag('Sign Up', id: 'signup_submit') %>
+  <%= button_tag 'Cancel', id: 'signup_cancel' %>
+<% end %>
 
 <!-- LOGIN CODE HERE -->
 
@@ -107,7 +126,7 @@ $( document ).ready(function() {
 	checkFavorites();
 	addtoFavorites();
 	deletefromFavorites();
-
+	loadLogin();
 });
 
 

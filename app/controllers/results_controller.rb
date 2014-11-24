@@ -2,6 +2,7 @@ class ResultsController < ApplicationController
   layout 'application'
 
   def show
+    @user = User.new
     @origin = params[:origin]
     @destination = params[:destination]
     @month = params[:month]
