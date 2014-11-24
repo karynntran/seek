@@ -58,6 +58,7 @@ function loginSuccess(data) {
             window.location.href='/users/' + data.id;
         });
     }
+    checkFavorites();
 }
 
 function validateElementLength($el, len, type) {
@@ -134,10 +135,9 @@ function submitSignup() {
         },
         success: function(data) {
             $("#signup_form").fadeOut(fadeTime);
-            debugger
             loginSuccess(data);
         }
-    })
+    });
 }
 
 
@@ -250,7 +250,7 @@ function determineFavoritesButton(status) {
 }
 
 function checkFavorites() {
-    console.log('check favorites');
+    console.log('check favorites (╯°□°)╯︵ ┻━┻');
     var url = document.URL;
     $.ajax({
         method: 'patch',

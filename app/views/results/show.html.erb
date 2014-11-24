@@ -93,12 +93,14 @@
 
 <script>
 $( document ).ready(function() {
+	$("#add-button").hide();
+  $("#delete-button").hide();
 	console.log(':)');
 	cycleImages();
-	checkFavorites();
+	loadLogin();
 	addtoFavorites();
 	deletefromFavorites();
-	loadLogin();
+	
 
 	var jcarousel = $('.jcarousel');
 
