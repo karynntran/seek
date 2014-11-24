@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   get '/result' => 'results#show'
 
-  resources :users
+  resources :users, :only => [:show, :new, :create, :destroy]
 
   patch '/check_favorites' => 'favorites#check_favorites'
 
@@ -15,7 +15,9 @@ Rails.application.routes.draw do
   patch '/delete_favorites' => 'favorites#delete_favorites'
 
 
-  resources :sessions, :only => [:new, :create, :destroy]
+  resources :sessions, :only => [:new, :create]
+
+  delete '/sessions' => 'sessions#destroy'
 
   get '/login' => "sessions#new"
 

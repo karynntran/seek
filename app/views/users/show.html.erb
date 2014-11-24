@@ -2,19 +2,14 @@
 
 
 	<header>
-		<%= form_tag new_session_path, method: 'delete' do %>
+		<%= @user.username %>		
+		
+		<%= form_tag sessions_path, method: 'delete' do %>
 		  <%= submit_tag 'Logout' %>
 		<% end %>
-		<%= @user.username %>		
 	</header>
 
 	<p id="notice"><%= notice %></p>
-
-	<div class="user-action">
-		<%= link_to 'Edit', edit_user_path(@user) %> |
-		<%= link_to 'Back', users_path %>
-	</div>
-
 
 	<div class="links">
 	  <strong>Your saved Favorites:</strong>
