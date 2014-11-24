@@ -310,6 +310,7 @@ function loadSearchPage() {
 };
 
 function loadLogin() {
+    console.log('<^-_-^>')
     checkUser();
     ajaxLogin();
     expandLogin();
