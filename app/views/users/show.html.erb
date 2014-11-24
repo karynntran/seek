@@ -2,7 +2,9 @@
 
 
 	<header>
-		form_for 
+		<%= form_tag new_session_path, method: 'delete' do %>
+		  <%= submit_tag 'Logout' %>
+		<% end %>
 		<%= @user.username %>		
 	</header>
 
