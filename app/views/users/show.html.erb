@@ -4,21 +4,26 @@
 
 <p id="notice"><%= notice %></p>
 
+<div class="user-action">
+	<%= link_to 'Edit', edit_user_path(@user) %> |
+	<%= link_to 'Back', users_path %>
+</div>
 
 
-
-<div class="container">
-  <strong>Here are your saved Favorites:</strong>
+<div class="links">
+  <strong>Your saved Favorites:</strong>
   <% @user.favorites.map do |favorite| %>		
 		<% destination = /(?<=destination=)[\w\+]+(?=&)/.match(favorite[:link]).to_s %> 
 		<% origin = /(?<=origin=)[\w\+]+(?=&)/.match(favorite[:link]).to_s %>
 		<% month = /(?<=month=)[\w\+]+(?=&)/.match(favorite[:link]).to_s %>
-		<a class="favorites" href=<%=favorite[:link]%>>
+		
+	<ul>
+		<li><button class="user"><a class="favorites" href=<%=favorite[:link]%>>
 			<%= origin.gsub("+", " ") %> to <%= destination.gsub("+", " ") %> during <%= month %>
-		</a>
+		</a></button></li>
+	</ul>
 	<% end %>
- 
+
 </div>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+
