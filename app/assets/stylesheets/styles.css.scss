@@ -1,12 +1,10 @@
 $medium: new-breakpoint(max-width 900px 6);
 $circle_size: 60px;
-
 $green-icon: #4f612a;
-
 
 body {
   background-color: white;
-  margin: 0 auto;
+  margin: 0;
   font-family: 'Oxygen', sans-serif;
   font-size: 18px;
 }
@@ -159,16 +157,21 @@ button {
   }
 
   .content {
+    @include outer-container;
     text-align: center;
     height: 70%;
-    display:block;
+    margin: 0 auto;
+    // display: inline-block;
 
     .flight, .weather, .big-mac, .hotels {
-      @include span-columns(3);
+      @include span-columns(3.2);
       margin: 10px 0;
       @include media($medium) {
         @include span-columns(3);
       }
+    }
+    .flight {
+      // @include shift(0.25);
     }
     .weather div {
       left: 5px;
@@ -177,15 +180,15 @@ button {
       width: 50%;
       border-radius: 50%;
       height: auto;
-      padding: -2em;
+      // padding: -2em;
       margin: 0 10px;
     }
     .sub-icon {
       border-radius: 50%;
       height: auto;
       width: 75%;
-      padding: 2px;
-      margin: 0 10px;
+      // padding: 2px;
+      // margin: 0 10px;
       background-color: white;
     }
     td{
@@ -210,9 +213,8 @@ button {
       background-color: lightgray;
       text-align: center;
       font-size: 1.1em;
-      margin: 0 0.2em;
+      // margin: 0 0.2em;
       color: darkblue;
-      padding: 10px;
     }
     #average_rate {
       // @include span-columns(3 of 3);
