@@ -1,5 +1,6 @@
 $medium: new-breakpoint(max-width 900px 6);
 $circle_size: 60px;
+
 $green-icon: #4f612a;
 
 
@@ -89,6 +90,7 @@ button {
     }
   .jcarousel-wrapper {
   margin: auto;
+  margin-bottom: 15px;
   position: relative;
   -webkit-box-shadow: 0 0 2px #999;
   -moz-box-shadow: 0 0 2px #999;
@@ -143,6 +145,7 @@ button {
 
   .city {
     text-align: center;
+    margin-bottom: 10px;
     .city-name {
       h1 {
       font-size: 50px;
@@ -197,17 +200,18 @@ button {
       text-align: center;
       margin-top: 15px;
     }
-    figure span {
+    span {
       // @include span-columns(3 of 3);
       display: inline-block;
       height: $circle_size;
       width: $circle_size;
       line-height: $circle_size;
-      border-radius: 50%;
+      border-radius: 70%;
       background-color: lightgray;
       text-align: center;
-      font-size: 1em;
-      color: black;
+      font-size: 1.1em;
+      margin: 0 0.2em;
+      color: darkblue;
       padding: 10px;
     }
     #average_rate {

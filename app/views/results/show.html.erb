@@ -88,21 +88,32 @@
 
 		<div class="big-mac">
 			<%= image_tag "icons/burger.png", :class => "icon" %>
-			<h1>A BIG MAC IN <%=@destination.upcase %></h1> 
-			<figure><span>$<%= @bm_index %></span></figure>
+			<table>
+				<tr align="center">
+					 <h1>A BIG MAC IN <%=@destination.upcase %></h1>
+				</tr>
+				<tr>
+					<td align="center"> <figure><span><%= @bm_index %></span></figure> </td>
+				</tr>
+			</table>
 		</div>
 
 		<!-- HOTEL -->
 
 		<div class="hotels ">
 			<%= image_tag "icons/hotel.png", :class => "icon" %>
-			<h1>AVERAGE HOTEL RATES</h1>
-
-			<figure class="hotel_rates">	
-				<span>$<%= @low_hotel_price %></span>
-				<span id='average_rate'>$<%= @avg_hotel_price %></span>
-				<span>$<%= @high_hotel_price %></span>
-			</figure>
+			<table>
+				<tr align="center">
+					<h1>BUDGET HOTEL RATES</h1>
+				</tr>	
+				<tr>
+					<figure class="hotel_rates">	
+						 <span>$<%= @low_hotel_price %></span>
+						 <span id='average_rate'>$<%= @avg_hotel_price %></span>
+						 <span>$<%= @high_hotel_price %></span>
+					</figure>
+				</tr>
+			</table>
 		</div>
 	</div>
 
