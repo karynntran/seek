@@ -379,4 +379,15 @@ button {
     color: lightgray;
     text-glow: 0 0 3px #FFF000;
   }
+
+  .name {
+    text-shadow: 3px 5px 7px black;
+    font-size: 100px;
+    opacity: .1;
+    color: white;
+    font-family: 'Rammetto One', cursive;
+    text-align: center;
+    margin: 80px 0 -80px 0;
+    position: relative;
+  }
 }
