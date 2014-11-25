@@ -1,4 +1,4 @@
-
+$medium: new-breakpoint(max-width 900px 6);
 $circle_size: 60px;
 $green-icon: #4f612a;
 
@@ -156,14 +156,16 @@ button {
   }
 
   .content {
-    @include span-columns(12);
     text-align: center;
     height: 70%;
     display:block;
 
     .flight, .weather, .big-mac, .hotels {
-      @include span-columns(3 of 12);
+      @include span-columns(3);
       margin: 10px 0;
+      @include media($medium) {
+        @include span-columns(3);
+      }
     }
     .weather div {
       left: 5px;
@@ -196,7 +198,7 @@ button {
       margin-top: 15px;
     }
     figure span {
-      @include span-columns(3 of 3);
+      // @include span-columns(3 of 3);
       display: inline-block;
       height: $circle_size;
       width: $circle_size;
@@ -209,7 +211,7 @@ button {
       padding: 10px;
     }
     #average_rate {
-      @include span-columns(3 of 3);
+      // @include span-columns(3 of 3);
       height: $circle_size*1.3;
       width: $circle_size*1.3;
       line-height: $circle_size*1.3;
