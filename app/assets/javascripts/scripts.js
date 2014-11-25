@@ -3,11 +3,11 @@ var destinations = []
 var fadeTime = 300
 
 function changeBackground(){
-  $('#slideshow').cycle({
-    fx: 'fade',
-    speed: 1800,
-    timeout:  3500 
-  });
+    $('#slideshow').cycle({
+        fx: 'fade',
+        speed: 1800,
+        timeout:  3500 
+    });
 }
 
 function checkUser() {
@@ -54,7 +54,7 @@ function loginSuccess(data) {
             .text(data.username)
             .css('background-color', 'white')
             .css('color', '#3867be')
-            .on('click', function(){
+            .on('click', function() {
             window.location.href='/users/' + data.id;
         });
     }
@@ -145,16 +145,16 @@ function submitSignup() {
 // ****** search form *******
 
 function fetchData() {
-  $.ajax({
-    url: '/autocomplete',
-    dataType: 'json',
-    success: function(data) {
-      origins = data.origin;
-      destinations = data.destination;
-      destinationComplete();
-      originComplete();
-    }
-  });
+    $.ajax({
+        url: '/autocomplete',
+        dataType: 'json',
+        success: function(data) {
+            origins = data.origin;
+            destinations = data.destination;
+            destinationComplete();
+            originComplete();
+        }
+    });
 }
 
 function destinationComplete(){
@@ -182,12 +182,11 @@ function inputListener() {
     $("#origin").on('keyup', function(){validateOrigin($(this).val());});
 }
 
-
 function validateDestination(value) {
     if ($.inArray(value, destinations) > -1) {
       // $("#origin_label").fadeIn(200);
       $("#destination_error").fadeOut(fadeTime);
-      $("#origin").fadeIn(fadeTime).focus();
+      $("#origin").fadeIn(fadeTime);
     }
 }
 
@@ -199,39 +198,36 @@ function validateOrigin(value) {
 }
 
 function showMonthandGo() {
-  $("#month_label").fadeIn(fadeTime);
-  $("#month").fadeIn(fadeTime)
-  $(".go").fadeIn(fadeTime);
-  setInterval(function() { validateAll(); },1000) 
+    $("#month_label").fadeIn(fadeTime);
+    $("#month").fadeIn(fadeTime);
+    $(".go").fadeIn(fadeTime);
+    setInterval(function() { validateAll(); },1000) 
 }
 
 function validateAll() {
-  if ($.inArray($("#origin").val(), origins) === -1) {
-    $("#origin_error").fadeIn(600);
-  } 
-  if ($.inArray($("#destination").val(), destinations) === -1) {
-    $("#destination_error").fadeIn(600);
-  }
-  if (($.inArray($("#origin").val(), origins) > -1) && ($.inArray($("#destination").val(), destinations) > -1)) {
-    $("input:submit").prop( "disabled", false );
-    return true;
-  } else {
-    $("input:submit").prop( "disabled", true );
-    return false;
-  }
-};
-
-
-
+    if ($.inArray($("#origin").val(), origins) === -1) {
+        $("#origin_error").fadeIn(600);
+    } 
+    if ($.inArray($("#destination").val(), destinations) === -1) {
+        $("#destination_error").fadeIn(600);
+    }
+    if (($.inArray($("#origin").val(), origins) > -1) && ($.inArray($("#destination").val(), destinations) > -1)) {
+        $("input:submit").prop( "disabled", false );
+        return true;
+    } else {
+        $("input:submit").prop( "disabled", true );
+        return false;
+    }
+}
 
 // *********  flickr images **********
 
 function cycleImages(){
-  $('#cycle-photos').cycle({
-    fx: 'fade',
-    speed: 1200,
-    timeout:  3500 
-  });
+    $('#cycle-photos').cycle({
+        fx: 'fade',
+        speed: 1200,
+        timeout:  3500 
+    });
 };
 
 // *********  favorites scripts **********
@@ -282,22 +278,72 @@ function addtoFavorites() {
 
 
 function deletefromFavorites(){
-console.log('delete from favorites');
-$("#delete-button").on('click', function(e){
-    e.preventDefault();
-    $.ajax({
-        method: 'patch',
-        url: '/delete_favorites',
-        dataType: 'json',
-        data: { remove: document.URL },
-        success: function() {
-          console.log('yay-removing!');
-          checkFavorites();
-        }
+    console.log('delete from favorites');
+    $("#delete-button").on('click', function(e){
+        e.preventDefault();
+        $.ajax({
+            method: 'patch',
+            url: '/delete_favorites',
+            dataType: 'json',
+            data: { remove: document.URL },
+            success: function() {
+              console.log('yay-removing!');
+              checkFavorites();
+            }
+        });
     });
-});
 }
   
+// ******* jCarousel functions ********
+function jCarousel() { 
+    var jcarousel = $('.jcarousel');
+
+    jcarousel
+    .on('jcarousel:reload jcarousel:create', function () {
+        var width = jcarousel.innerWidth();
+
+        if (width >= 1000) {
+            width = width / 3;
+        } else if (width >= 770) {
+            width = width / 2;
+        } else {
+            width = width;
+        }
+
+        jcarousel.jcarousel('items').css('width', width + 'px');
+    })
+    .jcarousel({
+        wrap: 'circular'
+    });
+
+    $('.jcarousel-control-prev')
+    .jcarouselControl({
+        target: '-=1'
+    });
+
+    $('.jcarousel-control-next')
+    .jcarouselControl({
+        target: '+=1'
+    });
+
+    $('.jcarousel-pagination')
+    .on('jcarouselpagination:active', 'a', function() {
+        $(this).addClass('active');
+    })
+    .on('jcarouselpagination:inactive', 'a', function() {
+        $(this).removeClass('active');
+    })
+    .on('click', function(e) {
+        e.preventDefault();
+    })
+    .jcarouselPagination({
+        perPage: 1,
+        item: function(page) {
+            return '<a href="#' + page + '">' + page + '</a>';
+        }
+    });
+}
+
 // ******* document ready functions ********
 
 function loadSearchPage() {
