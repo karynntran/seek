@@ -93,7 +93,7 @@
 					 <h1>A BIG MAC IN <%=@destination.upcase %></h1>
 				</tr>
 				<tr>
-					<td align="center"> <figure><span class="big-mac-span">$<%= @bm_index %></span></figure> </td>
+					<td><span class="big-mac-span">$<%= @bm_index %></span></td>
 				</tr>
 			</table>
 		</div>
@@ -106,13 +106,11 @@
 				<tr align="center">
 					<h1>BUDGET HOTEL RATES</h1>
 				</tr>	
-				<tr>
-					<figure class="hotel_rates">	
-						 <td><span>$<%= @low_hotel_price %></span></td>
-						 <td><span id='average_rate'>$<%= @avg_hotel_price %></span></td>
-						 <td><span>$<%= @high_hotel_price %></span></td>
-					</figure>
-				</tr>
+        <tr>
+						 <td><span class='hotel-span'>$<%= @low_hotel_price %></span></td>
+						 <td><span class='hotel-span' id='average_rate'>$<%= @avg_hotel_price %></span></td>
+						 <td><span class='hotel-span'>$<%= @high_hotel_price %></span></td>
+        </tr>
 			</table>
 		</div>
 	</div>
