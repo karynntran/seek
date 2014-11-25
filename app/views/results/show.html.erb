@@ -4,12 +4,12 @@
 <header>
 
   <%= form_tag("/result", method: "get", id: 'reroute_form') do %>
-    <%= label_tag :origin, 'FROM:' %>
-    <%= select_tag(:origin, options_for_select(@origins, @origin)) %>      
-    <%= label_tag :destination, 'TO:' %>
-    <%= select_tag(:destination, options_for_select(@destinations, @destination)) %>
-    <%= label_tag :month, 'IN:' %>
-    <%= select_tag :month, options_for_select(Date::MONTHNAMES[1..-1], @month) %>
+    <%= label_tag :origin, 'FROM:', :class => "search-form" %>
+    <%= select_tag(:origin, options_for_select(@origins, @origin), :class => "search-form") %>      
+    <%= label_tag :destination, 'TO:', :class => "search-form" %>
+    <%= select_tag(:destination, options_for_select(@destinations, @destination), :class => "search-form") %>
+    <%= label_tag :month, 'IN:', :class => "search-form" %>
+    <%= select_tag :month, options_for_select(Date::MONTHNAMES[1..-1], @month), :class => "search-form" %>
     <%= submit_tag("GO") %>
   <% end %>  
 
