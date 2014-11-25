@@ -47,7 +47,7 @@
 
 	<div class="clearfix city">
 		<div class="city-name">
-			<h1><%= @destination %></h1>
+			<h1><%= @destination %> in <%= @month %></h1>
 			<h3>LOCAL TIME IS <%= @time %></h3>
 		</div>
 
@@ -67,22 +67,21 @@
 
 		<div class="weather">
 			<%= image_tag "icons/weather.png", :class => "icon" %>
-			<td>
+			<table>
 				<tr>
 					<h1>HISTORICAL WEATHER</h1>
 				</tr>
 				<tr>
-					<%= image_tag "icons/hightemp-white.png", :class => "sub-icon" %>
-					<%= image_tag "icons/lowtemp-white.png", :class => "sub-icon" %>
-					<%= image_tag "icons/precipitation-white.png", :class => "sub-icon"%>
+					<td><%= image_tag "icons/hightemp-white.png", :class => "sub-icon" %></td>
+					<td><%= image_tag "icons/lowtemp-white.png", :class => "sub-icon" %></td>
+					<td><%= image_tag "icons/precipitation-white.png", :class => "sub-icon"%></td>
 				</tr>
 				<tr>
-				<div> <%= @max_temp %>&deg;  <%= @min_temp %>&deg; <%= @avg_precipitation %>inches per month</div>
+				 <td><%= @max_temp %>&deg;</td>
+				 <td><%= @min_temp %>&deg;</td>
+				 <td><%= @avg_precipitation %> in</td>
 				</tr>
-				<tr>
-					<div>Average Rainfall <%= @avg_precipitation %> Inches per Month</div>
-				</tr>
-			</td>
+			</table>
 		</div>
 
 		<!-- BIG MAC -->

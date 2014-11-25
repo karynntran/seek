@@ -83,7 +83,7 @@ button {
       background: gray;
     }
   .jcarousel-wrapper {
-  margin: 50px auto;
+  margin: auto;
   position: relative;
   -webkit-box-shadow: 0 0 2px #999;
   -moz-box-shadow: 0 0 2px #999;
@@ -135,6 +135,7 @@ button {
   .jcarousel-control-next {
       right: 15px;
   }
+
   .city {
     text-align: center;
     .city-name {
@@ -172,10 +173,18 @@ button {
     .sub-icon {
       border-radius: 50%;
       height: auto;
-      width: 20%;
+      width: 75%;
       padding: 2px;
       margin: 0 10px;
       background-color: white;
+    }
+    td{
+      border: none;
+      padding: 0;
+    }
+    tr{
+      padding: 0;
+      margin: 0;
     }
     figure {
       text-align: center;
