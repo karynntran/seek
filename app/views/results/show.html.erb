@@ -58,8 +58,8 @@
 		<div class="flight">
 			<%= image_tag "icons/flights.png", :class => "icon" %>
 			<h1>FLIGHT INFO</h1>
-			<%= @destination.upcase %> IS <%= @distance %> MILES FROM <%= @origin.upcase %>
-			<h1>AVERAGE FLIGHT PRICE</h1> $<%= @avg_price%> 
+				<span class="flight-span"><%= @distance %></span><br> MILES FROM <%= @origin.upcase %>
+			<h1>AVERAGE FLIGHT PRICE</h1><span class="flight-span">$<%= @avg_price%></span> 
 		</div>
 
 
@@ -93,7 +93,7 @@
 					 <h1>A BIG MAC IN <%=@destination.upcase %></h1>
 				</tr>
 				<tr>
-					<td align="center"> <figure><span><%= @bm_index %></span></figure> </td>
+					<td align="center"> <figure><span class="big-mac-span">$<%= @bm_index %></span></figure> </td>
 				</tr>
 			</table>
 		</div>

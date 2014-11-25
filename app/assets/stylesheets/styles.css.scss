@@ -210,11 +210,13 @@ button {
       width: $circle_size;
       line-height: $circle_size;
       border-radius: 70%;
-      background-color: lightgray;
+      background-color: white;
       text-align: center;
       font-size: 1.1em;
       // margin: 0 0.2em;
-      color: darkblue;
+      border: 5px solid blue;
+      padding: 10px;
+
     }
     #average_rate {
       // @include span-columns(3 of 3);
@@ -222,6 +224,16 @@ button {
       width: $circle_size*1.3;
       line-height: $circle_size*1.3;
       font-size: 1.2em;
+      border: rgb(152,72,27) 5px solid;
+    }
+    .hotel-span {
+      border: rgb(152,72,27) 5px solid;
+    }
+    .big-mac-span {
+      border: rgb(79,98,40) 5px solid;
+    }
+    .flight-span {
+      border: rgb(96,74,122) 5px solid;
     }
   }
 }
