@@ -241,6 +241,9 @@ button {
     }
     .flight-span {
       border: rgb(96,74,122) 5px solid;
+      width: $circle_size*1.3;
+      height: $circle_size*1.3;
+      line-height: $circle_size*1.3;
     }
   }
 }

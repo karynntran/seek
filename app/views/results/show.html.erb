@@ -1,47 +1,47 @@
 <div class="results">	
 
 	<!-- NAV BAR -->
-<header>
+	<header>
 
-  <%= form_tag("/result", method: "get", id: 'reroute_form') do %>
-    <%= label_tag :origin, 'FROM:', :class => "search-form" %>
-    <%= select_tag(:origin, options_for_select(@origins, @origin), :class => "search-form") %>      
-    <%= label_tag :destination, 'TO:', :class => "search-form" %>
-    <%= select_tag(:destination, options_for_select(@destinations, @destination), :class => "search-form") %>
-    <%= label_tag :month, 'IN:', :class => "search-form" %>
-    <%= select_tag :month, options_for_select(Date::MONTHNAMES[1..-1], @month), :class => "search-form" %>
-    <%= submit_tag("GO") %>
-  <% end %>  
+		<%= form_tag("/result", method: "get", id: 'reroute_form') do %>
+		<%= label_tag :origin, 'FROM:', :class => "search-form" %>
+		<%= select_tag(:origin, options_for_select(@origins, @origin), :class => "search-form") %>      
+		<%= label_tag :destination, 'TO:', :class => "search-form" %>
+		<%= select_tag(:destination, options_for_select(@destinations, @destination), :class => "search-form") %>
+		<%= label_tag :month, 'IN:', :class => "search-form" %>
+		<%= select_tag :month, options_for_select(Date::MONTHNAMES[1..-1], @month), :class => "search-form" %>
+		<%= submit_tag("GO") %>
+		<% end %>  
 
-	<div class="clearfix top_right">
-		
-    <%= render 'login_form' %>
+		<div class="clearfix top_right">
 
-		<button class="login_button" id="top_button">Log In</button>
+			<%= render 'login_form' %>
 
-		<div class="favorites">
-			<button id="add-button">&#9733 Add to favorites?</button>
-			<button id="delete-button"><span style='color: gold;'>&#9733</span> Remove favorite?</button>
-		</div>
-	</div>
+			<button class="login_button" id="top_button">Log In</button>
 
-  <%= render 'signup_form' %>
-
-	<div class="clearfix">
-		<div class="jcarousel-wrapper">
-			<div class="jcarousel">
-				<ul>
-					<% @photos.each do |photo| %>
-  					<li><img src=<%= photo %>></li>
-					<% end %>
-				</ul>
+			<div class="favorites">
+				<button id="add-button">&#9733 Add to favorites?</button>
+				<button id="delete-button"><span style='color: gold;'>&#9733</span> Remove favorite?</button>
 			</div>
-			<a href="#" class="jcarousel-control-prev">&lsaquo;</a>
-			<a href="#" class="jcarousel-control-next">&rsaquo;</a>
 		</div>
-	</div>
 
-</header>
+		<%= render 'signup_form' %>
+
+		<div class="clearfix">
+			<div class="jcarousel-wrapper">
+				<div class="jcarousel">
+					<ul>
+						<% @photos.each do |photo| %>
+						<li><img src=<%= photo %>></li>
+						<% end %>
+					</ul>
+				</div>
+				<a href="#" class="jcarousel-control-prev">&lsaquo;</a>
+				<a href="#" class="jcarousel-control-next">&rsaquo;</a>
+			</div>
+		</div>
+
+	</header>
 
 	<!-- CITY -->
 
@@ -57,9 +57,19 @@
 	<div class="content">
 		<div class="flight">
 			<%= image_tag "icons/flights.png", :class => "icon" %>
-			<h1>FLIGHT INFO</h1>
-				<span class="flight-span"><%= @distance %></span><br> MILES FROM <%= @origin.upcase %>
-			<h1>AVERAGE FLIGHT PRICE</h1><span class="flight-span">$<%= @avg_price%></span> 
+			<table>
+				<tr>
+					<h1>FLIGHT INFO</h1>
+				</tr>
+				<tr>
+					<td><span class="flight-span"><%= @distance %></span></td>
+					<td><span class="flight-span">$<%= @avg_price%></span></td>
+				</tr>
+				<tr>
+					<td>MILES FROM <%= @origin.upcase %></td>
+					<td>AVERAGE PRICE</td>
+				</tr>
+			</table>
 		</div>
 
 
@@ -77,9 +87,9 @@
 					<td><%= image_tag "icons/precipitation-white.png", :class => "sub-icon"%></td>
 				</tr>
 				<tr>
-				 <td><%= @max_temp %>&deg;</td>
-				 <td><%= @min_temp %>&deg;</td>
-				 <td><%= @avg_precipitation %> in</td>
+					<td><%= @max_temp %>&deg;</td>
+					<td><%= @min_temp %>&deg;</td>
+					<td><%= @avg_precipitation %> in</td>
 				</tr>
 			</table>
 		</div>
@@ -90,10 +100,13 @@
 			<%= image_tag "icons/burger.png", :class => "icon" %>
 			<table>
 				<tr align="center">
-					 <h1>A BIG MAC IN <%=@destination.upcase %></h1>
+					<h1>A BIG MAC IN <%=@destination.upcase %></h1>
 				</tr>
 				<tr>
 					<td><span class="big-mac-span">$<%= @bm_index %></span></td>
+				</tr>
+				<tr>
+					<td>VS $4.80 in the US</td>
 				</tr>
 			</table>
 		</div>
@@ -106,11 +119,17 @@
 				<tr align="center">
 					<h1>BUDGET HOTEL RATES</h1>
 				</tr>	
-        <tr>
-						 <td><span class='hotel-span'>$<%= @low_hotel_price %></span></td>
-						 <td><span class='hotel-span' id='average_rate'>$<%= @avg_hotel_price %></span></td>
-						 <td><span class='hotel-span'>$<%= @high_hotel_price %></span></td>
-        </tr>
+				<tr>
+					<td><span class='hotel-span'>$<%= @low_hotel_price %></span></td>
+					<td><span class='hotel-span' id='average_rate'>$<%= @avg_hotel_price %></span></td>
+					<td><span class='hotel-span'>$<%= @high_hotel_price %></span></td>
+				</tr>
+
+				<tr>
+					<td>LOW</td>
+					<td>AVG</td>
+					<td>HIGH</td>
+				</tr>
 			</table>
 		</div>
 	</div>
@@ -120,7 +139,7 @@
 <script>
 $( document ).ready(function() {
 	$("#add-button").hide();
-  $("#delete-button").hide();
+	$("#delete-button").hide();
 	console.log(':)');
 	cycleImages();
 	loadLogin();
