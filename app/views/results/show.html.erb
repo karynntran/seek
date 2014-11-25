@@ -2,13 +2,14 @@
 
 	<!-- NAV BAR -->
 <header>
+
   <%= form_tag("/result", method: "get", id: 'reroute_form') do %>
-    <%= label_tag :origin, 'FROM:' %>
-    <%= select_tag(:origin, options_for_select(@origins, @origin)) %>      
-    <%= label_tag :destination, 'TO:' %>
-    <%= select_tag(:destination, options_for_select(@destinations, @destination)) %>
-    <%= label_tag :month, 'IN:' %>
-    <%= select_tag :month, options_for_select(Date::MONTHNAMES[1..-1], @month) %>
+    <%= label_tag :origin, 'FROM:', :class => "search-form" %>
+    <%= select_tag(:origin, options_for_select(@origins, @origin), :class => "search-form") %>      
+    <%= label_tag :destination, 'TO:', :class => "search-form" %>
+    <%= select_tag(:destination, options_for_select(@destinations, @destination), :class => "search-form") %>
+    <%= label_tag :month, 'IN:', :class => "search-form" %>
+    <%= select_tag :month, options_for_select(Date::MONTHNAMES[1..-1], @month), :class => "search-form" %>
     <%= submit_tag("GO") %>
   <% end %>  
 
@@ -46,7 +47,7 @@
 
 	<div class="clearfix city">
 		<div class="city-name">
-			<h1><%= @destination %></h1>
+			<h1><%= @destination %> in <%= @month %></h1>
 			<h3>LOCAL TIME IS <%= @time %></h3>
 		</div>
 
@@ -66,10 +67,21 @@
 
 		<div class="weather">
 			<%= image_tag "icons/weather.png", :class => "icon" %>
-			<h1>HISTORICAL WEATHER</h1>
-			<div><%= image_tag "icons/hightemp-white.png", :class => "sub-icon" %>High of <%= @max_temp %></div>
-			<div><%= image_tag "icons/lowtemp-white.png", :class => "sub-icon" %>Low of <%= @min_temp %></div>
-			<div><%= image_tag "icons/precipitation-white.png", :class => "sub-icon" %>Average Rainfall <%= @avg_precipitation %> Inches per Month</div>
+			<table>
+				<tr>
+					<h1>HISTORICAL WEATHER</h1>
+				</tr>
+				<tr>
+					<td><%= image_tag "icons/hightemp-white.png", :class => "sub-icon" %></td>
+					<td><%= image_tag "icons/lowtemp-white.png", :class => "sub-icon" %></td>
+					<td><%= image_tag "icons/precipitation-white.png", :class => "sub-icon"%></td>
+				</tr>
+				<tr>
+				 <td><%= @max_temp %>&deg;</td>
+				 <td><%= @min_temp %>&deg;</td>
+				 <td><%= @avg_precipitation %> in</td>
+				</tr>
+			</table>
 		</div>
 
 		<!-- BIG MAC -->
@@ -77,7 +89,7 @@
 		<div class="big-mac">
 			<%= image_tag "icons/burger.png", :class => "icon" %>
 			<h1>A BIG MAC IN <%=@destination.upcase %></h1> 
-			<figure><span><%= @bm_index %></span></figure>
+			<figure><span>$<%= @bm_index %></span></figure>
 		</div>
 
 		<!-- HOTEL -->
