@@ -1,6 +1,18 @@
 class ResultsController < ApplicationController
   layout 'application'
 
+  # holy mother of mono-method
+  # each method should do just one thing.
+  # A controller should do the following things:
+  # 1. deal with incoming data
+  # 2. pass off the data to some other object to do work
+  # 3. send the user to the right place / display the right thing
+
+  # Everything in the "else" should at least be its own method, if not its own
+  # object. In addition, there are simply too many instance variables.
+  # Even if it feels hackish, grouping them together helps.
+  # Clearly there is a "@loc_data" object of some sort (name not definitive)
+
   def show
     @user = User.new
     @origin = params[:origin]
@@ -10,6 +22,8 @@ class ResultsController < ApplicationController
     @bm_index = City.where(name: @destination)[0].bm_index
     hotwire_flight_hash = Hotwire.get_flight_info(hash)
 
+    # These two seem to always come together. If this is a presentation concern
+    # (aka HTML / Javascript), maybe it should go in a helper?
     @origins = City.where(origin: true).map{ |city| city.name }
     @destinations = City.all.map{ |city| city.name }
 
@@ -27,6 +41,10 @@ class ResultsController < ApplicationController
         @low_hotel_price = hotwire_hotel_hash[:low_price]
         @high_hotel_price = hotwire_hotel_hash[:high_price]
         @avg_hotel_price = hotwire_hotel_hash[:avg_hotel_price]
+        # Instead of doing the searches every time, and even though Rails will
+        # cache the result, so the search does not actually go to the DB,
+        # it's usually better to give those a name with a variable.
+        # it improves readability of the code.
         origin_lat = City.where(name: @origin)[0].lat_long.split(',')[0].to_f
         origin_long = City.where(name: @origin)[0].lat_long.split(',')[1].to_f
         destination_lat = City.where(name: @destination)[0].lat_long.split(',')[0].to_f
