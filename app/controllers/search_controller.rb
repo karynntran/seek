@@ -7,6 +7,8 @@ class SearchController < ApplicationController
   end
 
   def autocomplete
+    # For both of the following lines, you can use City.pluck(:name)
+    # City.where(origin: true).pluck(:name)
     origin = City.where(origin: true).map{ |city| city.name }
     destination = City.all.map{ |city| city.name }
 
