@@ -2,13 +2,13 @@
 
 
 	<header>
-		
+
 		<%= image_tag "icons/user.png", :class => "user-icon" %>
 
 		<div class="username">
 			WELCOME, <%= @user.username.upcase %>!
-		</div>		
-		
+		</div>
+
 		<div class="logout">
 			<%= form_tag sessions_path, method: 'delete' do %>
 			  <%= submit_tag 'Logout' %>
@@ -20,11 +20,16 @@
 
 	<div class="links">
 	  <strong><h1 class="saved">YOUR SAVED FAVORITES</h1></strong><br>
-	  <% @user.favorites.map do |favorite| %>		
-			<% destination = /(?<=destination=)[\w\+]+(?=&)/.match(favorite[:link]).to_s %> 
+      <!--
+      This logic does not belong in the view. It should be somewhere else,
+      maybe in a helper. This will make the code more testable
+      and more maintainable. The view should just display.
+      -->
+	  <% @user.favorites.map do |favorite| %>
+			<% destination = /(?<=destination=)[\w\+]+(?=&)/.match(favorite[:link]).to_s %>
 			<% origin = /(?<=origin=)[\w\+]+(?=&)/.match(favorite[:link]).to_s %>
 			<% month = /(?<=month=)[\w\+]+(?=&)/.match(favorite[:link]).to_s %>
-			
+
 		<ul>
 			<li>
 				<button class="user"><a class="favorites" href=<%=favorite[:link]%>>
