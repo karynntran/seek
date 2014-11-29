@@ -4,11 +4,11 @@ On the homepage, the user can search through a list of possible destinations bef
 
 Once the search queries are submitted, the user is redirected to a results page that displays the hotel, flight, distance, weather, and estimated consumer costs data.  From this results page the user is able to login and save that search query to their unique username so that they can keep a log of possibile travel destinations in mind.
 
-![Home](https://github.com/mjprude/seek/app/assets/images/screenshot_home.png)
+![Home](app/assets/images/screenshot_home.png)
 
-![Results](https://github.com/mjprude/seek/app/assets/images/screenshot_results.png)
+![Results](app/assets/images/screenshot_results.png)
 
-![User](https://github.com/mjprude/seek/app/assets/images/screenshot_user.png)
+![User](app/assets/images/screenshot_user.png)
 
 
 Ruby on Rails, Javascript, JQuery, AJAX, SQL
