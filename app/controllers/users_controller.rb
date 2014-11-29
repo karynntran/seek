@@ -1,3 +1,5 @@
+# Gosh, this looks like scaffolded code.
+
 class UsersController < ApplicationController
   # before_action :set_user, only: [:show, :edit, :update, :destroy]
   before_filter :authorize, except: [:new, :create]
